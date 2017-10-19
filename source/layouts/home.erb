@@ -1,0 +1,12 @@
+<% wrap_layout :layout do %>
+  <section id="home-container">
+    <h1 class="namelogo"><%= link_to 'Hu Chen', '/index.html' %></h1>
+    <%= yield %>
+    <footer id="main-foot">
+      <%= partial 'includes/layout/menu' %>
+    </footer>
+    <a href="https://mixpanel.com/f/partner" class="mixpanel">
+      <img src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png" alt="Mobile Analytics" />
+    </a>
+  </section>
+<% end %>

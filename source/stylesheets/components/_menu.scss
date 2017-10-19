@@ -1,0 +1,109 @@
+$nav-open-time: .5s;
+$nav-menu-width: 230px;
+
+.site-nav {
+  @include position(absolute, 0 null 0 0);
+  outline: none;
+}
+
+.menu-icon {
+  @include transition(opacity $nav-open-time);
+  opacity: 1;
+}
+
+.site-nav-menu {
+  display: none;
+  overflow: auto;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1;
+  @include padding(null $menu-padding);
+  width: $nav-menu-width;
+  background-color: $theme-color;
+  font-family: $sans;
+  a {
+    color: $menu-link-color;
+    @include hover {
+      color: $white;
+    }
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .namelogo {
+    margin-bottom:10px;
+    @include padding($icon-margin null);
+    height: $metabar-mobile-height;
+    line-height: $icon-background-size - 2px; // Position fix
+    font-size: $menu-header-font-size;
+    border-bottom: 1px solid $menu-border-color;
+  }
+}
+
+ul.site-nav-list {
+  li a{
+    position: relative;
+    padding-left: 32px;
+    line-height: $mobile-list-height;
+    font-size: 18px;
+    display: block;
+    &::before {
+      position: absolute;
+      font-size: 22px;
+      display: block;
+      left: 0;
+      top: 1px;
+      text-align: center;
+    }
+  }
+}
+
+.site-nav-overlay {
+  @include position(fixed, 0 0 0 0);
+  z-index: -1;
+  background: rgba(0,0,0,0.2);
+  content: '';
+  opacity: 0;
+  @include transition(opacity $nav-open-time);
+}
+
+.no-csstransforms3d .site-nav-drawer-open #container {
+  padding-left: $nav-menu-width;
+}
+
+.site-nav-drawer-open {
+  .menu-icon {
+    opacity: 0.6;
+  }
+  .site-nav {
+    z-index: auto;
+  }
+  #container {
+    @include transform(translate3d($nav-menu-width, 0, 0));
+  }
+  .site-nav-overlay {
+    opacity: 1;
+    @include transition(opacity $nav-open-time);
+  }
+}
+
+.site-nav-transition {
+  overflow: hidden;
+  height: 100%;
+  .site-nav {
+    z-index: auto;
+    position: fixed;
+  }
+  .site-nav-menu {
+    display: block;
+  }
+  #container {
+    z-index: 800;
+    min-height: 100%;
+    height: auto !important;
+    @include transition(transform $nav-open-time);
+  }
+  .site-nav-overlay {
+    z-index: 600;
+  }
+}

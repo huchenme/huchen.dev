@@ -1,0 +1,22 @@
+<% wrap_layout :layout do %>
+  <nav class="site-nav" tabindex="-1">
+    <div class="site-nav-menu">
+      <h1 class="namelogo"><%= link_to 'Hu Chen', '/index.html' %></h1>
+      <%= partial 'includes/layout/menu' %>
+    </div>
+  </nav>
+  <div id="container">
+    <div class="metabar">
+      <button class="site-nav-icon menu-icon">
+        <span class="icon-navicon"></span>
+      </button>
+      <header class="hero layout-single-column">
+        <%= yield_content :header %>
+      </header>
+    </div>
+    <article class="article">
+      <%= yield %>
+    </article>
+    <div class="site-nav-overlay"></div>
+  </div>
+<% end %>

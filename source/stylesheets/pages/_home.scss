@@ -1,0 +1,96 @@
+$mobile-margin-sections: 80px;
+
+#home-container {
+  @include padding(0 $mobile-page-margin);
+  .namelogo {
+    @include margin(10px null);
+    a {
+      color: lighten($theme-color, 15%);
+      &:hover, &:active {
+        color: $theme-color;
+      }
+    }
+  }
+}
+
+.namelogo {
+  font-weight: 900;
+  font-size: rem(30px);
+  text-transform: uppercase;
+}
+
+.tagline {
+  margin-top: $mobile-margin-sections;
+  font-weight: 100;
+  color: $black;
+  font-size: em(30px);
+  @extend %no-select;
+  &.construction {
+    color: $medium-gray;
+  }
+  &.blue {
+    color: $blue;
+  }
+  strong {
+    font-weight: 700;
+  }
+}
+
+footer#main-foot {
+  margin-top: $mobile-margin-sections;
+  ul {
+    font-family: $header-font-family;
+    li {
+      @include from(2) {
+        @include clearfix;
+        float: left;
+        margin-right: em(25px);
+        a {
+          font-size: em(18px);
+          line-height: $base-line-height;
+          padding: 0;
+          border-bottom: 2px solid $light-gray;
+          &:hover {
+            border-color: $hover-link-color;
+          }
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+//
+// From iPad and above
+//
+@include breakpoint(600px (min-height $height-bp)) {
+  $padding-v: 50px;
+  $padding-h: 70px;
+
+  #home-container {
+    padding: $padding-v $padding-h;
+    .namelogo {
+      margin: 0;
+    }
+  }
+
+  .tagline {
+    @include position(absolute, 50% $padding-h null $padding-h);
+    margin-top: -0.5em;
+    font-size: em(35px);
+  }
+
+  #main-foot {
+    margin: 0;
+    @include position(fixed, null $padding-h $padding-v $padding-h);
+    ul {
+      @include margin(0 null);
+    }
+  }
+}
+
+.mixpanel {
+  opacity: 0;
+}

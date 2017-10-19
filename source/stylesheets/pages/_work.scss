@@ -1,0 +1,90 @@
+$work-image-height: 200px;
+$work-image-border-radius: 4px;
+$work-award-height: 100px;
+
+.bucket {
+  padding-bottom: em(40px);
+}
+
+.bucket-label {
+  padding: em(15px) 0;
+  font-family: $sans;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: $gray-text-color;
+  font-weight: 700;
+  @include from(3) {
+    font-size: 1.5em;
+  }
+}
+
+.bucket-contents {
+  margin-top: 1.2em;
+  @include clearfix;
+}
+
+.bucket-item{
+  display: block;
+  width: auto;
+  margin-left: 0;
+  margin-bottom: 1.5em;
+  position: relative;
+  overflow: hidden;
+  @include from(3) {
+    @include span(6 of 12 1);
+    &:nth-child(2n) {
+      @include last;
+    }
+  }
+}
+
+.bucket.awards .bucket-item {
+  height: $work-award-height;
+  img {
+    width: 250px;
+    @extend %vertical-center;
+    max-width: 80%;
+  }
+}
+
+.bucket-contents.small>.bucket-item{
+  @include from(3) {
+    @include span(4 of 12 1);
+    &:nth-child(3n) {
+      @include omega;
+    }
+    .work-item-title {
+      font-size: 1em;
+    }
+  }
+}
+
+.work-item {
+  @include hover {
+    color: #000;
+  }
+}
+
+.work-item-image {
+  height: $work-image-height;
+  background-color: rgba(0,0,0,0.8);
+  background-position: center;
+  background-size: cover;
+  border-radius: $work-image-border-radius;
+}
+
+.work-item-title {
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2em;
+  line-height: 1.2;
+  font-style: italic;
+  padding: 10px 0;
+  overflow: hidden;
+  word-break: break-word;
+  text-align: center;
+}

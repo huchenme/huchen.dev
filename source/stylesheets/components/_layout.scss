@@ -1,0 +1,28 @@
+// everything put into container
+#container {
+  background: $white;
+}
+
+// fix the open menu menu background break issue
+html, body, #container {
+  height: 100%;
+}
+
+// layout styles
+///////////////////////////////////////////////////////////////////////////////
+
+// center content of article
+.layout-single-column {
+  @include margin(null $mobile-page-margin);
+  @include from(3) {
+    @include margin(null auto);
+    width: 90%;
+    max-width: rem(640px);
+  }
+  @include from(4) {
+    max-width: rem(700px);
+  }
+  @include breakpoint($large-screen) {
+    max-width: rem(750px);
+  }
+}

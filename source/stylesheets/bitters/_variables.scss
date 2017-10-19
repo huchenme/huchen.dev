@@ -1,0 +1,93 @@
+// Breakpoints
+///////////////////////////////////////////////////////////////////////////////
+$slicer-anti-overlap-corrections: -1px, -0.1em, -0.1rem;
+
+// 1 - iPhone
+// 2 - iPhone landscape
+// 3 - iPad
+// 4 - iPad landscape
+// 5 - laptop
+$slicer-breakpoints: 0 400px 600px 800px 1010px;
+$height-bp: 500px;
+$large-screen: 1200px (min-height $height-bp);
+
+// Typography
+///////////////////////////////////////////////////////////////////////////////
+$sans-serif: $helvetica;
+$serif: $georgia;
+$chinese-font: "Helvetica Neue",Helvetica,"Hiragino Sans GB",STHeiti,"WenQuanYi Micro Hei","Microsoft Yahei",sans-serif;
+// font weight: 300, 500, 700, 900
+$freight-sans: append("freight-sans-pro", $chinese-font, comma);
+$freight-text: append("freight-text-pro", $chinese-font, comma);
+
+$sans: $freight-sans;
+$serif: $freight-text;
+
+$base-font-family: $serif;
+$header-font-family: $sans;
+
+// Sizes
+///////////////////////////////////////////////////////////////////////////////
+$base-font-size: 16px;
+$base-line-height: 1.45;
+$header-line-height: 1.2;
+$large-screen-line-height: 1.65;
+$base-border-radius: em(3);
+
+// Colors
+///////////////////////////////////////////////////////////////////////////////
+
+$blue: #2980b9;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+$white: #fff;
+$black: #000;
+
+$theme-color: $blue;
+
+// Body Color
+$base-body-color: $white;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$base-accent-color: $blue;
+$gray-text-color: rgba(0,0,0,0.3);
+
+// Block quote
+$blockquote-text-color: $gray-text-color;
+
+// Text Link Colors
+$base-link-color: $dark-gray;
+$hover-link-color: $theme-color;
+
+// Border color
+$base-border-color: $light-gray;
+
+// NProgress Colors
+$nprogress-color: $theme-color;
+
+// Border Color
+$white-page-border-color: rgba(0,0,0,0.15);
+
+// Menu
+///////////////////////////////////////////////////////////////////////////////
+$menu-padding: 20px;
+$menu-link-color: rgba(255,255,255,0.65);
+$menu-header-font-size: 25px;
+$menu-border-color: rgba(255,255,255,0.1);
+
+// Layout
+///////////////////////////////////////////////////////////////////////////////
+$mobile-page-margin: 16px;
+
+// List
+///////////////////////////////////////////////////////////////////////////////
+$mobile-list-height: 46px;
+
+// Meta Bar
+///////////////////////////////////////////////////////////////////////////////
+$icon-background-size: 44px;
+$icon-size: 35px;
+$icon-margin: 10px;
+$metabar-mobile-height: $icon-background-size + 2*$icon-margin;

@@ -1,0 +1,59 @@
+@mixin social-link($color: $color) {
+  color: $color;
+  @include from(2) {
+    border-color: transparent !important;
+    @include hover {
+      border-color: $color !important;
+    }
+  }
+}
+
+ul.social {
+  font-family: $sans;
+  @extend .clearfix;
+  li {
+    a {
+      display: inline-block;
+      line-height: $mobile-list-height;
+      padding-right: $mobile-list-height;
+      @include to(1) {
+        border: none;
+      }
+    }
+    // from iphone landscape
+    @include from(2) {
+      float: left;
+      // total 5 icons
+      @include span(1 of 5);
+      &:last-child {
+        @include last;
+      }
+      text-align: center;
+      a {
+        padding: 0;
+        line-height: $base-line-height;
+        border-width: 2px;
+      }
+    }
+  }
+}
+
+a.email {
+  @include social-link($medium-gray);
+}
+
+a.linkedin {
+  @include social-link(#007FB1);
+}
+
+a.weibo {
+  @include social-link(#E6162D);
+}
+
+a.twitter {
+  @include social-link(#00ACED);
+}
+
+a.github {
+  @include social-link(#4183C4);
+}

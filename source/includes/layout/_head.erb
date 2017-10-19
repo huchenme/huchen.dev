@@ -1,0 +1,32 @@
+<!--
+ __   __  __   __    _______  __   __  _______  __    _
+|  | |  ||  | |  |  |       ||  | |  ||       ||  |  | |
+|  |_|  ||  | |  |  |       ||  |_|  ||    ___||   |_| |
+|       ||  |_|  |  |       ||       ||   |___ |       |
+|       ||       |  |      _||       ||    ___||  _    |
+|   _   ||       |  |     |_ |   _   ||   |___ | | |   |
+|__| |__||_______|  |_______||__| |__||_______||_|  |__|
+
+-->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, , maximum-scale=1" user-scalable="no">
+<title><%= current_page.data.title ? "#{current_page.data.title} | #{data.config.title}" : data.config.title %></title>
+<meta name="description" content="<%= current_page.data.description || "Hey there! I am Chen" %>">
+
+<%= favicon_tag "favicon.ico" %>
+
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<%= stylesheet_link_tag "application", 'data-turbolinks-track' => true %>
+<%= javascript_include_tag "app", 'data-turbolinks-track' => true %>
+
+<% if data.config.typekit %>
+<script type="text/javascript" src="//use.typekit.net/<%= data.config.typekit %>.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<% end %>
+
+<%= partial 'includes/layout/ga' %>
+

@@ -1,0 +1,121 @@
+@include border-box-sizing;
+
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  -webkit-font-smoothing: antialiased;
+  line-height: $base-line-height;
+  // ipad and above
+  @include from(3) {
+    font-size: 112.5%;
+    line-height: $large-screen-line-height;
+  }
+  // imac
+  @include breakpoint($large-screen) {
+    font-size: 125%;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font-family;
+  line-height: 1.25em;
+  margin: 0;
+  font-weight: 700;
+  text-rendering: optimizeLegibility; // Fix the character spacing for headings
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: $base-font-size * 2.25; // 16 * 2.25 = 36px
+}
+
+h2 {
+  font-size: $base-font-size * 2; // 16 * 2 = 32px
+}
+
+h3 {
+  font-size: $base-font-size * 1.75; // 16 * 1.75 = 28px
+}
+
+h4 {
+  font-size: $base-font-size * 1.5; // 16 * 1.5 = 24px
+}
+
+h5 {
+  font-size: $base-font-size * 1.25; // 16 * 1.25 = 20px
+}
+
+h6 {
+  font-size: $base-font-size;
+}
+
+p {
+  margin: 0 0 ($base-line-height * .5)*$base-font-size;
+}
+
+a {
+  color: $base-link-color;
+  text-decoration: none;
+  @include transition-property (color, border-color);
+  @include transition-duration(0.3s);
+  @include transition-timing-function(cubic-bezier(0.165,0.630,0.140,0.820));
+  @include hover {
+    color: $hover-link-color;
+    outline: none;
+  }
+}
+
+hr {
+  width: 14%;
+  margin: em(40px) auto em(33px) auto;
+  border-top: 1px solid $white-page-border-color;
+}
+
+img {
+  margin: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+abbr, acronym {
+  border-bottom: 1px dotted $base-border-color;
+  cursor: help;
+}
+
+address {
+  display: block;
+  margin: 0 0 ($base-line-height / 2);
+}
+
+hgroup {
+  margin-bottom: $base-line-height / 2;
+}
+
+del {
+  color: lighten($base-font-color, 15);
+}
+
+blockquote {
+  color: $blockquote-text-color;
+  margin: 1em 0;
+  padding-left: 0;
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: $header-line-height;
+  text-align: center;
+  font-style: italic;
+  @include from(3) {
+    font-size: 2.5em;
+  }
+}
+
+cite {
+  color: lighten($base-font-color, 25);
+  font-style: italic;
+
+  &:before {
+    content: '\2014 \00A0';
+  }
+}
+

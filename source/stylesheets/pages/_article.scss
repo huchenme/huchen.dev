@@ -1,0 +1,14 @@
+article.article {
+  font-size: em(20px);
+  padding-bottom: em(30px);
+  a {
+    border-bottom: 1px solid $white-page-border-color;
+    &:hover, &:focus, &:active {
+      border-color: $theme-color;
+    }
+  }
+  h3 {
+    font-size: em(20px);
+  }
+}
+

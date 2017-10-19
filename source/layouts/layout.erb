@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <head>
+    <%= partial 'includes/layout/head' %>
+    <%= yield_content(:meta) %>
+  </head>
+  <body class="<%= page_classes %>">
+    <%= yield %>
+    <% if data.config.google_analytics and build? %>
+      <script>_gaq.push(['_trackPageview']);</script>
+    <% end %>
+  </body>
+</html>

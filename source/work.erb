@@ -1,0 +1,63 @@
+---
+layout: article
+title: My Works
+---
+<% content_for :header do %>
+  <h1 class="hero-title">My Works</h1>
+<% end %>
+
+<div class="layout-single-column">
+  <blockquote>
+    “I love making things that people(me) use.”
+  </blockquote>
+  <p>
+    It is very difficult to capture what I do in a single line. Here is a shorter explanation of what I do. <strong>“If it is fun I will make it.”</strong>
+  </p>
+  <hr>
+  <div class="bucket">
+    <h2 class="bucket-label">Current Works</h2>
+    <ul class="bucket-contents">
+      <li class="bucket-item">
+        <a class="work-item" href="/construction/">
+          <div class="work-item-image"  style="background-image:url(<%= asset_path(:images, "works/airbum.jpg") %>)"></div>
+          <div class="work-item-title">Airbum</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="bucket">
+    <h2 class="bucket-label">Past Works</h2>
+    <ul class="bucket-contents small">
+      <li class="bucket-item">
+        <a class="work-item" href="/construction/">
+          <div class="work-item-image"  style="background-image:url(<%= asset_path(:images, "works/dodohub.jpg") %>)"></div>
+          <div class="work-item-title">DodoHub</div>
+        </a>
+      </li>
+      <li class="bucket-item">
+        <a class="work-item" href="/construction/">
+          <div class="work-item-image"  style="background-image:url(<%= asset_path(:images, "works/fm.jpg") %>)"></div>
+          <div class="work-item-title">Favorite Medium</div>
+        </a>
+      </li>
+      <li class="bucket-item">
+        <a class="work-item" href="/construction/">
+          <div class="work-item-image"  style="background-image:url(<%= asset_path(:images, "works/method.jpg") %>)"></div>
+          <div class="work-item-title">Method</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="bucket awards">
+    <h2 class="bucket-label">Awards</h2>
+    <ul class="bucket-contents">
+      <li class="bucket-item">
+        <%= image_tag 'awards/awwwards.svg' %>
+      </li>
+      <li class="bucket-item">
+        <%= image_tag 'awards/cssda.png' %>
+      </li>
+    </ul>
+  </div>
+</div>
+

@@ -1,0 +1,31 @@
+@include font-face(huchen, 'icon/huchen', normal, $asset-pipeline: true);
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'huchen';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-navicon:before {
+  content: "\e600";
+}
+.icon-glass:before {
+  content: "\e601";
+}
+.icon-write:before {
+  content: "\e602";
+}
+.icon-chat:before {
+  content: "\e603";
+}
+.icon-work:before {
+  content: "\e604";
+}
