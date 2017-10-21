@@ -1,19 +1,18 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import get from 'lodash/get'
-import Helmet from 'react-helmet'
 
 import Bio from '../components/Bio'
 import { rhythm } from '../utils/typography'
+import styled from "styled-components"
 
-class BlogIndex extends React.Component {
-  render() {
-    return (
-      <div>
-        <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
-      </div>
-    )
-  }
-}
+const Username = styled.h1`
+`
+
+const BlogIndex = () => (
+  <div>
+    <div>I’m Hu Chen, a frontend engineer currently living in Singapore.</div>
+    <div>I’m Hu Chen, a frontend engineer currently living in Singapore.</div>
+  </div>
+)
 
 export default BlogIndex
