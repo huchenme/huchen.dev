@@ -13,6 +13,10 @@ const Line = styled.section`
   }
 `
 
+const Divider = styled.hr`
+  marginBottom: ${rhythm(1)}
+`
+
 const HomePage = () => (
   <div>
     <Line>
@@ -35,6 +39,7 @@ const HomePage = () => (
       <a href="https://github.com/huchenme/">GitHub</a> and my profile on{' '}
       <a href="https://www.linkedin.com/in/huchenme/">LinkedIn</a>.
     </Line>
+    <Divider />
     <Line>
       This site was built in Gatsby and hosted on{' '}
       <a href="https://github.com/huchenme/huchenme.github.io">GitHub</a>. And
