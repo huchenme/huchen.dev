@@ -7,6 +7,6 @@ import 'typeface-merriweather'
 import profilePic from './profile-pic.jpg'
 import { rhythm } from '../utils/typography'
 
-const Bio = () => <p>todo</p>
+const Footer = () => <p>Footer</p>
 
-export default Bio
+export default Footer

@@ -4,4 +4,7 @@ public
 .DS_Store
 .intermediate-representation/
 .cache/
-.Ulysses-favorites.plist
+
+// Ulysses
+*.plist
+*.marked
