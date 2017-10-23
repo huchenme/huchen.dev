@@ -41,7 +41,6 @@ module.exports = {
         trackingId: `UA-44913635-1`,
       },
     },
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-plugin-typography",
