@@ -14,13 +14,14 @@ const Line = styled.section`
 `
 
 const Divider = styled.hr`
-  marginBottom: ${rhythm(1)}
+  marginbottom: ${rhythm(1)};
 `
 
 const HomePage = () => (
   <div>
+    <h1>Hey, there</h1>
     <Line>
-      I'm Hu Chen, an inter-disciplinary frontend engineer, designer and
+      I’m <strong>Hu Chen</strong>, an inter-disciplinary frontend engineer, designer and
       adventurer living in Singapore and sometimes travelling.
     </Line>
     <Line>
@@ -41,11 +42,11 @@ const HomePage = () => (
     </Line>
     <Divider />
     <Line>
-      This site was built in Gatsby and hosted on{' '}
-      <a href="https://github.com/huchenme/huchenme.github.io">GitHub</a>. And
-      obviously, it is still under{' '}
-      <a href="https://github.com/huchenme/huchenme.github.io/issues/1">
-        construction
+      This site was built in Gatsby and{' '}
+      <a href="https://github.com/huchenme/huchenme.github.io">hosted</a>{' '}
+      on GitHub. And obviously, it is still{' '}
+      <a href="https://github.com/huchenme/huchenme.github.io/projects/1">
+        under construction
       </a>.
     </Line>
   </div>
