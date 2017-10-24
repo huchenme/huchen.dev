@@ -1,5 +1,6 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import PropTypes from 'prop-types'
+// import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import { Container } from 'react-responsive-grid'
 
@@ -7,10 +8,10 @@ import { rhythm } from '../utils/typography'
 import SiteLogo from '../components/SiteLogo'
 
 const Template = ({ children, data, location }) => {
-  let rootPath = `/`
-  if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
-    rootPath = __PATH_PREFIX__ + `/`
-  }
+  // let rootPath = `/`
+  // if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
+  //   rootPath = __PATH_PREFIX__ + `/`
+  // }
 
   const siteTitle = data.site.siteMetadata.title
 
@@ -37,9 +38,9 @@ const Template = ({ children, data, location }) => {
 }
 
 Template.propTypes = {
-  children: React.PropTypes.func,
-  location: React.PropTypes.object,
-  route: React.PropTypes.object,
+  children: PropTypes.func,
+  location: PropTypes.object,
+  route: PropTypes.object,
 }
 
 export default Template

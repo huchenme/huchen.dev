@@ -26,6 +26,7 @@
     "gatsby-transformer-remark": "^1.7.15",
     "gatsby-transformer-sharp": "^1.6.10",
     "lodash": "^4.15.0",
+    "prop-types": "^15.6.0",
     "react-responsive-grid": "^0.3.3",
     "typeface-merriweather": "^0.0.40",
     "typeface-montserrat": "^0.0.37",
@@ -34,7 +35,6 @@
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^4.1.1",
-    "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.6.0",
     "eslint-config-react-app": "^2.0.1",
     "eslint-plugin-flowtype": "^2.34.1",
