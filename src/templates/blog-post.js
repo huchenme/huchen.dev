@@ -1,9 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
+// import Link from 'gatsby-link'
 import get from 'lodash/get'
 
-import { rhythm, scale } from '../utils/typography'
+import { rhythm } from '../utils/typography'
 
 import './blog-post.css'
 
