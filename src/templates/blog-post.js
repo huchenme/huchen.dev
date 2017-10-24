@@ -1,30 +1,26 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-// import Link from 'gatsby-link'
-import get from 'lodash/get'
 
 import { rhythm } from '../utils/typography'
 
 import './blog-post.css'
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+const BlogPostTemplate = ({ data }) => {
+  const post = data.markdownRemark
+  const siteTitle = data.site.siteMetadata.title
 
-    return (
-      <div>
-        <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
+      <h1>{post.frontmatter.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <hr
+        style={{
+          marginBottom: rhythm(1),
+        }}
+      />
+    </div>
+  )
 }
 
 export default BlogPostTemplate
