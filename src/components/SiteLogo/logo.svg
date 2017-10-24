@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="logo-a" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#42B9FF"/>
+      <stop offset="100%" stop-color="#2D8EFF"/>
+    </linearGradient>
+    <polygon id="logo-b" points="80 0 149.282 120 10.718 120"/>
+    <filter id="logo-c" x="-8.8%" y="-8.8%" filterUnits="objectBoundingBox">
+      <feOffset dx="2" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="5"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="logo-e" width="93.333" height="60"/>
+    <filter id="logo-f" width="132.1%" height="150%" x="-16.1%" y="-25%" filterUnits="objectBoundingBox">
+      <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="5"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <circle cx="100" cy="100" r="100" fill="url(#logo-a)"/>
+    <g transform="translate(20 23.333)">
+      <mask id="logo-d" fill="#fff">
+        <use xlink:href="#logo-b"/>
+      </mask>
+      <use fill="#000" filter="url(#logo-c)" xlink:href="#logo-b"/>
+      <use fill="#B4DAFD" xlink:href="#logo-b"/>
+      <g mask="url(#logo-d)">
+        <g transform="translate(31.6 -12.4)">
+          <mask id="logo-g" fill="#fff">
+            <use xlink:href="#logo-e"/>
+          </mask>
+          <g>
+            <use fill="#000" filter="url(#logo-f)" xlink:href="#logo-e"/>
+            <use fill="#FFF" xlink:href="#logo-e"/>
+          </g>
+          <polygon fill="#FFF" fill-opacity=".6" points="48.4 12.4 117.682 132.4 -20.882 132.4" mask="url(#logo-g)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

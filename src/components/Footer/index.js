@@ -5,7 +5,7 @@ import 'typeface-montserrat'
 import 'typeface-merriweather'
 
 import profilePic from './profile-pic.jpg'
-import { rhythm } from '../utils/typography'
+import { rhythm } from '../../utils/typography'
 
 const Footer = () => <p>Footer</p>
 

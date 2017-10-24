@@ -3,7 +3,8 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import { Container } from 'react-responsive-grid'
 
-import { rhythm, scale } from '../utils/typography'
+import { rhythm } from '../utils/typography'
+import SiteLogo from '../components/SiteLogo'
 
 const Template = ({ children, data, location }) => {
   let rootPath = `/`
@@ -21,26 +22,15 @@ const Template = ({ children, data, location }) => {
       }}
     >
       <Helmet title={siteTitle} />
-      {location.pathname !== rootPath && (
-        <h3
-          style={{
-            fontFamily: 'Montserrat, sans-serif',
-            marginTop: 0,
-            marginBottom: rhythm(-1),
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            {siteTitle}
-          </Link>
-        </h3>
-      )}
+      <div
+        style={{
+          marginTop: 0,
+          marginBottom: rhythm(-1),
+        }}
+      >
+        <SiteLogo to="/" />
+      </div>
+
       {children()}
     </Container>
   )
