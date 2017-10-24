@@ -1,0 +1,15 @@
+{
+  "extends": ["react-app", "prettier"],
+  "env": {
+    "mocha": true
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": 2
+  },
+  "globals": {
+    "__PREFIX_PATHS__": true,
+    "__PATH_PREFIX__": true,
+    "graphql": true
+  }
+}

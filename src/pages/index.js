@@ -20,8 +20,8 @@ const HomePage = () => (
   <div>
     <h1>Hey, there</h1>
     <Line>
-      I’m <strong>Hu Chen</strong>, an inter-disciplinary frontend engineer, designer and
-      adventurer living in Singapore and sometimes travelling.
+      I’m <strong>Hu Chen</strong>, an inter-disciplinary frontend engineer,
+      designer and adventurer living in Singapore and sometimes travelling.
     </Line>
     <Line>
       I code in Javascript (React, Redux, React Native), Ruby and design in
@@ -42,8 +42,8 @@ const HomePage = () => (
     <Divider />
     <Line>
       This site was built in Gatsby and{' '}
-      <a href="https://github.com/huchenme/huchenme.github.io">hosted</a>{' '}
-      on GitHub. And obviously, it is still{' '}
+      <a href="https://github.com/huchenme/huchenme.github.io">hosted</a> on
+      GitHub. And obviously, it is still{' '}
       <a href="https://github.com/huchenme/huchenme.github.io/projects/1">
         under construction
       </a>.
