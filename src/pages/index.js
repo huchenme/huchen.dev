@@ -18,10 +18,10 @@ const Divider = styled.hr`
 
 const HomePage = () => (
   <div>
-    <h1>Hey, there</h1>
+    <h1>Hi, I’m Hu Chen</h1>
     <Line>
-      I’m <strong>Hu Chen</strong>, an inter-disciplinary frontend engineer,
-      designer and adventurer living in Singapore and sometimes travelling.
+      I’m an inter-disciplinary frontend engineer, designer and adventurer
+      living in Singapore and sometimes travelling.
     </Line>
     <Line>
       I code in Javascript (React, Redux, React Native), Ruby and design in
