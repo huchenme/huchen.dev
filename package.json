@@ -7,6 +7,11 @@
     "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
   },
   "dependencies": {
+    "@storybook/addon-actions": "^3.2.13",
+    "@storybook/addon-knobs": "^3.2.13",
+    "@storybook/addon-notes": "^3.2.13",
+    "@storybook/addon-options": "^3.2.13",
+    "@storybook/react": "^3.2.13",
     "gatsby": "^1.9.62",
     "gatsby-link": "^1.6.21",
     "gatsby-plugin-google-analytics": "^1.0.8",
@@ -27,6 +32,7 @@
     "lodash": "^4.15.0",
     "prop-types": "^15.6.0",
     "react-responsive-grid": "^0.3.3",
+    "storybook-readme": "^3.0.6",
     "typeface-merriweather": "^0.0.43",
     "typeface-montserrat": "^0.0.43",
     "typography-breakpoint-constants": "^0.15.10",
@@ -49,11 +55,7 @@
     "rimraf": "^2.6.2"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby",
-    "Hu Chen",
-    "reactjs"
-  ],
+  "keywords": ["gatsby", "Hu Chen", "reactjs"],
   "license": "MIT",
   "main": "n/a",
   "repository": {
@@ -62,21 +64,21 @@
   },
   "scripts": {
     "dev": "gatsby develop",
-    "eslint": "eslint --ext .js,.jsx --ignore-pattern public .",
+    "eslint": "eslint --ext .js,.jsx --ignore-pattern public . .storybook",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write 'src/**/*.{js,jsx,json,css}'",
     "develop": "gatsby develop",
     "prebuild": "rimraf public",
-    "build": "gatsby build",
+    "build": "gatsby build && npm run storybook:build",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d public -b master",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
-    "precommit": "lint-staged"
+    "fix-semi":
+      "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
+    "precommit": "lint-staged",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook:build": "build-storybook -c .storybook -o public/components"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.{js,jsx,json,css}": ["prettier --write", "git add"]
   }
 }

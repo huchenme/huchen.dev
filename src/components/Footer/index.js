@@ -1,12 +1,11 @@
 import React from 'react'
 
-// Import typefaces
-import 'typeface-montserrat'
-import 'typeface-merriweather'
+import styled from 'styled-components'
 
-// import profilePic from './profile-pic.jpg'
-// import { rhythm } from '../../utils/typography'
+const FooterWrapper = styled.div`
+  color: red;
+`
 
-const Footer = () => <p>Footer</p>
+const Footer = () => <FooterWrapper>This is a Footer</FooterWrapper>
 
 export default Footer

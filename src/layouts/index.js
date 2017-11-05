@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { Container } from 'react-responsive-grid'
 
 import { rhythm } from '../utils/typography'
-import SiteLogo from '../components/SiteLogo'
+import { SiteLogo } from '../components'
 import styled from 'styled-components'
 
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
