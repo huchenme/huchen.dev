@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Container } from 'react-responsive-grid'
 
-import { rhythm } from '../utils/typography'
+import { rhythm } from '../../utils/typography'
 import { SiteLogo } from '../components'
 import styled from 'styled-components'
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 // import get from 'lodash/get'
 
-import { rhythm } from '../utils/typography'
+import { rhythm } from '../../utils/typography'
 
 const Posts = ({ data }) => {
   // const siteTitle = data.site.siteMetadata.title

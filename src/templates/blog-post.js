@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import { rhythm } from '../utils/typography'
+import { rhythm } from '../../utils/typography'
 
 import './blog-post.css'
 

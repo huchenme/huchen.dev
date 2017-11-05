@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 
 import logo from './logo.svg'
 import styled from 'styled-components'
-// import { rhythm } from '../utils/typography'
+// import { rhythm } from '../../utils/typography'
 
 const StyledLink = styled(Link)`
   box-shadow: none;
