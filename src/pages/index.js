@@ -43,10 +43,7 @@ const HomePage = () => (
     <Line>
       This site was built in Gatsby and{' '}
       <a href="https://github.com/huchenme/huchenme.github.io">hosted</a> on
-      GitHub. And obviously, it is still{' '}
-      <a href="https://github.com/huchenme/huchenme.github.io/projects/1">
-        under construction
-      </a>.
+      GitHub. And obviously, it is still under construction.
     </Line>
   </div>
 )
