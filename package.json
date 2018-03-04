@@ -1,11 +1,8 @@
 {
-  "name": "huchenme-website-2",
+  "name": "huchenme-website",
   "description": "A new website using Gatsby",
   "version": "1.0.0",
   "author": "Hu Chen <chen@huchen.me>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
-  },
   "dependencies": {
     "gatsby": "^1.9.221",
     "gatsby-link": "^1.6.38",
@@ -35,16 +32,17 @@
     "typography-theme-wordpress-2016": "^0.15.1"
   },
   "devDependencies": {
+    "eslint": "^4.18.2",
+    "eslint-config-kentcdodds": "^13.0.1",
     "gh-pages": "^1.0.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
     "prettier": "^1.11.1",
     "rimraf": "^2.6.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "http://huchen.me",
   "keywords": ["gatsby", "reactjs"],
   "license": "MIT",
-  "main": "n/a",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
@@ -57,10 +55,10 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d public -b master",
     "precommit": "lint-staged",
-    "storybook": "start-storybook -p 9001 -c .storybook",
-    "storybook:build": "build-storybook -c .storybook -o public/components"
+    "lint": "eslint ."
   },
   "lint-staged": {
-    "*.{js,jsx,json,css}": ["prettier --write", "git add"]
+    "*.{js,jsx,json,css}": ["prettier --write", "git add"],
+    "*.{js,jsx}": ["eslint"]
   }
 }

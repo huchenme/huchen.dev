@@ -1,9 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 
-import { rhythm } from "../../utils/typography";
-
-export default ({ data }) => {
+const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
 
@@ -15,6 +13,8 @@ export default ({ data }) => {
     </div>
   );
 };
+
+export default BlogPostTemplate;
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {

@@ -1,16 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
-const Title = styled.h1``
+const Title = styled.h1``;
 
-const Subtitle = styled.h3``
+const Subtitle = styled.h3``;
 
-const UpdatedAtLine = styled.div``
+const UpdatedAtLine = styled.div``;
 
 const UpdatedAtText = styled.span`
   font-weight: bold;
-`
+`;
 
 const PageTitle = ({ children, subtitle, updatedAt }) => (
   <div>
@@ -22,12 +22,12 @@ const PageTitle = ({ children, subtitle, updatedAt }) => (
       </UpdatedAtLine>
     )}
   </div>
-)
+);
 
 PageTitle.propTypes = {
   children: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
-  updatedAt: PropTypes.string,
-}
+  updatedAt: PropTypes.string
+};
 
-export default PageTitle
+export default PageTitle;

@@ -4,6 +4,7 @@ public
 .DS_Store
 .intermediate-representation/
 .cache/
+TODO.md
 
 // Ulysses
 *.plist

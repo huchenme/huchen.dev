@@ -1,13 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { Container } from 'react-responsive-grid'
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { Container } from "react-responsive-grid";
+import styled from "styled-components";
+import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants";
 
-import { rhythm } from '../../utils/typography'
-import { SiteLogo } from '../components'
-import styled from 'styled-components'
-
-import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
+import { rhythm } from "../../utils/typography";
+import { SiteLogo } from "../components";
 
 const LogoWrapper = styled.div`
   margin-top: 0;
@@ -16,21 +15,16 @@ const LogoWrapper = styled.div`
   ${MOBILE_MEDIA_QUERY} {
     text-align: center;
   }
-`
+`;
 
-const Template = ({ children, data, location }) => {
-  // let rootPath = `/`
-  // if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
-  //   rootPath = __PATH_PREFIX__ + `/`
-  // }
-
-  const siteTitle = data.site.siteMetadata.title
+const Template = ({ children, data }) => {
+  const siteTitle = data.site.siteMetadata.title;
 
   return (
     <Container
       style={{
         maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)} ${rhythm(3)}`,
+        padding: `${rhythm(1.5)} ${rhythm(3 / 4)} ${rhythm(3)}`
       }}
     >
       <Helmet title={siteTitle} />
@@ -40,16 +34,14 @@ const Template = ({ children, data, location }) => {
 
       {children()}
     </Container>
-  )
-}
+  );
+};
 
 Template.propTypes = {
-  children: PropTypes.func,
-  location: PropTypes.object,
-  route: PropTypes.object,
-}
+  children: PropTypes.func
+};
 
-export default Template
+export default Template;
 
 export const query = graphql`
   query LayoutQuery {
@@ -59,4 +51,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

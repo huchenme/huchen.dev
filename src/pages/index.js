@@ -1,7 +1,7 @@
 import React from "react";
+import styled from "styled-components";
 
 import { rhythm } from "../../utils/typography";
-import styled from "styled-components";
 
 const Line = styled.section`
   margin-bottom: ${rhythm(1)};
@@ -12,7 +12,7 @@ const Line = styled.section`
 `;
 
 const Divider = styled.hr`
-  marginbottom: ${rhythm(1)};
+  margin-bottom: ${rhythm(1)};
 `;
 
 const HomePage = () => (
