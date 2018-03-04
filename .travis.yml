@@ -15,9 +15,8 @@ branches:
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN
   keep-history: true
+  github-token: $GITHUB_TOKEN
   local-dir: public
   target-branch: master
-  on:
-    branch: v2-src
+  fqdn: huchen.me
