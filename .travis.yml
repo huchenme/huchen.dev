@@ -20,3 +20,5 @@ deploy:
   local-dir: public
   target-branch: master
   fqdn: huchen.me
+  on:
+    branch: v2-src
