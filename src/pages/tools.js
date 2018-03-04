@@ -1,15 +1,9 @@
-import React from 'react'
-// import Link from 'gatsby-link'
-
-// import { rhythm } from '../../utils/typography'
-import styled from 'styled-components'
-
-const Header = styled.h1``
+import React from "react";
 
 const Tools = () => (
   <div>
-    <Header>Tools</Header>
+    <h1>Tools</h1>
   </div>
-)
+);
 
-export default Tools
+export default Tools;

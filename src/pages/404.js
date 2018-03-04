@@ -1,8 +1,5 @@
-import React from 'react'
-import Link from 'gatsby-link'
-// import Helmet from 'react-helmet'
-
-// import { rhythm } from '../../utils/typography'
+import React from "react";
+import Link from "gatsby-link";
 
 const FourOhFour = () => (
   <div>
@@ -11,6 +8,6 @@ const FourOhFour = () => (
       <Link to="/">HOME</Link>
     </h4>
   </div>
-)
+);
 
-export default FourOhFour
+export default FourOhFour;
