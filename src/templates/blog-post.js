@@ -1,19 +1,20 @@
 import React from "react";
 import Helmet from "react-helmet";
+import { Container } from "../components";
 
 const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
 
   return (
-    <div>
+    <Container>
       <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
       <h1>{post.frontmatter.title}</h1>
       <div
         className="post-body"
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
-    </div>
+    </Container>
   );
 };
 

@@ -61,7 +61,7 @@ const typographyOptions = {
   overrideStyles: ({ rhythm, scale }, options) => {
     return {
       "h1,h2,h4,h5,h6": {
-        marginTop: rhythm(options.blockMarginBottom * 2),
+        marginTop: rhythm(options.blockMarginBottom * 1),
         marginBottom: rhythm(options.blockMarginBottom * 0.5),
         letterSpacing: `-0.0075em`
       },

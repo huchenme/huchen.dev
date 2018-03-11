@@ -27,7 +27,6 @@
     "lodash": "^4.17.5",
     "prop-types": "^15.6.0",
     "react-helmet": "^5.2.0",
-    "react-responsive-grid": "^0.3.3",
     "typeface-space-mono": "^0.0.54",
     "typeface-spectral": "^0.0.54",
     "typography-breakpoint-constants": "^0.15.10",

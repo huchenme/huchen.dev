@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 // import { Container } from "react-responsive-grid";
-import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants";
+// import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants";
 import "../css/prism-coy.css";
 
 import { rhythm } from "../utils/typography";
-import { SiteLogo, Container } from "../components";
+import { SiteLogo } from "../components";
 
 // Import Futura PT typeface
 import "../fonts/Webfonts/futurapt_book_macroman/stylesheet.css";
@@ -22,21 +22,19 @@ const Template = ({ children, data }) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return (
-    <Container>
+    <div>
       <Helmet title={siteTitle} />
       <div
         css={{
-          marginTop: 0,
-          marginBottom: rhythm(-1),
-          [MOBILE_MEDIA_QUERY]: {
-            textAlign: "center"
-          }
+          marginTop: rhythm(1.5),
+          textAlign: "center",
+          height: 40
         }}
       >
         <SiteLogo to="/" />
       </div>
       <div className="main-body">{children()}</div>
-    </Container>
+    </div>
   );
 };
 

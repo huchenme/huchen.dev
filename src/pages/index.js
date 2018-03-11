@@ -2,6 +2,7 @@ import React from "react";
 import glamorous from "glamorous";
 
 import { rhythm } from "../utils/typography";
+import { Container } from "../components";
 
 const Line = glamorous.section({
   marginBottom: rhythm(1),
@@ -15,7 +16,7 @@ const Divider = glamorous.hr({
 });
 
 const HomePage = () => (
-  <div>
+  <Container>
     <h1>Hi, I’m Hu Chen</h1>
     <Line>
       I’m an inter-disciplinary frontend engineer, designer and adventurer
@@ -44,7 +45,7 @@ const HomePage = () => (
       <a href="https://github.com/huchenme/huchenme.github.io">hosted</a> on
       GitHub. And obviously, it is still under construction.
     </Line>
-  </div>
+  </Container>
 );
 
 export default HomePage;
