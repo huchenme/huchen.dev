@@ -15,7 +15,7 @@ script:
   - yarn build
 branches:
   only:
-    - v2-src
+    - develop
 deploy:
   provider: pages
   skip-cleanup: true
@@ -25,4 +25,4 @@ deploy:
   target-branch: master
   fqdn: huchen.me
   on:
-    branch: v2-src
+    branch: develop
