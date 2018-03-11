@@ -9,3 +9,4 @@ TODO.md
 // Ulysses
 *.plist
 *.marked
+.vscode

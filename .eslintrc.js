@@ -10,6 +10,7 @@ module.exports = {
   },
   rules: {
     "import/no-extraneous-dependencies": "off",
+    "import/no-unassigned-import": "off",
     "react/prop-types": "off"
   }
 };
