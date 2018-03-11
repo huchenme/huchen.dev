@@ -73,7 +73,6 @@ const typographyOptions = {
       },
       h3: {
         ...scale(2 / 5),
-        lineHeight: 1,
         marginTop: rhythm(options.blockMarginBottom),
         marginBottom: rhythm(options.blockMarginBottom / 2)
       },
@@ -319,5 +318,5 @@ if (process.env.NODE_ENV !== "production") {
   typography.injectStyles();
 }
 
-export const { rhythm } = typography;
+export const { rhythm, scale, options } = typography;
 export default typography;

@@ -1,19 +1,18 @@
 import React from "react";
-import styled from "styled-components";
+import glamorous from "glamorous";
 
 import { rhythm } from "../utils/typography";
 
-const Line = styled.section`
-  margin-bottom: ${rhythm(1)};
-
-  &:last-child {
-    margin-bottom: 0;
+const Line = glamorous.section({
+  marginBottom: rhythm(1),
+  ":last-child": {
+    marginBottom: 0
   }
-`;
+});
 
-const Divider = styled.hr`
-  margin-bottom: ${rhythm(1)};
-`;
+const Divider = glamorous.hr({
+  marginBottom: rhythm(1)
+});
 
 const HomePage = () => (
   <div>

@@ -33,6 +33,14 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#9D7CBF`,
+        showSpinner: false
+      }
+    },
+    `gatsby-plugin-glamor`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -47,7 +55,6 @@ module.exports = {
       options: {
         pathToConfigModule: "src/utils/typography"
       }
-    },
-    `gatsby-plugin-styled-components`
+    }
   ]
 };
