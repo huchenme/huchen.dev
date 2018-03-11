@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-typography",
       options: {
-        pathToConfigModule: "utils/typography"
+        pathToConfigModule: "src/utils/typography"
       }
     },
     `gatsby-plugin-styled-components`

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "gatsby-link";
 import { get } from "lodash";
 
-import { rhythm } from "../../utils/typography";
+import { rhythm } from "../utils/typography";
 
 const Posts = ({ data }) => {
   const blogs = get(data, "allMarkdownRemark.edges", []);

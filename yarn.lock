@@ -11065,13 +11065,13 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typeface-merriweather@^0.0.54:
+typeface-space-mono@^0.0.54:
   version "0.0.54"
-  resolved "https://registry.yarnpkg.com/typeface-merriweather/-/typeface-merriweather-0.0.54.tgz#a6b694d93c7ac432e26e8d7797a19afe83844186"
+  resolved "https://registry.yarnpkg.com/typeface-space-mono/-/typeface-space-mono-0.0.54.tgz#0dd2fa58e0a3f50f5d9c2f3bbbc6246f2cfacb82"
 
-typeface-montserrat@^0.0.54:
+typeface-spectral@^0.0.54:
   version "0.0.54"
-  resolved "https://registry.yarnpkg.com/typeface-montserrat/-/typeface-montserrat-0.0.54.tgz#3fc338db6428d73485b75aa7bd2af8c9a55b9ab3"
+  resolved "https://registry.yarnpkg.com/typeface-spectral/-/typeface-spectral-0.0.54.tgz#1b851ad6e3e6da6a6a37e5ae54059a46f54a80b7"
 
 typography-breakpoint-constants@^0.15.10:
   version "0.15.10"
@@ -11081,12 +11081,12 @@ typography-normalize@^0.14.0:
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/typography-normalize/-/typography-normalize-0.14.0.tgz#1d77c1fe2aaf4a51b3673c4c85c85a65a2d4b573"
 
-typography-theme-wordpress-2016@^0.15.1:
-  version "0.15.10"
-  resolved "https://registry.yarnpkg.com/typography-theme-wordpress-2016/-/typography-theme-wordpress-2016-0.15.10.tgz#8f14f002af9334303b858093358455e02d33131d"
+typography-plugin-code@^0.16.11:
+  version "0.16.11"
+  resolved "https://registry.yarnpkg.com/typography-plugin-code/-/typography-plugin-code-0.16.11.tgz#037c72803c2d76113220cf85d1a55d7cfc6a34de"
   dependencies:
     gray-percentage "^2.0.0"
-    typography-breakpoint-constants "^0.15.10"
+    lodash "^4.13.1"
 
 typography@^0.16.0:
   version "0.16.6"

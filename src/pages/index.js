@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { rhythm } from "../../utils/typography";
+import { rhythm } from "../utils/typography";
 
 const Line = styled.section`
   margin-bottom: ${rhythm(1)};
