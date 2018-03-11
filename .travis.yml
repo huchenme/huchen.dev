@@ -15,7 +15,12 @@ git:
 script:
   - yarn lint
   - yarn build
+branches:
+  only:
+    - develop
 deploy:
+  edge:
+    branch: v1.8.47
   provider: pages
   skip-cleanup: true
   keep-history: true
