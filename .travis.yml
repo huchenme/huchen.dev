@@ -9,7 +9,7 @@ notifications:
     on_success: always
     on_failure: always
 node_js:
-  - '8'
+  - '9'
 git:
   depth: 3
 script:
@@ -19,8 +19,6 @@ branches:
   only:
     - develop
 deploy:
-  edge:
-    branch: v1.8.47
   provider: pages
   skip-cleanup: true
   keep-history: true
