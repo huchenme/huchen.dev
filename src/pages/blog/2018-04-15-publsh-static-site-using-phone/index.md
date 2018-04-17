@@ -132,7 +132,9 @@ $ git commit -m "Add Travis config file"
 $ git push origin develop
 ```
 
-Now you can check the status on Travis, if everything is ok, you should receive an email about the successful build and visit `https://username.github.io` to view your site live.
+Now you can check the status on Travis, you should see Travis is status changed to yellow (running), if everything is ok, it will turn green in a few minutes and you should receive an email about the successful build and visit `https://username.github.io` to view your site live.
+
+![Travis Running](travis_progress.jpg)
 
 ## 4. Add a new blog and publish
 
