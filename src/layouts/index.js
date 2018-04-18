@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
+// TODO: Remove below
 // import { Container } from "react-responsive-grid";
 // import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants";
 import "../css/prism-coy.css";
@@ -20,7 +21,6 @@ import "typeface-space-mono";
 
 const Template = ({ children, data }) => {
   const siteTitle = data.site.siteMetadata.title;
-
   return (
     <div>
       <Helmet title={siteTitle} />

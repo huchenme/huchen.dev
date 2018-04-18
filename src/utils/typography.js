@@ -187,6 +187,9 @@ const typographyOptions = {
         fontSize: `102%`,
         color: colors.gatsby
       },
+      ".post-body strong": {
+        fontFamily: options.headerFontFamily.join(`,`)
+      },
       ".main-body a:hover": {
         background: colors.ui.bright
       },
