@@ -18,8 +18,14 @@ const BlogPostTemplate = ({ data }) => {
       <Helmet>
         <title>{post.frontmatter.title}</title>
         <meta name="description" content={description} />
+        <meta name="article:author" content={siteMetadata.authorName} />
+        <meta name="author" content={siteMetadata.authorName} />
+        <meta
+          name="article:published_time"
+          content={post.frontmatter.rawDate}
+        />
+        <meta name="og:type" content="article" />
         <meta name="og:description" content={description} />
-        <meta name="twitter:description" content={description} />
         <meta name="og:title" content={post.frontmatter.title} />
         {post.frontmatter.image && (
           <meta
@@ -29,6 +35,10 @@ const BlogPostTemplate = ({ data }) => {
             }`}
           />
         )}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.frontmatter.title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:creator" content={siteMetadata.authorTwitter} />
         {post.frontmatter.image && (
           <meta
             name="twitter:image"
@@ -37,16 +47,8 @@ const BlogPostTemplate = ({ data }) => {
             }`}
           />
         )}
-        <meta name="og:type" content="article" />
-        <meta name="twitter:creator" content={siteMetadata.authorTwitter} />
-        <meta name="article:author" content={siteMetadata.authorName} />
-        <meta name="author" content={siteMetadata.authorName} />
         <meta name="twitter:label1" content="Reading time" />
         <meta name="twitter:data1" content={`${post.timeToRead} min read`} />
-        <meta
-          name="article:published_time"
-          content={post.frontmatter.rawDate}
-        />
       </Helmet>
       <h1
         css={{
