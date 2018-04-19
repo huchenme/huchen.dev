@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { css } from 'react-emotion'
+import styled from 'react-emotion'
 
 import '../prism-coy'
 
@@ -18,20 +18,20 @@ import '../fonts/Webfonts/futurapt_demiitalic_macroman/stylesheet.css'
 import 'typeface-spectral'
 import 'typeface-space-mono'
 
+const LogoWrapper = styled.div({
+  marginTop: rhythm(1.5),
+  textAlign: 'center',
+  height: 40
+})
+
 const Template = ({ children, data }) => {
   const siteTitle = data.site.siteMetadata.title
   return (
     <div>
       <Helmet title={siteTitle} />
-      <div
-        className={css({
-          marginTop: rhythm(1.5),
-          textAlign: 'center',
-          height: 40
-        })}
-      >
+      <LogoWrapper>
         <SiteLogo to="/" />
-      </div>
+      </LogoWrapper>
       <div className="main-body">{children()}</div>
     </div>
   )

@@ -1,11 +1,22 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
-import { css } from 'react-emotion'
+import styled from 'react-emotion'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { Container } from '../components'
 import presets from '../utils/presets'
 import { rhythm } from '../utils/typography'
+
+const H1 = styled.h1({
+  marginTop: 0,
+  [presets.Desktop]: {
+    marginBottom: rhythm(5 / 4)
+  }
+})
+
+const ImageContainer = styled.div({
+  marginBottom: rhythm(1)
+})
 
 // eslint-disable-next-line complexity
 const BlogPostTemplate = ({ data }) => {
@@ -51,23 +62,10 @@ const BlogPostTemplate = ({ data }) => {
         <meta name="twitter:label1" content="Reading time" />
         <meta name="twitter:data1" content={`${post.timeToRead} min read`} />
       </Helmet>
-      <h1
-        className={css({
-          marginTop: 0,
-          [presets.Desktop]: {
-            marginBottom: rhythm(5 / 4)
-          }
-        })}
-      >
-        {post.frontmatter.title}
-      </h1>
+      <H1>{post.frontmatter.title}</H1>
       {post.frontmatter.image &&
         !(post.frontmatter.showImageInArticle === false) && (
-          <div
-            className={css({
-              marginBottom: rhythm(1)
-            })}
-          >
+          <ImageContainer>
             <Img sizes={post.frontmatter.image.childImageSharp.sizes} />
             {post.frontmatter.imageAuthor &&
               post.frontmatter.imageAuthorLink && (
@@ -78,7 +76,7 @@ const BlogPostTemplate = ({ data }) => {
                   </OutboundLink>
                 </em>
               )}
-          </div>
+          </ImageContainer>
         )}
       <div
         className="post-body"
