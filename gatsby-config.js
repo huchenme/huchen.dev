@@ -1,15 +1,15 @@
 module.exports = {
   siteMetadata: {
-    url: "http://huchen.me",
-    title: "Hu Chen",
-    authorTwitter: "huchenme",
-    authorName: "Hu Chen"
+    url: 'http://huchen.me',
+    title: 'Hu Chen',
+    authorTwitter: 'huchenme',
+    authorName: 'Hu Chen'
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "pages",
+        name: 'pages',
         path: `${__dirname}/src/pages`
       }
     },
@@ -29,10 +29,10 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.05rem`
             }
           },
-          "gatsby-remark-prismjs",
-          "gatsby-remark-copy-linked-files",
-          "gatsby-remark-autolink-headers",
-          "gatsby-remark-smartypants"
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-autolink-headers',
+          'gatsby-remark-smartypants'
         ]
       }
     },
@@ -55,10 +55,10 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-offline`,
     {
-      resolve: "gatsby-plugin-typography",
+      resolve: 'gatsby-plugin-typography',
       options: {
-        pathToConfigModule: "src/utils/typography"
+        pathToConfigModule: 'src/utils/typography'
       }
     }
   ]
-};
+}

@@ -1,13 +1,13 @@
-import React from "react";
-import Link from "gatsby-link";
-import { css, cx } from "react-emotion";
+import React from 'react'
+import Link from 'gatsby-link'
+import { css, cx } from 'react-emotion'
 
-import { rhythm, scale, options } from "../utils/typography";
-import presets from "../utils/presets";
-import colors from "../utils/colors";
+import { rhythm, scale, options } from '../utils/typography'
+import presets from '../utils/presets'
+import colors from '../utils/colors'
 
 const BlogPostPreviewItem = props => {
-  const post = props.post;
+  const post = props.post
 
   return (
     <article
@@ -60,10 +60,10 @@ const BlogPostPreviewItem = props => {
           textIndent: `-100%`,
           whiteSpace: `nowrap`,
           zIndex: 0,
-          "&&": {
+          '&&': {
             border: 0,
             boxShadow: `none`,
-            "&:hover": {
+            '&:hover': {
               background: `none`
             }
           }
@@ -72,10 +72,10 @@ const BlogPostPreviewItem = props => {
         Read more
       </Link>
     </article>
-  );
-};
+  )
+}
 
-export default BlogPostPreviewItem;
+export default BlogPostPreviewItem
 
 export const blogPostPreviewFragment = graphql`
   fragment BlogPostPreview_item on MarkdownRemark {
@@ -88,4 +88,4 @@ export const blogPostPreviewFragment = graphql`
       date(formatString: "MMMM Do YYYY")
     }
   }
-`;
+`

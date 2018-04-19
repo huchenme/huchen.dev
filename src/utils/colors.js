@@ -1,4 +1,4 @@
-import gray from "gray-percentage";
+import gray from 'gray-percentage'
 
 const colorStr = `
 #281505
@@ -49,7 +49,7 @@ const colorStr = `
 #def6ea
 #f5eefe
 #fcf6f0
-`;
+`
 
 const colors = {
   a: [],
@@ -74,28 +74,28 @@ const colors = {
     copy: gray(12, 270),
     calm: gray(46, 270)
   }
-};
+}
 
-let pointer = `a`;
+let pointer = `a`
 colorStr
   .split(`\n`)
   .reverse()
   .forEach(c => {
-    if (c === ``) return;
-    colors[pointer].push(c);
+    if (c === ``) return
+    colors[pointer].push(c)
     switch (pointer) {
       case `a`:
-        pointer = `b`;
-        break;
+        pointer = `b`
+        break
       case `b`:
-        pointer = `c`;
-        break;
+        pointer = `c`
+        break
       case `c`:
-        pointer = `a`;
-        break;
+        pointer = `a`
+        break
       default:
-        break;
+        break
     }
-  });
+  })
 
-export default colors;
+export default colors

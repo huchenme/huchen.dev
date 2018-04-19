@@ -1,8 +1,8 @@
-import React from "react";
-import { css, cx } from "react-emotion";
-import presets from "../utils/presets";
+import React from 'react'
+import { css, cx } from 'react-emotion'
+import presets from '../utils/presets'
 
-import { rhythm, options } from "../utils/typography";
+import { rhythm, options } from '../utils/typography'
 
 const Container = ({ children, className, styles = {} }) => (
   <div
@@ -23,6 +23,6 @@ const Container = ({ children, className, styles = {} }) => (
   >
     {children}
   </div>
-);
+)
 
-export default Container;
+export default Container

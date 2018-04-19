@@ -1,19 +1,19 @@
-import React from "react";
-import Helmet from "react-helmet";
-import Img from "gatsby-image";
-import { css } from "react-emotion";
-import { OutboundLink } from "gatsby-plugin-google-analytics";
-import { Container } from "../components";
-import presets from "../utils/presets";
-import { rhythm } from "../utils/typography";
+import React from 'react'
+import Helmet from 'react-helmet'
+import Img from 'gatsby-image'
+import { css } from 'react-emotion'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
+import { Container } from '../components'
+import presets from '../utils/presets'
+import { rhythm } from '../utils/typography'
 
 // eslint-disable-next-line complexity
 const BlogPostTemplate = ({ data }) => {
-  const post = data.markdownRemark;
-  const siteMetadata = data.site.siteMetadata;
+  const post = data.markdownRemark
+  const siteMetadata = data.site.siteMetadata
   const description = post.frontmatter.excerpt
     ? post.frontmatter.excerpt
-    : post.excerpt;
+    : post.excerpt
   return (
     <Container>
       <Helmet>
@@ -85,10 +85,10 @@ const BlogPostTemplate = ({ data }) => {
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
     </Container>
-  );
-};
+  )
+}
 
-export default BlogPostTemplate;
+export default BlogPostTemplate
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
@@ -127,4 +127,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

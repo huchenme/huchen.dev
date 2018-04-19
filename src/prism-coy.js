@@ -1,4 +1,4 @@
-import { injectGlobal } from "emotion";
+import { injectGlobal } from 'emotion'
 
 injectGlobal`
 .token.regex,
@@ -36,4 +36,4 @@ injectGlobal`
 .token.lf:before {
   color: #e0d7d1;
 }
-`;
+`

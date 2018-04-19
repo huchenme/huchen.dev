@@ -30,6 +30,6 @@ const presets = {
   },
   logoOffset: 1.8,
   headerHeight: `3.5rem`
-};
+}
 
-export default presets;
+export default presets

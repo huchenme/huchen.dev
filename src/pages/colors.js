@@ -1,15 +1,15 @@
-import React from "react";
-import range from "lodash/range";
-import styled from "react-emotion";
-import colors from "../utils/colors";
-import { rhythm, options } from "../utils/typography";
-import { Container } from "../components";
+import React from 'react'
+import range from 'lodash/range'
+import styled from 'react-emotion'
+import colors from '../utils/colors'
+import { rhythm, options } from '../utils/typography'
+import { Container } from '../components'
 
 const Header = styled.h1({
   margin: 0,
   marginLeft: rhythm(1 / 4),
   marginBottom: rhythm(1)
-});
+})
 
 const ColorBlock = styled.div(
   {
@@ -17,20 +17,20 @@ const ColorBlock = styled.div(
     width: 30
   },
   props => ({ background: props.background })
-);
+)
 
 const LetterBlock = styled.div({
   height: 30,
   width: 30,
   fontWeight: `bold`,
   fontFamily: options.headerFontFamily.join(`,`)
-});
+})
 
 const Col = styled.div({
   float: `left`,
   marginRight: 3,
   textAlign: `center`
-});
+})
 
 const Colors = () => (
   <Container>
@@ -54,6 +54,6 @@ const Colors = () => (
       </Col>
     </div>
   </Container>
-);
+)
 
-export default Colors;
+export default Colors

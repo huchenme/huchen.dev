@@ -1,16 +1,16 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { get } from "lodash";
-import { css } from "react-emotion";
+import React from 'react'
+import Helmet from 'react-helmet'
+import { get } from 'lodash'
+import { css } from 'react-emotion'
 
-import { rhythm, options } from "../utils/typography";
-import { Container, BlogPostPreviewItem } from "../components";
-import presets from "../utils/presets";
-import colors from "../utils/colors";
-import logo from "../logo.svg";
+import { rhythm, options } from '../utils/typography'
+import { Container, BlogPostPreviewItem } from '../components'
+import presets from '../utils/presets'
+import colors from '../utils/colors'
+import logo from '../logo.svg'
 
 const Posts = ({ data }) => {
-  const blogs = get(data, "allMarkdownRemark.edges", []);
+  const blogs = get(data, 'allMarkdownRemark.edges', [])
 
   return (
     <div
@@ -59,11 +59,11 @@ const Posts = ({ data }) => {
                 }, padding ${presets.animation.speedDefault} ${
                   presets.animation.curveDefault
                 }`,
-                "&:hover": {
+                '&:hover': {
                   transform: `translateY(-4px)`,
                   boxShadow: `0 10px 42px rgba(25, 17, 34, 0.1)`
                 },
-                "&:active": {
+                '&:active': {
                   boxShadow: `0 3px 10px rgba(25, 17, 34, 0.05)`,
                   transform: `translateY(0)`,
                   transition: `transform 50ms`
@@ -76,10 +76,10 @@ const Posts = ({ data }) => {
         ))}
       </Container>
     </div>
-  );
-};
+  )
+}
 
-export default Posts;
+export default Posts
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -94,4 +94,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

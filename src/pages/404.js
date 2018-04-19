@@ -1,5 +1,5 @@
-import React from "react";
-import Link from "gatsby-link";
+import React from 'react'
+import Link from 'gatsby-link'
 
 const FourOhFour = () => (
   <div>
@@ -8,6 +8,6 @@ const FourOhFour = () => (
       <Link to="/">HOME</Link>
     </h4>
   </div>
-);
+)
 
-export default FourOhFour;
+export default FourOhFour
