@@ -43,16 +43,17 @@ module.exports = {
         showSpinner: false
       }
     },
-    `gatsby-plugin-glamor`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-44913635-1`
       }
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-emotion`,
+    `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-typography",
       options: {

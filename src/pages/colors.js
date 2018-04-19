@@ -1,50 +1,57 @@
 import React from "react";
 import range from "lodash/range";
+import styled from "react-emotion";
 import colors from "../utils/colors";
 import { rhythm, options } from "../utils/typography";
 import { Container } from "../components";
 
+const Header = styled.h1({
+  margin: 0,
+  marginLeft: rhythm(1 / 4),
+  marginBottom: rhythm(1)
+});
+
+const ColorBlock = styled.div(
+  {
+    height: 30,
+    width: 30
+  },
+  props => ({ background: props.background })
+);
+
+const LetterBlock = styled.div({
+  height: 30,
+  width: 30,
+  fontWeight: `bold`,
+  fontFamily: options.headerFontFamily.join(`,`)
+});
+
+const Col = styled.div({
+  float: `left`,
+  marginRight: 3,
+  textAlign: `center`
+});
+
 const Colors = () => (
   <Container>
-    <h1 css={{ margin: 0, marginLeft: rhythm(1 / 4) }}>Colors</h1>
-    <div css={{ overflow: `hidden` }}>
-      <div css={{ float: `left`, marginRight: 3, textAlign: `center` }}>
-        <br />
-        <br />
-        <br />
-        <div css={{ marginBottom: 7.5 }} />
-        {range(0, 16).map(a => (
-          <div
-            key={a}
-            css={{
-              height: 30,
-              width: 30,
-              fontWeight: `bold`,
-              fontFamily: options.headerFontFamily.join(`,`)
-            }}
-          >
-            {a}
-          </div>
-        ))}
-      </div>
-      <div css={{ float: `left`, marginRight: 3, textAlign: `center` }}>
-        <h4>a</h4>
-        {colors.a.map(a => (
-          <div key={a} css={{ height: 30, width: 30, background: a }} />
-        ))}
-      </div>
-      <div css={{ float: `left`, marginRight: 3, textAlign: `center` }}>
-        <h4>b</h4>
-        {colors.b.map(a => (
-          <div key={a} css={{ height: 30, width: 30, background: a }} />
-        ))}
-      </div>
-      <div css={{ float: `left`, marginRight: 3, textAlign: `center` }}>
-        <h4>c</h4>
-        {colors.c.map(a => (
-          <div key={a} css={{ height: 30, width: 30, background: a }} />
-        ))}
-      </div>
+    <Header>Colors</Header>
+    <div>
+      <Col>
+        <LetterBlock />
+        {range(0, 16).map(a => <LetterBlock key={a}>{a}</LetterBlock>)}
+      </Col>
+      <Col>
+        <LetterBlock>a</LetterBlock>
+        {colors.a.map(a => <ColorBlock key={a} background={a} />)}
+      </Col>
+      <Col>
+        <LetterBlock>b</LetterBlock>
+        {colors.b.map(a => <ColorBlock key={a} background={a} />)}
+      </Col>
+      <Col>
+        <LetterBlock>c</LetterBlock>
+        {colors.c.map(a => <ColorBlock key={a} background={a} />)}
+      </Col>
     </div>
   </Container>
 );

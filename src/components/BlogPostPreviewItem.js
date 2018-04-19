@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "gatsby-link";
+import { css, cx } from "react-emotion";
 
 import { rhythm, scale, options } from "../utils/typography";
 import presets from "../utils/presets";
@@ -9,22 +10,29 @@ const BlogPostPreviewItem = props => {
   const post = props.post;
 
   return (
-    <article className={props.className} css={{ position: `relative` }}>
+    <article
+      className={cx(
+        css({
+          position: `relative`
+        }),
+        props.className
+      )}
+    >
       <Link to={post.fields.slug}>
         <h2>{post.frontmatter.title}</h2>
-        <p css={{ fontWeight: `normal` }}>
+        <p className={css({ fontWeight: `normal` })}>
           {post.frontmatter.excerpt ? post.frontmatter.excerpt : post.excerpt}
         </p>
       </Link>
       <div
-        css={{
+        className={css({
           display: `flex`,
           alignItems: `center`,
           marginBottom: rhythm(1)
-        }}
+        })}
       >
         <div
-          css={{
+          className={css({
             display: `inline-block`,
             fontFamily: options.headerFontFamily.join(`,`),
             color: colors.gray.calm,
@@ -35,14 +43,14 @@ const BlogPostPreviewItem = props => {
             [presets.Desktop]: {
               ...scale(0)
             }
-          }}
+          })}
         >
           <div>Posted on {post.frontmatter.date}</div>
         </div>
       </div>
       <Link
         to={post.fields.slug}
-        css={{
+        className={css({
           position: `absolute`,
           top: 0,
           left: 0,
@@ -59,7 +67,7 @@ const BlogPostPreviewItem = props => {
               background: `none`
             }
           }
-        }}
+        })}
       >
         Read more
       </Link>

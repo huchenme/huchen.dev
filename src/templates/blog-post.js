@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import Img from "gatsby-image";
+import { css } from "react-emotion";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import { Container } from "../components";
 import presets from "../utils/presets";
@@ -51,21 +52,21 @@ const BlogPostTemplate = ({ data }) => {
         <meta name="twitter:data1" content={`${post.timeToRead} min read`} />
       </Helmet>
       <h1
-        css={{
+        className={css({
           marginTop: 0,
           [presets.Desktop]: {
             marginBottom: rhythm(5 / 4)
           }
-        }}
+        })}
       >
         {post.frontmatter.title}
       </h1>
       {post.frontmatter.image &&
         !(post.frontmatter.showImageInArticle === false) && (
           <div
-            css={{
+            className={css({
               marginBottom: rhythm(1)
-            }}
+            })}
           >
             <Img sizes={post.frontmatter.image.childImageSharp.sizes} />
             {post.frontmatter.imageAuthor &&

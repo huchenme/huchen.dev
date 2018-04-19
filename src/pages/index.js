@@ -1,17 +1,17 @@
 import React from "react";
-import glamorous from "glamorous";
+import styled from "react-emotion";
 
 import { rhythm } from "../utils/typography";
 import { Container } from "../components";
 
-const Line = glamorous.section({
+const Line = styled.section({
   marginBottom: rhythm(1),
   ":last-child": {
     marginBottom: 0
   }
 });
 
-const Divider = glamorous.hr({
+const Divider = styled.hr({
   marginBottom: rhythm(1)
 });
 

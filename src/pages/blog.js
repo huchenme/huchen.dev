@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { get } from "lodash";
+import { css } from "react-emotion";
 
 import { rhythm, options } from "../utils/typography";
 import { Container, BlogPostPreviewItem } from "../components";
@@ -13,18 +14,18 @@ const Posts = ({ data }) => {
 
   return (
     <div
-      css={{
+      className={css({
         [presets.Tablet]: {
           background: colors.ui.whisper,
           paddingBottom: rhythm(options.blockMarginBottom * 4)
         }
-      }}
+      })}
     >
       <Helmet>
         <title>Blog</title>
       </Helmet>
       <Container
-        css={{
+        styles={{
           [presets.Tablet]: {
             background: `url(${logo})`,
             paddingBottom: `${rhythm(
@@ -40,7 +41,7 @@ const Posts = ({ data }) => {
           <BlogPostPreviewItem
             post={node}
             key={node.fields.slug}
-            css={{
+            className={css({
               marginBottom: rhythm(options.blockMarginBottom),
               [presets.Tablet]: {
                 background: `#fff`,
@@ -70,7 +71,7 @@ const Posts = ({ data }) => {
               },
               [presets.Desktop]: {},
               [presets.Hd]: {}
-            }}
+            })}
           />
         ))}
       </Container>

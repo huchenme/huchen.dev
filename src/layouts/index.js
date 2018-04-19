@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
-// TODO: Remove below
-// import { Container } from "react-responsive-grid";
-// import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants";
-import "../css/prism-coy.css";
+import { css } from "react-emotion";
+
+import "../prism-coy";
 
 import { rhythm } from "../utils/typography";
 import { SiteLogo } from "../components";
@@ -25,11 +24,11 @@ const Template = ({ children, data }) => {
     <div>
       <Helmet title={siteTitle} />
       <div
-        css={{
+        className={css({
           marginTop: rhythm(1.5),
           textAlign: "center",
           height: 40
-        }}
+        })}
       >
         <SiteLogo to="/" />
       </div>
