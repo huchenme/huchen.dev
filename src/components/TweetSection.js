@@ -56,14 +56,14 @@ const TweetIcon = styled.span`
   width: 24px;
 `
 
-const TweetSection = ({ text = 'I just read this blog', via }) => (
+const TweetSection = ({ text = 'I just read this blog', via, siteUrl }) => (
   <StyledSection>
     <p>
       If you found this article was helpful, consider sharing it on Twitter.
     </p>
     <TweetButton
       href={`https://twitter.com/intent/tweet?url=${
-        location.href
+        typeof window === 'undefined' ? siteUrl : window.location.href
       }&text=${text}&via=${via}`}
     >
       <TweetIcon />

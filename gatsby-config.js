@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    url: 'http://huchen.me',
+    siteUrl: 'http://huchen.me',
     title: 'Hu Chen',
     authorTwitter: 'huchenme',
     authorName: 'Hu Chen'

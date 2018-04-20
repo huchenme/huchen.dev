@@ -42,7 +42,7 @@ const BlogPostTemplate = ({ data }) => {
         {post.frontmatter.image && (
           <meta
             name="og:image"
-            content={`${siteMetadata.url}${
+            content={`${siteMetadata.siteUrl}${
               post.frontmatter.image.childImageSharp.resize.src
             }`}
           />
@@ -54,7 +54,7 @@ const BlogPostTemplate = ({ data }) => {
         {post.frontmatter.image && (
           <meta
             name="twitter:image"
-            content={`${siteMetadata.url}${
+            content={`${siteMetadata.siteUrl}${
               post.frontmatter.image.childImageSharp.resize.src
             }`}
           />
@@ -85,6 +85,7 @@ const BlogPostTemplate = ({ data }) => {
       <TweetSection
         text={post.frontmatter.title}
         via={siteMetadata.authorTwitter}
+        siteUrl={siteMetadata.siteUrl}
       />
     </Container>
   )
@@ -125,7 +126,7 @@ export const query = graphql`
         title
         authorTwitter
         authorName
-        url
+        siteUrl
       }
     }
   }
