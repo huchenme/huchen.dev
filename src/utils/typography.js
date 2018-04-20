@@ -90,7 +90,10 @@ const typographyOptions = {
         }`
       },
       hr: {
-        backgroundColor: colors.ui.light
+        backgroundColor: colors.ui.light,
+        height: `4px`,
+        marginTop: rhythm(options.blockMarginBottom * 2),
+        marginBottom: rhythm(options.blockMarginBottom * 2)
       },
       'tt,code': {
         // background: `hsla(23, 60%, 97%, 1)`,

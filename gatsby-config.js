@@ -52,13 +52,14 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-emotion`,
+    `gatsby-plugin-twitter`,
     `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography'
       }
-    }
+    },
+    `gatsby-plugin-emotion`
   ]
 }

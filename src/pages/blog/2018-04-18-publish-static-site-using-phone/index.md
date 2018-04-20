@@ -1,7 +1,7 @@
 ---
-title: "How to write a blog using Gatsby from your phone"
+title: "How to write to your Gatsby blog from your phone"
 date: "2018-04-18"
-excerpt: "The easier you can write and publish a blog, the more you will write. After trying to make writing simple using Gatsby and some additional setups, and I am pretty happy with the result."
+excerpt: "The easier you can write and publish a blog, the more you will write. I will share my setup on how to use Travis to automatically deploy your Gatsby blog and use your phone to write a blog post."
 image: "cover.jpg"
 imageAuthor: "Jesus Kiteque"
 imageAuthorLink: "https://unsplash.com/@jesuskiteque"
@@ -9,13 +9,19 @@ imageAuthorLink: "https://unsplash.com/@jesuskiteque"
 
 Recently I decided to migrate my blog to [Gatsby](https://www.gatsbyjs.org/). Gatsby is a blazing fast static site generator based on React.
 
-There are two kind of people: people who write on Medium or Wordpress and people who code the blog themselves using static site generators. There are lots of advantages to write on public platforms like Medium over static site generators. If you write in public platforms, you can write on laptop, and edit on your phone, once you finished writing, you just need to click "Publish" button, everything is done and your blog is live. On the other hand, if you write a blog in static site generator, you will need to remember all the scripts, preview blog on `localhost`, build the blog for production, commit and push your changes to GitHub and deploy your site to public. If anything goes wrong, you might have to repeat some of the steps and wait a few minutes until the blog online is what you want.
+**Why does people love to write on platforms like Medium other than using static site generator?**
 
-> **You will end up spend much more time doing unimportant things other than actual writing.**
+There are two kind of people: people who write on platforms like Medium and people who code the blog themselves using static site generators. There are lots of advantages to write on public platforms like Medium over static site generators. If you write in public platforms, you can write on laptop, and edit on your phone, once you finished writing, you just need to click "Publish" button, everything is done and your blog is live, and you can reach your audience right away. On the other hand, if you write a blog in static site generator, you will need to remember all the scripts, preview blog on `localhost`, build the blog for production, commit and push your changes to GitHub and deploy your site to public. If anything goes wrong, you might have to repeat some of the steps and wait a few minutes until the blog online is what you want.
+
+> You will end up spend much more time doing unimportant things other than actual writing.
+
+**Why should I write in Gatsby instead of platforms?**
 
 I guess this is why people eventually give up writing using static site generator and just write on Medium. But there is something Medium or Wordpress can not provide: The more you write, the more you want to keep your writings in a secure place, in simple format, just like you keep your diary books for years. Just imagine that one day you will need to migrate everything you wrote from Medium to somewhere else, that is when you hope you have wrote everything in Markdown initially and have a site hosting those Markdown files.
 
-But writing using static site generator does not need to be that difficult. I always believe that the easier you can write and publish a blog, the more you will write. After trying and researching with different setups, and I am pretty happy with the result.
+**But how can I make writing in Gatsby as easy as writing on Medium?**
+
+Writing using static site generator does not need to be difficult. I always believe that the easier you can write and publish a blog, the more you will write. After trying and researching with different setups, and I am pretty happy with the result.
 
 With my setup with Travis, `git push` is the new "Publish" button. All you need to do is to commit and push your code, nothing else is needed. And I will also share on how to edit the blog on your phone.
 

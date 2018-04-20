@@ -7,7 +7,7 @@ import { rhythm, options } from '../utils/typography'
 import { Container, BlogPostPreviewItem } from '../components'
 import presets from '../utils/presets'
 import colors from '../utils/colors'
-import logo from '../logo.svg'
+import logo from '../assets/logo/logo.svg'
 
 const blogPostPreviewItemStyles = css({
   marginBottom: rhythm(options.blockMarginBottom),

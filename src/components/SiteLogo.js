@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'react-emotion'
 
-import logo from '../logo.svg'
+import logo from '../assets/logo/logo.svg'
 
 const StyledLink = styled(Link)({
   width: 40,

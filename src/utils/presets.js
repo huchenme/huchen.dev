@@ -1,6 +1,7 @@
 const presets = {
   mobile: `(min-width: 400px)`,
   Mobile: `@media (min-width: 400px)`,
+  MobileOnly: `@media (max-width: 400px)`,
   phablet: `(min-width: 550px)`,
   Phablet: `@media (min-width: 550px)`,
   tablet: `(min-width: 750px)`,

@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 import styled from 'react-emotion'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { Container } from '../components'
+import { Container, TweetSection } from '../components'
 import presets from '../utils/presets'
 import { rhythm } from '../utils/typography'
 
@@ -81,6 +81,10 @@ const BlogPostTemplate = ({ data }) => {
       <div
         className="post-body"
         dangerouslySetInnerHTML={{ __html: post.html }}
+      />
+      <TweetSection
+        text={post.frontmatter.title}
+        via={siteMetadata.authorTwitter}
       />
     </Container>
   )
