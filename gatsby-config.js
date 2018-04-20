@@ -53,7 +53,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-twitter`,
-    `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-plugin-typography',
       options: {
