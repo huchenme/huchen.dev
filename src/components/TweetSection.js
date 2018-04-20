@@ -8,9 +8,12 @@ import twitterIcon from '../assets/icons/icon-twitter.svg'
 
 const StyledSection = styled.div({
   borderTop: `2px solid ${colors.lilac}`,
-  paddingTop: `${rhythm(1)}`,
+  paddingTop: rhythm(1),
   marginTop: rhythm(3),
-  marginBottom: rhythm(3)
+
+  [presets.Mobile]: {
+    marginBottom: rhythm(3)
+  }
 })
 
 const TweetButton = styled.a`
