@@ -36,6 +36,7 @@ const TweetButton = styled.a`
     font-weight: bold;
 
     &:hover {
+      background-image: linear-gradient(-134deg, #65d1f9, #2457f5);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
       transform: translateY(-2px);
     }

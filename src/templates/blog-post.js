@@ -50,7 +50,10 @@ const BlogPostTemplate = ({ data }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.frontmatter.title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:creator" content={siteMetadata.authorTwitter} />
+        <meta
+          name="twitter:creator"
+          content={`@${siteMetadata.authorTwitter}`}
+        />
         {post.frontmatter.image && (
           <meta
             name="twitter:image"
@@ -59,8 +62,6 @@ const BlogPostTemplate = ({ data }) => {
             }`}
           />
         )}
-        <meta name="twitter:label1" content="Reading time" />
-        <meta name="twitter:data1" content={`${post.timeToRead} min read`} />
       </Helmet>
       <H1>{post.frontmatter.title}</H1>
       {post.frontmatter.image &&
