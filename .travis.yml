@@ -6,8 +6,6 @@ notifications:
   email:
     recipients:
       - chen@huchen.me
-    on_success: always
-    on_failure: always
 node_js:
   - '9'
 git:
@@ -17,4 +15,4 @@ script:
   - yarn build
 branches:
   only:
-    - develop
+    - master
