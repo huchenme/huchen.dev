@@ -194,5 +194,3 @@ Although I can also setup my iPhone to do git commits and pushes, I feel it is n
 We have come to the end of this tutorial. Thank you for reading this far.
 
 This post is just the tip of iceberg of Gatsby's features, I am really amazed by its flexibility and powerful features. You should definitely checkout its [official tutorial](https://www.gatsbyjs.org/tutorial/).
-
-You can reference the source code of my blog [here](https://github.com/huchenme/huchenme.github.io), the setup will be slightly different.
