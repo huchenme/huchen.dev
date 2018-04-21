@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
-import presets from '../utils/presets'
-
-import { rhythm, options } from '../utils/typography'
+import { presets, rhythm, options } from '../utils'
 
 const StyledContainer = styled.div({
   maxWidth: rhythm(presets.maxWidth),

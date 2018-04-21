@@ -5,6 +5,7 @@ excerpt: "The easier you can write and publish a blog, the more you will write. 
 image: "cover.jpg"
 imageAuthor: "Jesus Kiteque"
 imageAuthorLink: "https://unsplash.com/@jesuskiteque"
+tags: ["code"]
 ---
 
 Recently I decided to migrate my blog to [Gatsby](https://www.gatsbyjs.org/). Gatsby is a blazing fast static site generator based on React.

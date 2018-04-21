@@ -3,6 +3,7 @@ title: "十二周挑战 1/12: 『勾引：如何让用户对你的产品形成�
 date: "2015-01-29"
 image: "cover.jpg"
 showImageInArticle: false
+tags: ["read", "chinese"]
 ---
 
 ![cover](cover.jpg)

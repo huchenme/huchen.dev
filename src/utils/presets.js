@@ -12,7 +12,8 @@ const presets = {
   Hd: `@media (min-width: 1200px)`,
   VHd: `@media (min-width: 1450px)`,
   VVHd: `@media (min-width: 1650px)`,
-  maxWidth: 22,
+  maxWidth: 20,
+  maxWidthHome: 22,
   radius: 2,
   radiusLg: 4,
   gutters: {

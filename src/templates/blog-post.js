@@ -3,9 +3,8 @@ import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 import styled from 'react-emotion'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { Container, TweetSection } from '../components'
-import presets from '../utils/presets'
-import { rhythm } from '../utils/typography'
+import { Container, TweetSection, TagsSection } from '../components'
+import { rhythm, presets } from '../utils'
 
 const H1 = styled.h1({
   marginTop: 0,
@@ -83,6 +82,7 @@ const BlogPostTemplate = ({ data }) => {
         className="post-body"
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
+      <TagsSection tags={post.frontmatter.tags} />
       <TweetSection
         text={post.frontmatter.title}
         via={siteMetadata.authorTwitter}
@@ -107,6 +107,7 @@ export const query = graphql`
         title
         rawDate: date
         excerpt
+        tags
         imageAuthor
         imageAuthorLink
         showImageInArticle

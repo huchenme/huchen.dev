@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'react-emotion'
 
-import { rhythm } from '../utils/typography'
-import colors from '../utils/colors'
-import presets from '../utils/presets'
+import { presets, colors, rhythm } from '../utils'
 import twitterIcon from '../assets/icons/icon-twitter.svg'
 
 const StyledSection = styled.div({

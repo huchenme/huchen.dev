@@ -3,11 +3,9 @@ import Helmet from 'react-helmet'
 import { get } from 'lodash'
 import styled, { css } from 'react-emotion'
 
-import { rhythm, options } from '../utils/typography'
-import { Container, BlogPostPreviewItem } from '../components'
-import presets from '../utils/presets'
-import colors from '../utils/colors'
-import logo from '../assets/logo/logo.svg'
+import { rhythm, options, presets, colors } from '../../utils'
+import { Container, BlogPostPreviewItem } from '../../components'
+import logo from '../../assets/logo/logo.svg'
 
 const blogPostPreviewItemStyles = css({
   marginBottom: rhythm(options.blockMarginBottom),

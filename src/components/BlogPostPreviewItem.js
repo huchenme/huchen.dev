@@ -2,9 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'react-emotion'
 
-import { rhythm, scale, options } from '../utils/typography'
-import presets from '../utils/presets'
-import colors from '../utils/colors'
+import { rhythm, scale, options, presets, colors } from '../utils'
 
 const Article = styled.article({
   position: `relative`

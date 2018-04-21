@@ -60,6 +60,7 @@ module.exports = {
       }
     },
     `gatsby-plugin-react-next`,
+    `gatsby-plugin-lodash`,
     `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-netlify`,

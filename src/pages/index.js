@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'react-emotion'
 
-import { rhythm } from '../utils/typography'
+import { rhythm } from '../utils'
 import { Container } from '../components'
 
 const Line = styled.section({

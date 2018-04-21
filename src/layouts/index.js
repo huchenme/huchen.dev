@@ -3,37 +3,42 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import styled from 'react-emotion'
 
-import '../prism-coy'
-
-import { rhythm } from '../utils/typography'
+import { rhythm, presets, colors, removeTrailingSlash } from '../utils'
 import { SiteLogo } from '../components'
 
-// Import Futura PT typeface
+import '../prism-coy'
+
 import '../assets/fonts/Webfonts/futurapt_book_macroman/stylesheet.css'
 import '../assets/fonts/Webfonts/futurapt_bookitalic_macroman/stylesheet.css'
 import '../assets/fonts/Webfonts/futurapt_demi_macroman/stylesheet.css'
 import '../assets/fonts/Webfonts/futurapt_demiitalic_macroman/stylesheet.css'
 
-// Other fonts
 import 'typeface-spectral'
 import 'typeface-space-mono'
 
 const LogoWrapper = styled.div({
-  marginTop: rhythm(1.5),
-  textAlign: 'center',
-  height: 40
+  paddingTop: rhythm(1.5),
+  textAlign: 'center'
 })
 
-const Template = ({ children, data }) => {
+const StyledSite = styled.div({}, props => ({
+  [presets.Tablet]: {
+    background: props.isBlogIndex ? colors.ui.whisper : 'transparent'
+  }
+}))
+
+const Template = ({ children, data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   return (
-    <div>
+    <StyledSite
+      isBlogIndex={removeTrailingSlash(location.pathname) === `/blog`}
+    >
       <Helmet title={siteTitle} />
       <LogoWrapper>
         <SiteLogo to="/" />
       </LogoWrapper>
       <div className="main-body">{children()}</div>
-    </div>
+    </StyledSite>
   )
 }
 

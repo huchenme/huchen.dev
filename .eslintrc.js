@@ -12,6 +12,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'import/no-unassigned-import': 'off',
     'react/prop-types': 'off',
-    'import/max-dependencies': 'warn'
+    'import/max-dependencies': 'off'
   }
-};
+}

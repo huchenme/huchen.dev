@@ -1,8 +1,7 @@
 import React from 'react'
 import range from 'lodash/range'
 import styled from 'react-emotion'
-import colors from '../utils/colors'
-import { rhythm, options } from '../utils/typography'
+import { rhythm, options, colors } from '../utils'
 import { Container } from '../components'
 
 const Header = styled.h1({
