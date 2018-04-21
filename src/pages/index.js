@@ -27,10 +27,10 @@ const HomePage = () => (
       Sketch.
     </Line>
     <Line>
-      I made <a href="nz.huchen.me">a website</a> with stories in my 23 days New
-      Zealand trip and a web product lanquan to help everyone easily create
-      story like mine. Other than that I made a React Native app Pack to help
-      people pack things for trips and a site called dodohub to help people
+      I made <a href="http://nz.huchen.me">a website</a> with stories in my 23
+      days New Zealand trip and a web product lanquan to help everyone easily
+      create story like mine. Other than that I made a React Native app Pack to
+      help people pack things for trips and a site called dodohub to help people
       building habits.
     </Line>
     <Line>
