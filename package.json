@@ -49,7 +49,7 @@
     "prettier": "^1.12.1",
     "rimraf": "^2.6.2"
   },
-  "homepage": "http://huchen.me",
+  "homepage": "https://huchen.me",
   "keywords": ["gatsby", "reactjs"],
   "license": "MIT",
   "repository": {

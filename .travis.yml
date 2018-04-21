@@ -13,6 +13,3 @@ git:
 script:
   - yarn lint
   - yarn build
-branches:
-  only:
-    - master
