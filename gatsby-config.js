@@ -62,6 +62,14 @@ module.exports = {
     `gatsby-plugin-react-next`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify`
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          '/*.js': ['Cache-Control: max-age=31536000'],
+          '/*.css': ['Cache-Control: max-age=31536000']
+        }
+      }
+    }
   ]
 }
