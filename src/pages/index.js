@@ -27,10 +27,11 @@ const HomePage = () => (
       Sketch.
     </Line>
     <Line>
-      I made <a href="/nz/">a website</a> with stories in my 23 days New Zealand
-      trip and a web product lanquan to help everyone easily create story like
-      mine. Other than that I made a React Native app Pack to help people pack
-      things for trips and a site called dodohub to help people building habits.
+      I made <a href="nz.huchen.me">a website</a> with stories in my 23 days New
+      Zealand trip and a web product lanquan to help everyone easily create
+      story like mine. Other than that I made a React Native app Pack to help
+      people pack things for trips and a site called dodohub to help people
+      building habits.
     </Line>
     <Line>
       <a href="mailto:chen@huchen.me">Say hi</a>, or find my photos on{' '}
@@ -41,9 +42,8 @@ const HomePage = () => (
     </Line>
     <Divider />
     <Line>
-      This site was built in Gatsby and{' '}
-      <a href="https://github.com/huchenme/huchenme.github.io">hosted</a> on
-      GitHub. And obviously, it is still under construction.
+      This site was built in Gatsby and hosted on Netlify. And obviously, it is
+      still under construction.
     </Line>
   </Container>
 )

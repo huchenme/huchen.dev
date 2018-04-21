@@ -18,13 +18,3 @@ script:
 branches:
   only:
     - develop
-deploy:
-  provider: pages
-  skip-cleanup: true
-  keep-history: true
-  github-token: $GITHUB_TOKEN
-  local-dir: public
-  target-branch: master
-  fqdn: huchen.me
-  on:
-    branch: develop
