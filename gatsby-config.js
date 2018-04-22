@@ -61,6 +61,24 @@ module.exports = {
     },
     `gatsby-plugin-react-next`,
     `gatsby-plugin-lodash`,
+    /* eslint-disable camelcase */
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Hu Chen`,
+        short_name: `Hu Chen`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/assets/logo/logo.svg`
+      }
+    },
+    /* eslint-enable camelcase */
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {}
+    },
     `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-netlify`,
