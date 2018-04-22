@@ -5,10 +5,8 @@ import { Container } from '../components'
 
 const Tags = ({ pathContext, data }) => {
   const { tag } = pathContext
-  const { edges, totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? `` : `s`
-  } tagged with "${tag}"`
+  const { edges } = data.allMarkdownRemark
+  const tagHeader = `#${tag}`
 
   return (
     <div>
@@ -27,7 +25,6 @@ const Tags = ({ pathContext, data }) => {
             )
           })}
         </ul>
-        <Link to="/blog/tags">All tags</Link>
       </Container>
     </div>
   )

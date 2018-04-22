@@ -58,11 +58,12 @@ const StyledPage = styled.div({
 
 const Posts = ({ data }) => {
   const blogs = get(data, 'allMarkdownRemark.edges', [])
+  const title = data.site.siteMetadata.title
 
   return (
     <StyledPage>
       <Helmet>
-        <title>Blog</title>
+        <title>Blog | {title}</title>
       </Helmet>
       <Container className={containerStyles}>
         {blogs.map(({ node }) => (
@@ -81,6 +82,11 @@ export default Posts
 
 export const pageQuery = graphql`
   query IndexQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { fileAbsolutePath: { regex: "/blog/" } }
