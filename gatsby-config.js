@@ -77,7 +77,10 @@ module.exports = {
     /* eslint-enable camelcase */
     {
       resolve: `gatsby-plugin-offline`,
-      options: {}
+      options: {
+        navigateFallback: null,
+        navigateFallbackWhitelist: []
+      }
     },
     `gatsby-plugin-emotion`,
     {
