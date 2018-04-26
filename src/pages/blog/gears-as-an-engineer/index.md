@@ -11,6 +11,7 @@ I change up things fairy often, so this page will serve as a living document. So
 
 * **Monitor**: [Dell 4k P2715Q](http://www.dell.com/en-us/work/shop/dell-27-ultra-hd-4k-monitor-p2715q/apd/210-adof/monitors-monitor-accessories). I am pretty happy with this screen, as it does not contains a speak, I connect it to [Bose SoundLink Mini II](https://www.bose.com/en_us/products/speakers/portable_speakers/soundlink-mini-ii-bundle.html).
 * **Speaker**: [Bose SoundLink Mini II](https://www.bose.com/en_us/products/speakers/portable_speakers/soundlink-mini-ii-bundle.html) for desktop, an awesome speaker both at home or camp outside; and 2 x [Sonos Play 3 White](https://www.sonos.com/en/shop/play3.html) mounted at wall for casual music.
+* **Headphone**: [Bose QuietComfort 35](https://www.bose.com/en_us/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii.html), it is my most used headphone yet, wireless, long battery life, and good noice cancellation. The only downside is that it is a bit hot in Singapore.
 * **Laptop**: Macbook Pro 15 inch Mid 2015. It is a bit old but I feel it can get work done, especially it works with 4k monitor without any problem. Personally I don’t like USB-C used in later MBPs.
 * **Dock**: [OWC Thunderbolt 2 dock](https://www.owcdigital.com/products/thunderbolt-2-dock). With this dock, I just need to connect a thunderbolt cable to my laptop, and the dock connect with Gigabit Ethernet, my keyboard, Wacom Intuos and sometimes my SD cards. I definitely can’t live without it.
 * **Keyboard**: [Filco Ninja Majestouch 2](https://www.amazon.com/Filco-Majestouch-2-Tenkeyless-FKBN87M-EFB2/dp/B004ZJPSGI/) with red switch. It looks good, feels good, the only downside is that it is not wireless.
@@ -38,7 +39,7 @@ I change up things fairy often, so this page will serve as a living document. So
 * **Workflows**: [Alfred](https://www.alfredapp.com/) for daily tasks and search with some custom workflows.
 * **Design**: When I comes to digital design(mostly mobile apps), I work in [Sketch](https://www.sketchapp.com/), [Principle](http://principleformac.com/) and [Framer](https://framer.com/).
 * **Dealing with images**: I use [ImageOptim](https://imageoptim.com/) to reduce image file sizes, [SVGO](https://github.com/svg/svgo) to optimise SVG size, and [ImageMagick](https://www.imagemagick.org/) to convert format and scale images.
-* I use [Dropbox](https://www.dropbox.com/) mostly, [Google Drive](http://drive.google.com/) for shared documentations, and [CloudApp](https://www.getcloudapp.com/) to share screenshots.
+* **Cloud Storage**: I use [Dropbox](https://www.dropbox.com/) mostly, [Google Drive](http://drive.google.com/) for shared documentations, and [CloudApp](https://www.getcloudapp.com/) to share screenshots.
 * **Keep Mac awake**: [Amphetamine](https://itunes.apple.com/sg/app/amphetamine/id937984704?mt=12).
 * **Mac window manager**: [Magnet](http://magnet.crowdcafe.com/).
 * **Colour picker**: [Sip](https://sipapp.io/).
