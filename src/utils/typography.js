@@ -180,10 +180,11 @@ const typographyOptions = {
         borderBottom: `1px solid ${colors.ui.bright}`,
         boxShadow: `inset 0 -2px 0px 0px ${colors.ui.bright}`,
         fontFamily: options.headerFontFamily.join(`,`),
-        fontWeight: `bold`
+        fontWeight: `bold`,
+        ...scale(1 / 6)
       },
       '.post-body a': {
-        fontSize: `102%`,
+        ...scale(1 / 6),
         color: colors.gatsby
       },
       '.post-body strong': {
