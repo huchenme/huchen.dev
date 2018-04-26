@@ -30,7 +30,7 @@ const typographyOptions = {
     `sans-serif`
   ],
   bodyFontFamily: [
-    `Spectral`,
+    `IBM Plex Serif`,
     `Hiragino Sans GB`,
     `STHeiti`,
     `WenQuanYi Micro Hei`,
@@ -41,7 +41,7 @@ const typographyOptions = {
     `serif`
   ],
   monospaceFontFamily: [
-    `Space Mono`,
+    `IBM Plex Mono`,
     `SFMono-Regular`,
     `Menlo`,
     `Monaco`,
@@ -68,11 +68,7 @@ const typographyOptions = {
       'ul, ol': {
         marginTop: rhythm(options.blockMarginBottom)
       },
-      h1: {
-        ...scale(4 / 5)
-      },
       h3: {
-        ...scale(2 / 5),
         marginTop: rhythm(options.blockMarginBottom),
         marginBottom: rhythm(options.blockMarginBottom / 2)
       },
@@ -191,7 +187,8 @@ const typographyOptions = {
         color: colors.gatsby
       },
       '.post-body strong': {
-        fontFamily: options.headerFontFamily.join(`,`)
+        fontFamily: options.headerFontFamily.join(`,`),
+        ...scale(1 / 6)
       },
       '.main-body a:hover': {
         background: colors.ui.bright

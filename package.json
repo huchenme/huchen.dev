@@ -35,8 +35,6 @@
     "prop-types": "^15.6.0",
     "react-emotion": "^9.1.2",
     "react-helmet": "^5.2.0",
-    "typeface-space-mono": "^0.0.54",
-    "typeface-spectral": "^0.0.54",
     "typography-breakpoint-constants": "^0.15.10",
     "typography-plugin-code": "^0.16.11"
   },

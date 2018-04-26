@@ -41,6 +41,10 @@ module.exports = class HTML extends React.Component {
             sizes="16x16"
             href={`/favicon-16.png`}
           />
+          <link
+            href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Serif:400,400i"
+            rel="stylesheet"
+          />
           {this.props.headComponents}
           {css}
         </head>

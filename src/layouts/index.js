@@ -13,9 +13,6 @@ import '../assets/fonts/Webfonts/futurapt_bookitalic_macroman/stylesheet.css'
 import '../assets/fonts/Webfonts/futurapt_demi_macroman/stylesheet.css'
 import '../assets/fonts/Webfonts/futurapt_demiitalic_macroman/stylesheet.css'
 
-import 'typeface-spectral'
-import 'typeface-space-mono'
-
 const LogoWrapper = styled.div({
   paddingTop: rhythm(1.5),
   textAlign: 'center'

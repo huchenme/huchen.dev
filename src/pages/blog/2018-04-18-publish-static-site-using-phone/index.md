@@ -91,7 +91,7 @@ And we are able to get rid of those steps with [Travis CI](https://travis-ci.org
 
 If your project is public on GitHub, Travis is totally free. Now create a Travis account by connect with your GitHub and add your repo in Travis.
 
-### Create a `travis.yml` file in project root
+### Create a `.travis.yml` file in project root
 
 ```yaml
 language: node_js

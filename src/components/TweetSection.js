@@ -29,7 +29,7 @@ const TweetButton = styled.a`
     position: relative;
     text-align: center;
     transition: 0.8s cubic-bezier(0.2, 1, 0.2, 1);
-    width: 185px;
+    width: 200px;
     border: 0;
     font-weight: bold;
 
@@ -61,7 +61,8 @@ const TweetIcon = styled.span`
 const TweetSection = ({ text = 'I just read this blog', via, siteUrl }) => (
   <StyledSection>
     <p>
-      If you found this article was helpful, consider sharing it on Twitter.
+      If you found this article was helpful, consider sharing or commenting it
+      on Twitter.
     </p>
     <TweetButton
       href={`https://twitter.com/intent/tweet?url=${
@@ -69,7 +70,7 @@ const TweetSection = ({ text = 'I just read this blog', via, siteUrl }) => (
       }&text=${text}&via=${via}`}
     >
       <TweetIcon />
-      <span>Tweet</span>
+      <span>Comment</span>
     </TweetButton>
   </StyledSection>
 )
