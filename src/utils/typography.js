@@ -63,7 +63,8 @@ const typographyOptions = {
       'h1,h2,h4,h5,h6': {
         marginTop: rhythm(options.blockMarginBottom * 1),
         marginBottom: rhythm(options.blockMarginBottom * 0.5),
-        letterSpacing: `-0.0075em`
+        letterSpacing: `-0.0075em`,
+        lineHeight: 1.2
       },
       'ul, ol': {
         marginTop: rhythm(options.blockMarginBottom)
@@ -246,15 +247,15 @@ const typographyOptions = {
       '.twitter-tweet-rendered': {
         margin: `${rhythm(options.blockMarginBottom * 2)} auto !important`
       },
+      [TABLET_MEDIA_QUERY]: {
+        html: {
+          fontSize: `${17 / 16 * 100}%`
+        }
+      },
       [MOBILE_MEDIA_QUERY]: {
         // Make baseFontSize on mobile 16px.
         html: {
           fontSize: `${16 / 16 * 100}%`
-        }
-      },
-      [TABLET_MEDIA_QUERY]: {
-        html: {
-          fontSize: `${17 / 16 * 100}%`
         }
       },
       [MIN_DEFAULT_MEDIA_QUERY]: {
