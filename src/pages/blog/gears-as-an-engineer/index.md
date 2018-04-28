@@ -9,12 +9,12 @@ I change up things fairy often, so this page will serve as a living document. So
 
 ## Hardwares
 
-* **Monitor**: [Dell 4k P2715Q](http://www.dell.com/en-us/work/shop/dell-27-ultra-hd-4k-monitor-p2715q/apd/210-adof/monitors-monitor-accessories). I am pretty happy with this screen, as it does not contains a speak, I connect it to [Bose SoundLink Mini II](https://www.bose.com/en_us/products/speakers/portable_speakers/soundlink-mini-ii-bundle.html).
+* **Monitor**: [Dell 4k P2715Q](http://www.dell.com/en-us/work/shop/dell-27-ultra-hd-4k-monitor-p2715q/apd/210-adof/monitors-monitor-accessories). I am pretty happy with this screen, as it does not contains a speaker, I connect it to [Bose SoundLink Mini II](https://www.bose.com/en_us/products/speakers/portable_speakers/soundlink-mini-ii-bundle.html).
 * **Speaker**: [Bose SoundLink Mini II](https://www.bose.com/en_us/products/speakers/portable_speakers/soundlink-mini-ii-bundle.html) for desktop, an awesome speaker both at home or camp outside; and 2 x [Sonos Play 3 White](https://www.sonos.com/en/shop/play3.html) mounted at wall for casual music.
 * **Headphone**: [Bose QuietComfort 35](https://www.bose.com/en_us/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii.html), it is my most used headphone yet, wireless, long battery life, and good noice cancellation. The only downside is that it is a bit hot in Singapore.
 * **Laptop**: Macbook Pro 15 inch Mid 2015. It is a bit old but I feel it can get work done, especially it works with 4k monitor without any problem. Personally I don’t like USB-C used in later MBPs.
 * **Dock**: [OWC Thunderbolt 2 dock](https://www.owcdigital.com/products/thunderbolt-2-dock). With this dock, I just need to connect a thunderbolt cable to my laptop, and the dock connect with Gigabit Ethernet, my keyboard, Wacom Intuos and sometimes my SD cards. I definitely can’t live without it.
-* **Keyboard**: [Filco Ninja Majestouch 2](https://www.amazon.com/Filco-Majestouch-2-Tenkeyless-FKBN87M-EFB2/dp/B004ZJPSGI/) with red switch. It looks good, feels good, the only downside is that it is not wireless.
+* **Keyboard**: I use [Filco Ninja Majestouch 2](https://www.amazon.com/Filco-Majestouch-2-Tenkeyless-FKBN87M-EFB2/dp/B004ZJPSGI/) with red switch at home and [Poker II](https://www.ikbckeyboard.com/product-page/new-poker-ii-black) with red switch at work.
 * **Mouse**: [Logitech Anywhere MX 2](https://www.amazon.com/Logitech-Anywhere-Wireless-Mobile-Mouse/dp/B00Y09IWGQ). Wireless, rechargeable with ultra long battery, it is the mouse I can trust with, and easy to carry.
 * **Drawing Tablet**: [Wacom Intuos](https://www.wacom.com/en-in/products/pen-tablets/intuos) Medium size, I use it for post processing my DSLR photos.
 * **Laptop Stand**: [Rain mStand](https://www.amazon.com/Rain-Design-mStand-Laptop-Patented/dp/B000OOYECC). This stand sits besides my 4k monitor.
