@@ -40,7 +40,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         reject(result.errors)
       }
 
-      const blogPosts = _.filter(result.data.allMarkdownRemark.edges, edge => {
+      const allMarkdownPages = result.data.allMarkdownRemark.edges
+
+      // Blog Posts
+      const blogPosts = _.filter(allMarkdownPages, edge => {
         const slug = _.get(edge, `node.fields.slug`)
         if (!slug) {
           return false
@@ -68,6 +71,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         })
       })
 
+      // Tags
       const tagLists = blogPosts
         .filter(post => _.get(post, `node.frontmatter.tags`))
         .map(post => _.get(post, `node.frontmatter.tags`))
@@ -78,6 +82,37 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           component: path.resolve(`./src/templates/tags.js`),
           context: {
             tag
+          }
+        })
+      })
+
+      // Reading
+      const readingPosts = _.filter(allMarkdownPages, edge => {
+        const slug = _.get(edge, `node.fields.slug`)
+        if (!slug) {
+          return false
+        }
+
+        if (_.includes(slug, `/reading/`)) {
+          return true
+        }
+
+        return false
+      })
+
+      readingPosts.forEach(({ node }, index) => {
+        const next = index === 0 ? null : readingPosts[index - 1].node
+        const prev =
+          index === readingPosts.length - 1
+            ? null
+            : readingPosts[index + 1].node
+        createPage({
+          path: node.fields.slug,
+          component: path.resolve(`./src/templates/reading-post.js`),
+          context: {
+            slug: node.fields.slug,
+            prev,
+            next
           }
         })
       })

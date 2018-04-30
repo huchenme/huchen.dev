@@ -4,10 +4,10 @@ import { get } from 'lodash'
 import styled, { css } from 'react-emotion'
 
 import { rhythm, options, presets, colors } from '../../utils'
-import { Container, BlogPostPreviewItem } from '../../components'
+import { Container, ReadingPostPreviewItem } from '../../components'
 import logo from '../../assets/logo/logo.svg'
 
-const blogPostPreviewItemStyles = css({
+const readingPostPreviewItemStyles = css({
   marginBottom: rhythm(options.blockMarginBottom),
   [presets.Tablet]: {
     background: `#fff`,
@@ -57,20 +57,20 @@ const StyledPage = styled.div({
 })
 
 const Posts = ({ data }) => {
-  const blogs = get(data, 'allMarkdownRemark.edges', [])
+  const readings = get(data, 'allMarkdownRemark.edges', [])
   const title = data.site.siteMetadata.title
 
   return (
     <StyledPage>
       <Helmet>
-        <title>Blog | {title}</title>
+        <title>Reading | {title}</title>
       </Helmet>
       <Container className={containerStyles}>
-        {blogs.map(({ node }) => (
-          <BlogPostPreviewItem
+        {readings.map(({ node }) => (
+          <ReadingPostPreviewItem
             post={node}
             key={node.fields.slug}
-            className={blogPostPreviewItemStyles}
+            className={readingPostPreviewItemStyles}
           />
         ))}
       </Container>
@@ -81,7 +81,7 @@ const Posts = ({ data }) => {
 export default Posts
 
 export const pageQuery = graphql`
-  query BlogIndexQuery {
+  query ReadingIndexQuery {
     site {
       siteMetadata {
         title
@@ -89,11 +89,11 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { fileAbsolutePath: { regex: "/blog/" } }
+      filter: { fileAbsolutePath: { regex: "/reading/" } }
     ) {
       edges {
         node {
-          ...BlogPostPreview_item
+          ...ReadingPostPreview_item
         }
       }
     }

@@ -14,22 +14,25 @@ const StyledSection = styled.div({
   }
 })
 
+const TweetButtonContainer = styled.div`
+  margin-top: 20px;
+  text-align: center;
+`
+
 const TweetButton = styled.a`
   .main-body a& {
     background-image: linear-gradient(-134deg, #65d1f9, #2457f5);
     border-radius: 30px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.15);
     color: #fff;
-    display: block;
+    display: inline-block;
     font-size: 24px;
     line-height: 28px;
-    margin: 20px auto 0;
     text-decoration: none;
-    padding: 15px 20px 15px 50px;
+    padding: 15px 30px 15px 65px;
     position: relative;
     text-align: center;
     transition: 0.8s cubic-bezier(0.2, 1, 0.2, 1);
-    width: 200px;
     border: 0;
     font-weight: bold;
 
@@ -58,20 +61,27 @@ const TweetIcon = styled.span`
   width: 24px;
 `
 
-const TweetSection = ({ text = 'I just read this blog', via, siteUrl }) => (
+const TweetSection = ({
+  buttonText = 'Tweet',
+  text = 'I just read this blog',
+  via,
+  siteUrl
+}) => (
   <StyledSection>
     <p>
       If you found this article was helpful, consider sharing or commenting it
       on Twitter.
     </p>
-    <TweetButton
-      href={`https://twitter.com/intent/tweet?url=${
-        typeof window === 'undefined' ? siteUrl : window.location.href
-      }&text=${text}&via=${via}`}
-    >
-      <TweetIcon />
-      <span>Comment</span>
-    </TweetButton>
+    <TweetButtonContainer>
+      <TweetButton
+        href={`https://twitter.com/intent/tweet?url=${
+          typeof window === 'undefined' ? siteUrl : window.location.href
+        }&text=${text}&via=${via}`}
+      >
+        <TweetIcon />
+        <span>{buttonText}</span>
+      </TweetButton>
+    </TweetButtonContainer>
   </StyledSection>
 )
 

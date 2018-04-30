@@ -1,12 +1,11 @@
 ---
-title: "十二周挑战 1/12: 『勾引：如何让用户对你的产品形成习惯』"
+title: "勾引：如何让用户对你的产品形成习惯"
+authors: ["Nir Eyal", "Ryan Hoover"]
 date: "2015-01-29"
 image: "cover.jpg"
-showImageInArticle: false
-tags: ["read", "chinese"]
+isBlog: true
+isChinese: true
 ---
-
-![cover](cover.jpg)
 
 偶然在 Medium 上看到的两篇文章「[Weekly Redesign Challenge](https://medium.com/weekly-redesign-challenge)」和「[How I finally learned Rails](https://medium.com/ruby-on-rails/how-i-finally-learned-rails-95e9b832675b)」给我一些启发，前者是一个在 Shopify 工作的设计师每周重新设计一个手机 App 的交互，后者是一个前端工程师想要学习 Ruby on Rails，于是每周完成一个小软件并做成视频教程放在自己的博客上。他们对自己的挑战也给了我很多激励，让我觉得自己也应该更加专注的做成一些事情。
 

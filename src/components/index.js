@@ -1,5 +1,6 @@
 export { default as SiteLogo } from './SiteLogo'
 export { default as Container } from './Container'
 export { default as BlogPostPreviewItem } from './BlogPostPreviewItem'
+export { default as ReadingPostPreviewItem } from './ReadingPostPreviewItem'
 export { default as TweetSection } from './TweetSection'
 export { default as TagsSection } from './TagsSection'
