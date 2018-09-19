@@ -1,8 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'react-emotion'
-import { Container, TweetSection, Divider } from '../components'
+import { Layout, Container, TweetSection, Divider } from '../components'
 import { rhythm, presets, colors } from '../utils'
 
 const Header = styled.div({
@@ -78,71 +79,73 @@ export default class ReadingPostTemplate extends React.Component {
       ? post.frontmatter.excerpt
       : post.excerpt
     return (
-      <Container>
-        <Helmet>
-          <title>{post.frontmatter.title}</title>
-          <meta name="description" content={description} />
-          <meta name="article:author" content={siteMetadata.authorName} />
-          <meta name="author" content={siteMetadata.authorName} />
-          <meta
-            name="article:published_time"
-            content={post.frontmatter.rawDate}
-          />
-          <meta name="og:type" content="article" />
-          <meta name="og:description" content={description} />
-          <meta name="og:title" content={post.frontmatter.title} />
-          {post.frontmatter.image && (
+      <Layout>
+        <Container>
+          <Helmet>
+            <title>{post.frontmatter.title}</title>
+            <meta name="description" content={description} />
+            <meta name="article:author" content={siteMetadata.authorName} />
+            <meta name="author" content={siteMetadata.authorName} />
             <meta
-              name="og:image"
-              content={`${siteMetadata.siteUrl}${
-                post.frontmatter.image.childImageSharp.resize.src
-              }`}
+              name="article:published_time"
+              content={post.frontmatter.rawDate}
             />
-          )}
-          <meta name="twitter:title" content={post.frontmatter.title} />
-          <meta name="twitter:description" content={description} />
-          <meta
-            name="twitter:creator"
-            content={`@${siteMetadata.authorTwitter}`}
-          />
-          {post.frontmatter.image && (
+            <meta name="og:type" content="article" />
+            <meta name="og:description" content={description} />
+            <meta name="og:title" content={post.frontmatter.title} />
+            {post.frontmatter.image && (
+              <meta
+                name="og:image"
+                content={`${siteMetadata.siteUrl}${
+                  post.frontmatter.image.childImageSharp.resize.src
+                }`}
+              />
+            )}
+            <meta name="twitter:title" content={post.frontmatter.title} />
+            <meta name="twitter:description" content={description} />
             <meta
-              name="twitter:image"
-              content={`${siteMetadata.siteUrl}${
-                post.frontmatter.image.childImageSharp.resize.src
-              }`}
+              name="twitter:creator"
+              content={`@${siteMetadata.authorTwitter}`}
             />
+            {post.frontmatter.image && (
+              <meta
+                name="twitter:image"
+                content={`${siteMetadata.siteUrl}${
+                  post.frontmatter.image.childImageSharp.resize.src
+                }`}
+              />
+            )}
+          </Helmet>
+          {post.frontmatter.image && (
+            <ImageBlockContainer>
+              <ImageContainer>
+                <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
+              </ImageContainer>
+            </ImageBlockContainer>
           )}
-        </Helmet>
-        {post.frontmatter.image && (
-          <ImageBlockContainer>
-            <ImageContainer>
-              <Img sizes={post.frontmatter.image.childImageSharp.sizes} />
-            </ImageContainer>
-          </ImageBlockContainer>
-        )}
-        <Header>
-          <Title>{post.frontmatter.title}</Title>
-          {post.frontmatter.authors &&
-            this.renderAuthorNames(post.frontmatter.authors)}
-        </Header>
-        <Divider />
-        <div
-          className="post-body"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-        <TweetSection
-          text={post.frontmatter.title}
-          via={siteMetadata.authorTwitter}
-          siteUrl={siteMetadata.siteUrl}
-        />
-      </Container>
+          <Header>
+            <Title>{post.frontmatter.title}</Title>
+            {post.frontmatter.authors &&
+              this.renderAuthorNames(post.frontmatter.authors)}
+          </Header>
+          <Divider />
+          <div
+            className="post-body"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+          <TweetSection
+            text={post.frontmatter.title}
+            via={siteMetadata.authorTwitter}
+            siteUrl={siteMetadata.siteUrl}
+          />
+        </Container>
+      </Layout>
     )
   }
 }
 
 export const query = graphql`
-  query ReadingPostQuery($slug: String!) {
+  query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       excerpt
@@ -159,8 +162,8 @@ export const query = graphql`
             resize(width: 1500, height: 800) {
               src
             }
-            sizes(maxWidth: 786) {
-              ...GatsbyImageSharpSizes
+            fluid(maxWidth: 786) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

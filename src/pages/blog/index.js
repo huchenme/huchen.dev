@@ -1,10 +1,15 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import styled, { css } from 'react-emotion'
 
 import { rhythm, options, presets, colors } from '../../utils'
-import { Container, BlogPostPreviewItem } from '../../components'
+import {
+  BlogIndexLayout,
+  Container,
+  BlogPostPreviewItem
+} from '../../components'
 import logo from '../../assets/logo/logo.svg'
 
 const blogPostPreviewItemStyles = css({
@@ -61,27 +66,29 @@ const Posts = ({ data }) => {
   const title = data.site.siteMetadata.title
 
   return (
-    <StyledPage>
-      <Helmet>
-        <title>Blog | {title}</title>
-      </Helmet>
-      <Container className={containerStyles}>
-        {blogs.map(({ node }) => (
-          <BlogPostPreviewItem
-            post={node}
-            key={node.fields.slug}
-            className={blogPostPreviewItemStyles}
-          />
-        ))}
-      </Container>
-    </StyledPage>
+    <BlogIndexLayout>
+      <StyledPage>
+        <Helmet>
+          <title>Blog | {title}</title>
+        </Helmet>
+        <Container className={containerStyles}>
+          {blogs.map(({ node }) => (
+            <BlogPostPreviewItem
+              post={node}
+              key={node.fields.slug}
+              className={blogPostPreviewItemStyles}
+            />
+          ))}
+        </Container>
+      </StyledPage>
+    </BlogIndexLayout>
   )
 }
 
 export default Posts
 
 export const pageQuery = graphql`
-  query BlogIndexQuery {
+  {
     site {
       siteMetadata {
         title

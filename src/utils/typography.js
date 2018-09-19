@@ -58,6 +58,7 @@ const typographyOptions = {
   blockMarginBottom: 1,
   scaleRatio: 2,
   plugins: [new CodePlugin()],
+  // eslint-disable-next-line max-lines-per-function
   overrideStyles: ({ rhythm, scale }, options) => {
     return {
       'h1,h2,h4,h5,h6': {
@@ -137,8 +138,8 @@ const typographyOptions = {
         marginRight: `${rhythm(-options.blockMarginBottom)}`,
         marginLeft: `${rhythm(-options.blockMarginBottom)}`,
         paddingRight: rhythm(options.blockMarginBottom),
-        paddingLeft: `${rhythm(options.blockMarginBottom / 5 * 4)}`,
-        borderLeft: `${rhythm(options.blockMarginBottom / 5 * 1)} solid ${
+        paddingLeft: `${rhythm((options.blockMarginBottom / 5) * 4)}`,
+        borderLeft: `${rhythm((options.blockMarginBottom / 5) * 1)} solid ${
           colors.a[3]
         }`,
         display: `block`
@@ -249,13 +250,13 @@ const typographyOptions = {
       },
       [TABLET_MEDIA_QUERY]: {
         html: {
-          fontSize: `${17 / 16 * 100}%`
+          fontSize: `${(17 / 16) * 100}%`
         }
       },
       [MOBILE_MEDIA_QUERY]: {
         // Make baseFontSize on mobile 16px.
         html: {
-          fontSize: `${16 / 16 * 100}%`
+          fontSize: `${(16 / 16) * 100}%`
         }
       },
       [MIN_DEFAULT_MEDIA_QUERY]: {
@@ -271,13 +272,15 @@ const typographyOptions = {
           marginRight: `${rhythm(-options.blockMarginBottom * 1.5)}`,
           marginLeft: `${rhythm(-options.blockMarginBottom * 1.5)}`,
           paddingRight: rhythm(options.blockMarginBottom * 1.5),
-          paddingLeft: `${rhythm(options.blockMarginBottom * 1.5 / 5 * 4)}`,
-          borderLeftWidth: `${rhythm(options.blockMarginBottom * 1.5 / 5 * 1)}`
+          paddingLeft: `${rhythm(((options.blockMarginBottom * 1.5) / 5) * 4)}`,
+          borderLeftWidth: `${rhythm(
+            ((options.blockMarginBottom * 1.5) / 5) * 1
+          )}`
         }
       },
       [MIN_LARGER_DISPLAY_MEDIA_QUERY]: {
         html: {
-          fontSize: `${21 / 16 * 100}%`
+          fontSize: `${(21 / 16) * 100}%`
         }
       },
       '.token.comment,.token.block-comment,.token.prolog,.token.doctype,.token.cdata': {

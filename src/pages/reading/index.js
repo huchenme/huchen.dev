@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import styled, { css } from 'react-emotion'
 
@@ -81,7 +82,7 @@ const Posts = ({ data }) => {
 export default Posts
 
 export const pageQuery = graphql`
-  query ReadingIndexQuery {
+  {
     site {
       siteMetadata {
         title

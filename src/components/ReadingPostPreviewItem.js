@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { Link, graphql } from 'gatsby'
 import styled from 'react-emotion'
 
 import { rhythm, scale, options, presets, colors } from '../utils'

@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 import kebabCase from 'lodash/kebabCase'
 
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
-import { Container } from '../../components'
+import { Link, graphql } from 'gatsby'
+import { Layout, Container } from '../../components'
 
 const TagsPage = ({
   data: {
@@ -15,7 +15,7 @@ const TagsPage = ({
     }
   }
 }) => (
-  <div>
+  <Layout>
     <Container>
       <Helmet>
         <title>Tags | {title}</title>
@@ -33,7 +33,7 @@ const TagsPage = ({
         </ul>
       </div>
     </Container>
-  </div>
+  </Layout>
 )
 
 TagsPage.propTypes = {
@@ -57,7 +57,7 @@ TagsPage.propTypes = {
 export default TagsPage
 
 export const pageQuery = graphql`
-  query TagsQuery {
+  {
     site {
       siteMetadata {
         title
