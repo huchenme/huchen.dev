@@ -63,21 +63,20 @@ const BlogPostTemplate = ({ data }) => {
         )}
       </Helmet>
       <H1>{post.frontmatter.title}</H1>
-      {post.frontmatter.image &&
-        !(post.frontmatter.showImageInArticle === false) && (
-          <ImageContainer>
-            <Img sizes={post.frontmatter.image.childImageSharp.sizes} />
-            {post.frontmatter.imageAuthor &&
-              post.frontmatter.imageAuthorLink && (
-                <em>
-                  Image by{` `}
-                  <OutboundLink href={post.frontmatter.imageAuthorLink}>
-                    {post.frontmatter.imageAuthor}
-                  </OutboundLink>
-                </em>
-              )}
-          </ImageContainer>
-        )}
+      {post.frontmatter.image && (
+        <ImageContainer>
+          <Img sizes={post.frontmatter.image.childImageSharp.sizes} />
+          {post.frontmatter.imageAuthor &&
+            post.frontmatter.imageAuthorLink && (
+              <em>
+                Image by{` `}
+                <OutboundLink href={post.frontmatter.imageAuthorLink}>
+                  {post.frontmatter.imageAuthor}
+                </OutboundLink>
+              </em>
+            )}
+        </ImageContainer>
+      )}
       <div
         className="post-body"
         dangerouslySetInnerHTML={{ __html: post.html }}
@@ -87,6 +86,7 @@ const BlogPostTemplate = ({ data }) => {
         text={post.frontmatter.title}
         via={siteMetadata.authorTwitter}
         siteUrl={siteMetadata.siteUrl}
+        buttonText="Comment"
       />
     </Container>
   )
@@ -110,7 +110,6 @@ export const query = graphql`
         tags
         imageAuthor
         imageAuthorLink
-        showImageInArticle
         image {
           childImageSharp {
             resize(width: 1500, height: 800) {

@@ -184,13 +184,13 @@ const typographyOptions = {
         fontWeight: `bold`,
         ...scale(1 / 6)
       },
+      '.main-body strong': {
+        fontFamily: options.headerFontFamily.join(`,`),
+        ...scale(1 / 6)
+      },
       '.post-body a': {
         ...scale(1 / 6),
         color: colors.gatsby
-      },
-      '.post-body strong': {
-        fontFamily: options.headerFontFamily.join(`,`),
-        ...scale(1 / 6)
       },
       '.main-body a:hover': {
         background: colors.ui.bright
