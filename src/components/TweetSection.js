@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'react-emotion'
 
-import { presets, colors, rhythm } from '../utils'
+import { presets, rhythm } from '../utils'
 import twitterIcon from '../assets/icons/icon-twitter.svg'
+import Divider from './Divider'
 
 const StyledSection = styled.div({
-  borderTop: `2px solid ${colors.lilac}`,
   paddingTop: rhythm(1),
-  marginTop: rhythm(3),
+  marginTop: rhythm(1),
 
   [presets.Mobile]: {
     marginBottom: rhythm(3)
@@ -68,6 +68,7 @@ const TweetSection = ({
   siteUrl
 }) => (
   <StyledSection>
+    <Divider />
     <p>
       If you found this article was helpful, consider sharing or commenting it
       on Twitter.

@@ -2,25 +2,46 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 import styled from 'react-emotion'
-import { Container, TweetSection } from '../components'
-import { rhythm, presets } from '../utils'
+import { Container, TweetSection, Divider } from '../components'
+import { rhythm, presets, colors } from '../utils'
 
-const H1 = styled.h1({
-  marginTop: 0,
+const Header = styled.div({
+  textAlign: 'center',
   [presets.Desktop]: {
     marginBottom: rhythm(5 / 4)
   }
 })
 
-const ImageBlockContainer = styled.div`
-  margin-bottom: ${rhythm(1)};
-  text-align: center;
+const Title = styled.h1({
+  marginTop: 0,
+  marginBottom: 0
+})
+
+const Subtitle = styled.div`
+  font-style: italic;
+  margin-top: ${rhythm(1 / 4)};
+
+  & strong {
+    color: ${colors.gatsby};
+  }
 `
 
-const ImageContainer = styled.div`
-  margin: 0 auto;
-  max-width: 50%;
-`
+const ImageBlockContainer = styled.div({
+  marginBottom: rhythm(1.5)
+})
+
+const ImageContainer = styled.div({
+  margin: '0 auto',
+  maxWidth: '50%',
+  borderRadius: 6,
+  boxShadow: `${rhythm(1 / 2)} ${rhythm(1 / 2)} ${rhythm(
+    1
+  )} 4px rgba(0,0,0,0.3)`,
+  overflow: 'hidden',
+  [presets.Desktop]: {
+    maxWidth: rhythm(8)
+  }
+})
 
 export default class ReadingPostTemplate extends React.Component {
   getAuthorNameSeparator = (index, authorsLength) => {
@@ -35,7 +56,7 @@ export default class ReadingPostTemplate extends React.Component {
 
   renderAuthorNames = authors => {
     return (
-      <em>
+      <Subtitle>
         Written By{' '}
         {authors.map((author, index) => (
           <span key={author}>
@@ -43,7 +64,7 @@ export default class ReadingPostTemplate extends React.Component {
             {this.getAuthorNameSeparator(index, authors.length)}
           </span>
         ))}
-      </em>
+      </Subtitle>
     )
   }
 
@@ -93,16 +114,19 @@ export default class ReadingPostTemplate extends React.Component {
             />
           )}
         </Helmet>
-        <H1>{post.frontmatter.title}</H1>
         {post.frontmatter.image && (
           <ImageBlockContainer>
             <ImageContainer>
               <Img sizes={post.frontmatter.image.childImageSharp.sizes} />
             </ImageContainer>
-            {post.frontmatter.authors &&
-              this.renderAuthorNames(post.frontmatter.authors)}
           </ImageBlockContainer>
         )}
+        <Header>
+          <Title>{post.frontmatter.title}</Title>
+          {post.frontmatter.authors &&
+            this.renderAuthorNames(post.frontmatter.authors)}
+        </Header>
+        <Divider />
         <div
           className="post-body"
           dangerouslySetInnerHTML={{ __html: post.html }}

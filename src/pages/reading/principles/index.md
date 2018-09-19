@@ -1,5 +1,6 @@
 ---
 title: "Principles"
+image: "cover.jpg"
 authors: ["Ray Dalio"]
 date: "2018-12-31"
 inProgress: true

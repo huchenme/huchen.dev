@@ -1,5 +1,6 @@
 ---
 title: "微习惯"
+image: "cover.jpg"
 authors: ["Stephen Guise"]
 date: "2018-04-13"
 ---
