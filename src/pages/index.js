@@ -31,14 +31,14 @@ const Divider = styled.hr({
   marginBottom: rhythm(1)
 })
 
-const Link = ({ title, desc, herf }) => (
+const Link = ({ title, desc, href }) => (
   <li>
     {desc ? (
       <>
-        <a href={herf}>{title}</a> - {desc}
+        <a href={href}>{title}</a> - {desc}
       </>
     ) : (
-      <a href={herf}>{title}</a>
+      <a href={href}>{title}</a>
     )}
   </li>
 )
