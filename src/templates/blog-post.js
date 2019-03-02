@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 import styled from 'react-emotion'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { Layout, Container, TweetSection, TagsSection } from '../components'
+import { Layout, Container, TweetSection } from '../components'
 import { rhythm, presets } from '../utils'
 
 const H1 = styled.h1({
@@ -68,23 +68,21 @@ const BlogPostTemplate = ({ data }) => {
         {post.frontmatter.image && (
           <ImageContainer>
             <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
-            {post.frontmatter.imageAuthor &&
-              post.frontmatter.imageAuthorLink && (
-                <em>
-                  Image by
-                  {` `}
-                  <OutboundLink href={post.frontmatter.imageAuthorLink}>
-                    {post.frontmatter.imageAuthor}
-                  </OutboundLink>
-                </em>
-              )}
+            {post.frontmatter.imageAuthor && post.frontmatter.imageAuthorLink && (
+              <em>
+                Image by
+                {` `}
+                <OutboundLink href={post.frontmatter.imageAuthorLink}>
+                  {post.frontmatter.imageAuthor}
+                </OutboundLink>
+              </em>
+            )}
           </ImageContainer>
         )}
         <div
           className="post-body"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-        <TagsSection tags={post.frontmatter.tags} />
         <TweetSection
           text={post.frontmatter.title}
           via={siteMetadata.authorTwitter}

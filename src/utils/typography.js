@@ -94,7 +94,6 @@ const typographyOptions = {
         marginBottom: rhythm(options.blockMarginBottom * 2)
       },
       'tt,code': {
-        // background: `hsla(23, 60%, 97%, 1)`,
         background: colors.a[0],
         fontFamily: options.monospaceFontFamily.join(`,`),
         fontSize: `80%`,
