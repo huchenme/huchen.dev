@@ -57,12 +57,12 @@ const HomePage = () => (
         <ul>
           <Link
             title="Hacker Tab"
-            href="https://huu.im/gh/ht"
+            href="https://github.com/huchenme/hacker-tab-extension"
             desc="Chrome extension to replace new tab screen with GitHub trending projects"
           />
           <Link
             title="github-trending-api"
-            href="https://huu.im/gh/api"
+            href="https://github.com/huchenme/github-trending-api"
             desc="An unofficial API for GitHub trending projects"
           />
         </ul>
@@ -72,32 +72,32 @@ const HomePage = () => (
         <ul>
           <Link
             title="Gears"
-            href="blog/gears-as-an-engineer/"
+            href="/blog/gears-as-an-engineer/"
             desc="Links to all the stuff I use as developer and designer"
           />
           <Link
             title="GitHub"
-            href="https://huu.im/gh"
+            href="https://github.com/huchenme/"
             desc="I have a bunch of projects on here :)"
           />
           <Link
             title="Writing"
-            href="https://huu.im/write"
+            href="https://medium.com/@chen"
             desc="My writings on Medium.com"
           />
           <Link
             title="Unsplash"
-            href="https://huu.im/photo"
+            href="https://unsplash.com/@huchenme"
             desc="My photos on Unsplash (free license to use and download)"
           />
           <Link
             title="New Zealand"
-            href="https://huu.im/nz"
+            href="http://nz.huchen.dev/"
             desc="A hand made website with story of my 23 days in New Zealand"
           />
-          <Link title="Twitter" href="https://huu.im/twitter" />
-          <Link title="LinkedIn" href="https://huu.im/li" />
-          <Link title="Instagram" href="https://huu.im/ig" />
+          <Link title="Twitter" href="https://twitter.com/huchenme" />
+          <Link title="LinkedIn" href="https://www.linkedin.com/in/huchenme/" />
+          <Link title="Instagram" href="https://www.instagram.com/huchenme" />
         </ul>
       </Line>
       <Divider />
