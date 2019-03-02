@@ -1,50 +1,108 @@
 import React from 'react'
 import styled from 'react-emotion'
 
-import { rhythm } from '../utils'
+import { rhythm, colors } from '../utils'
 import { Layout, Container } from '../components'
 
 const Line = styled.section({
   marginBottom: rhythm(1),
   ':last-child': {
     marginBottom: 0
+  },
+  ul: {
+    margin: '1rem 0 1rem 1.5rem'
+  },
+  li: {
+    marginBottom: 'calc(2rem / 4)'
   }
+})
+
+const Title = styled.h1`
+  margin-top: 0;
+`
+
+const Header = styled.h3({
+  marginTop: rhythm(1.5),
+  marginBottom: rhythm(0.5),
+  color: colors.b[7]
 })
 
 const Divider = styled.hr({
   marginBottom: rhythm(1)
 })
 
+const Link = ({ title, desc, herf }) => (
+  <li>
+    {desc ? (
+      <>
+        <a href={herf}>{title}</a> - {desc}
+      </>
+    ) : (
+      <a href={herf}>{title}</a>
+    )}
+  </li>
+)
+
 const HomePage = () => (
   <Layout>
     <Container>
-      <h1>Hi, I’m Hu Chen</h1>
+      <Title>Hi, I’m Hu Chen</Title>
       <Line>
-        I’m an inter-disciplinary frontend engineer, designer and adventurer
-        living in Singapore and sometimes travelling.
+        I’m an inter-disciplinary frontend engineer, occasional designer and
+        adventurer living in Singapore. I code in Javascript (React, React
+        Native), Ruby and design in Sketch.
       </Line>
+      <Header>Recent Projects</Header>
       <Line>
-        I code in Javascript (React, Redux, React Native), Ruby and design in
-        Sketch.
+        <ul>
+          <Link
+            title="Hacker Tab"
+            href="https://huu.im/gh/ht"
+            desc="Chrome extension to replace new tab screen with GitHub trending projects"
+          />
+          <Link
+            title="github-trending-api"
+            href="https://huu.im/gh/api"
+            desc="An unofficial API for GitHub trending projects"
+          />
+        </ul>
       </Line>
+      <Header>Other Links</Header>
       <Line>
-        I made <a href="http://nz.huchen.me">a website</a> with stories in my 23
-        days New Zealand trip and a web product lanquan to help everyone easily
-        create story like mine. Other than that I made a React Native app Pack
-        to help people pack things for trips and a site called dodohub to help
-        people building habits.
-      </Line>
-      <Line>
-        <a href="mailto:chen@huchen.me">Say hi</a>, or find my photos on{' '}
-        <a href="https://unsplash.com/@huchenme">Unsplash</a> or{' '}
-        <a href="https://www.instagram.com/huchenme">Instagram</a>, my code on{' '}
-        <a href="https://github.com/huchenme/">GitHub</a> and my profile on{' '}
-        <a href="https://www.linkedin.com/in/huchenme/">LinkedIn</a>.
+        <ul>
+          <Link
+            title="Gears"
+            href="https://huu.im/gear"
+            desc="Links to all the stuff I use as developer and designer"
+          />
+          <Link
+            title="GitHub"
+            href="https://huu.im/gh"
+            desc="I have a bunch of projects on here :)"
+          />
+          <Link
+            title="Writing"
+            href="https://huu.im/write"
+            desc="My writings on Medium.com"
+          />
+          <Link
+            title="Unsplash"
+            href="https://huu.im/photo"
+            desc="My photos on Unsplash (free license to use and download)"
+          />
+          <Link
+            title="New Zealand"
+            href="https://huu.im/nz"
+            desc="A hand made website with story of my 23 days in New Zealand"
+          />
+          <Link title="Twitter" href="https://huu.im/twitter" />
+          <Link title="LinkedIn" href="https://huu.im/li" />
+          <Link title="Instagram" href="https://huu.im/ig" />
+        </ul>
       </Line>
       <Divider />
       <Line>
-        This site was built in Gatsby and hosted on Netlify. And obviously, it
-        is still under construction.
+        <a href="mailto:chen@huchen.me">Say hi</a> to chen@huchen.dev
       </Line>
     </Container>
   </Layout>
