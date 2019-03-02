@@ -72,7 +72,7 @@ const HomePage = () => (
         <ul>
           <Link
             title="Gears"
-            href="https://huu.im/gear"
+            href="blog/gears-as-an-engineer/"
             desc="Links to all the stuff I use as developer and designer"
           />
           <Link
