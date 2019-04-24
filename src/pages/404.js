@@ -1,16 +1,25 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import styled from 'react-emotion'
 import { Layout, Container } from '../components'
+import fourOhFourImg from './404.svg'
 
 const FourOhFour = () => (
   <Layout>
     <Container>
-      <h1>404, url does not exits any more</h1>
-      <h4>
-        <Link to="/">HOME</Link>
-      </h4>
+      <ImgContainer>
+        <img src={fourOhFourImg} alt="404" />
+      </ImgContainer>
     </Container>
   </Layout>
 )
 
 export default FourOhFour
+
+const ImgContainer = styled.div`
+  text-align: center;
+  margin-top: 6em;
+
+  @media (min-width: 1000px) {
+    margin-top: 5em;
+  }
+`

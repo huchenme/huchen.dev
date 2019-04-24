@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "author": "Hu Chen <chen@huchen.me>",
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
     "emotion": "^9.2.9",
     "emotion-server": "^9.2.9",
     "gatsby": "^2.0.3",
