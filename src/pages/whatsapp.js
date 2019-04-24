@@ -44,7 +44,7 @@ export default class Whatsapp extends React.Component {
       this.state.phoneNumber.trim() === ''
     return (
       <React.Fragment>
-        <Helmet defaultTitle="Send to Whatsapp - Hu Chen">
+        <Helmet defaultTitle="Whatsapp to Stranger">
           <link
             rel="apple-touch-icon"
             sizes="57x57"
