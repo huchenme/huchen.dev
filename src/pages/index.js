@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
+import { Link as GatsbyLink } from 'gatsby'
 
 import { rhythm, colors } from '../utils'
 import { Layout, Container } from '../components'
@@ -31,17 +32,25 @@ const Divider = styled.hr({
   marginBottom: rhythm(1)
 })
 
-const Link = ({ title, desc, href }) => (
-  <li>
-    {desc ? (
-      <>
-        <a href={href}>{title}</a> - {desc}
-      </>
-    ) : (
-      <a href={href}>{title}</a>
-    )}
-  </li>
-)
+const Link = ({ title, desc, href, gatsbyLink = false }) => {
+  const link = gatsbyLink ? (
+    <GatsbyLink to={href}>{title}</GatsbyLink>
+  ) : (
+    <a href={href}>{title}</a>
+  )
+
+  return (
+    <li>
+      {desc ? (
+        <>
+          {link} - {desc}
+        </>
+      ) : (
+        link
+      )}
+    </li>
+  )
+}
 
 const HomePage = () => (
   <Layout>
@@ -65,12 +74,20 @@ const HomePage = () => (
             href="https://github.com/huchenme/github-trending-api"
             desc="An unofficial API for GitHub trending projects"
           />
+          <Link
+            gatsbyLink
+            title="Send Whatsapp"
+            href="/whatsapp"
+            desc="Helps you send Whatsapp messages without creating a
+            new contact (mobile)"
+          />
         </ul>
       </Line>
       <Header>Other Links</Header>
       <Line>
         <ul>
           <Link
+            gatsbyLink
             title="Gears"
             href="/blog/gears-as-an-engineer/"
             desc="Links to all the stuff I use as developer and designer"

@@ -10,6 +10,7 @@ module.exports = {
     'import/no-unassigned-import': 'off',
     'react/prop-types': 'off',
     'import/max-dependencies': 'off',
+    'no-use-before-define': 'off',
     'babel/no-unused-expressions': ['error', { allowTaggedTemplates: true }]
   }
 }
