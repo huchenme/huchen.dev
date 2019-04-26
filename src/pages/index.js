@@ -76,7 +76,7 @@ const HomePage = () => (
           />
           <Link
             gatsbyLink
-            title="Whatsapp to Stranger"
+            title="Whatsapp Direct"
             href="/whatsapp"
             desc="Helps you send Whatsapp messages without creating a
             new contact (mobile)"
