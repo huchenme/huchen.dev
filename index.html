@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hu Chen - CV</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --bg: #fdfdfd;
+    --text: #1a1a2e;
+    --accent: #4a6cf7;
+    --muted: #6b7280;
+    --border: #d1d5db;
+    --highlight: #f0f4ff;
+    --dim: #9ca3af;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: A4;
+    margin: 18mm 20mm;
+  }
+
+  body {
+    font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    font-size: 8.2pt;
+    line-height: 1.55;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 18mm 20mm;
+  }
+
+  /* ── Header ── */
+  .header {
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .ascii-name {
+    font-size: 7.5pt;
+    line-height: 1.15;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    white-space: pre;
+  }
+
+  .header-meta {
+    margin-top: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .title-line {
+    font-size: 9pt;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .contact-line {
+    font-size: 7.8pt;
+    color: var(--muted);
+  }
+
+  .contact-line a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .contact-line a:hover {
+    color: var(--accent);
+  }
+
+  /* ── Dividers ── */
+  .divider-double {
+    border: none;
+    border-top: 2px solid var(--accent);
+    margin: 12px 0;
+  }
+
+  /* ── Sections ── */
+  .section {
+    margin-bottom: 22px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .section-icon {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 8.5pt;
+    white-space: pre;
+  }
+
+  .section-title {
+    font-size: 8.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text);
+  }
+
+  .section-line {
+    flex: 1;
+    border-top: 1px solid var(--border);
+    margin-left: 8px;
+  }
+
+  /* ── Role entries ── */
+  .role {
+    margin-bottom: 18px;
+  }
+
+  .role-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 3px;
+  }
+
+  .role-title {
+    font-weight: 700;
+    font-size: 8.5pt;
+    color: var(--text);
+  }
+
+  .role-date {
+    font-size: 7.8pt;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .role-company {
+    font-size: 8pt;
+    color: var(--muted);
+    margin-bottom: 5px;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 4px;
+    font-size: 8pt;
+    color: var(--text);
+  }
+
+  ul li::before {
+    content: ">";
+    position: absolute;
+    left: 2px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ── Summary ── */
+  .summary {
+    font-size: 8pt;
+    color: var(--text);
+    line-height: 1.6;
+    padding: 10px 14px;
+    background: var(--highlight);
+    border-left: 3px solid var(--accent);
+    margin-bottom: 20px;
+  }
+
+  /* ── Tags ── */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 4px;
+  }
+
+  .tag {
+    font-size: 7pt;
+    padding: 1px 6px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .tag.highlight {
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ── Small roles ── */
+  .small-role {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+    font-size: 8pt;
+  }
+
+  .small-role-title {
+    font-weight: 500;
+  }
+
+  .small-role-date {
+    color: var(--muted);
+    font-size: 7.8pt;
+  }
+
+  /* ── Speaking ── */
+  .talk-entry {
+    margin-bottom: 5px;
+  }
+
+  .talk-title {
+    font-weight: 600;
+    font-size: 8pt;
+  }
+
+  .talk-detail {
+    font-size: 7.8pt;
+    color: var(--muted);
+  }
+
+  /* ── Education ── */
+  .edu-detail {
+    font-size: 7.8pt;
+    color: var(--muted);
+    padding-left: 16px;
+    margin-bottom: 6px;
+  }
+
+  /* ── Interests ── */
+  .interests {
+    font-size: 8pt;
+    color: var(--text);
+  }
+
+  .interests strong {
+    color: var(--accent);
+  }
+
+  /* ── Status bar ── */
+  .status-bar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 6.8pt;
+    color: var(--dim);
+    margin-top: 20px;
+    padding-top: 6px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── Mobile ── */
+  @media screen and (max-width: 600px) {
+    body {
+      padding: 12px 16px;
+      font-size: 9pt;
+    }
+    .ascii-name {
+      font-size: 5.5pt;
+      overflow-x: auto;
+    }
+    .header-meta {
+      flex-direction: column;
+      gap: 2px;
+    }
+    .role-header {
+      flex-direction: column;
+      gap: 1px;
+    }
+    .small-role {
+      flex-direction: column;
+      gap: 1px;
+    }
+    ul li {
+      font-size: 8.5pt;
+    }
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { padding: 0; margin: 0; }
+    .status-bar { display: none; }
+    .role { break-inside: avoid; }
+    .summary {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .tag.highlight {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ━━━ HEADER ━━━ -->
+<div class="header">
+<div class="ascii-name">
+ ▄███▄  █ █ █ █   ▄▀▀ █ █ █▀▀ █▄ █
+ █████  █▀█ █ █   █   █▀█ █▀  █ ▀█
+ ▀███▀  ▀ ▀ ▀▀▀   ▀▀▀ ▀ ▀ ▀▀▀ ▀  ▀
+</div>
+<div class="header-meta">
+  <span class="title-line">Engineering Manager</span>
+  <span class="contact-line">
+    <a href="mailto:chen@huchen.dev">chen@huchen.dev</a>
+     |
+    Singapore
+  </span>
+</div>
+</div>
+
+<hr class="divider-double">
+
+<!-- ━━━ SUMMARY ━━━ -->
+<div class="summary">
+Engineering manager with 5+ years of people leadership at Zendesk, building and scaling teams that own real-time infrastructure serving millions of customer service interactions. Track record of growing engineers (6 promotions across 4 engineers, including intern to senior), mentoring and coaching across seniority levels, merging teams through cultural alignment, and pioneering AI-driven engineering workflows. Previously a senior frontend engineer with deep React expertise.
+</div>
+
+<!-- ━━━ EXPERIENCE ━━━ -->
+<div class="section">
+<div class="section-header">
+  <span class="section-icon">~/</span>
+  <span class="section-title">Experience</span>
+  <span class="section-line"></span>
+</div>
+
+<!-- Milo -->
+<div class="role">
+<div class="role-header">
+  <span class="role-title">Engineering Manager</span>
+  <span class="role-date">2024 ~ present</span>
+</div>
+<div class="role-company">Zendesk, Singapore</div>
+<ul>
+  <li>Manage a team of 8 engineers (Senior to Senior Staff) owning Zendesk's real-time omnichannel routing infrastructure, serving enterprise customers at scale</li>
+  <li>Merged two teams into a unified team during a transition period where key senior members were unavailable. Co-created processes, identity, and culture with the team through collaborative decision-making. Presented this playbook at an internal tech summit</li>
+  <li>Coached every original team member up over 3 years, achieving <strong>6 promotions across 4 engineers</strong> (intern to senior engineer, two to Staff, one to Senior Staff) through structured performance management, stretch assignments, and deliberate project ownership</li>
+  <li>Ship 2+ product epics per quarter, consistently ahead of schedule. Own quarterly roadmap planning with epic-level sprint breakdowns. Team adapts quickly to production incidents, cross-functional requests, and shifting priorities</li>
+  <li>Drove AI adoption beyond own team: built reusable AI developer tools, helped other teams roll out AI-assisted code reviews, and introduced AI-driven end-to-end testing for a greenfield service</li>
+  <li>Established engineering culture through lab days, hackathons, and knowledge-sharing sessions. Founded a social community club, organizing quarterly events for the Singapore engineering community</li>
+</ul>
+</div>
+
+<!-- Kopi -->
+<div class="role">
+<div class="role-header">
+  <span class="role-title">Engineering Manager</span>
+  <span class="role-date">2021 ~ 2024</span>
+</div>
+<div class="role-company">Zendesk, Singapore</div>
+<ul>
+  <li>Built a team of 5 engineers from inception, owning backend routing services for Zendesk's Agent Workspace</li>
+  <li>Owned a cross-org workstream end-to-end, influencing frontend, QA, and product teams across multiple offices to align on a shared delivery plan. Coordinated cross-functional delivery through EAP, beta, and GA</li>
+  <li>Established all team processes from scratch: sprint cadence, 1-on-1 framework with structured performance management, on-call rotations, quarterly roadmap planning with OKRs, feedback sessions, and champion roles</li>
+  <li>Improved production smoke test reliability, proactively capturing incidents before customer impact. Consistently met operational SLAs</li>
+  <li>Sustained team delivery velocity and morale through an org-wide layoff that directly impacted the team, guiding the team through the transition with clear communication and stakeholder management</li>
+</ul>
+</div>
+
+<!-- Polo -->
+<div class="role">
+<div class="role-header">
+  <span class="role-title">Senior Frontend Engineer</span>
+  <span class="role-date">2019 ~ 2021</span>
+</div>
+<div class="role-company">Zendesk, Singapore</div>
+<ul>
+  <li>Developed frontend features for Zendesk Agent Workspace including Chat Dashboard, chat-to-messaging migration, and Answer Bot handoff for Native Messaging</li>
+  <li>Introduced a React hook pattern to eliminate unnecessary backend calls. Became a standard pattern adopted across the codebase. Co-presented at an internal tech summit</li>
+  <li>Led Cypress E2E testing POC and owned smoke testing, capturing 7 production incidents in 6 weeks</li>
+  <li>Founded the biweekly SG Tech Brownbag series for the Singapore engineering community</li>
+</ul>
+</div>
+
+<!-- StanChart -->
+<div class="role">
+<div class="role-header">
+  <span class="role-title">JavaScript Engineer</span>
+  <span class="role-date">2018 ~ 2019</span>
+</div>
+<div class="role-company">Standard Chartered Bank, Singapore</div>
+<ul>
+  <li>Managed internal open-source React UI component library with design system documentation, automated versioning and CI/CD release pipeline, used by 5+ engineering teams across the bank's digital banking division</li>
+  <li>Built and maintained shared frontend tooling within a regulated banking environment: custom react-scripts, Babel/ESLint presets, and custom ESLint plugins, adhering to internal audit and compliance standards</li>
+</ul>
+</div>
+
+<!-- Earlier roles -->
+<div class="role" style="margin-bottom: 6px;">
+<div class="role-header">
+  <span class="role-title">Earlier Roles</span>
+  <span class="role-date">2011 ~ 2017</span>
+</div>
+</div>
+
+<div class="small-role">
+  <span class="small-role-title">Product Manager & App Experience, ezbuy</span>
+  <span class="small-role-date">2017</span>
+</div>
+
+<div class="small-role">
+  <span class="small-role-title">Senior Full Stack Engineer, honestbee</span>
+  <span class="small-role-date">2016 ~ 2017</span>
+</div>
+
+<div class="small-role">
+  <span class="small-role-title">Senior Full Stack Engineer, Wego</span>
+  <span class="small-role-date">2014 ~ 2015</span>
+</div>
+
+<div class="small-role">
+  <span class="small-role-title">Staff Software Engineer, Favorite Medium</span>
+  <span class="small-role-date">2013 ~ 2014</span>
+</div>
+
+<div class="small-role">
+  <span class="small-role-title">Technical Analyst, Credit Suisse</span>
+  <span class="small-role-date">2011 ~ 2012</span>
+</div>
+
+</div>
+
+<!-- ━━━ SPEAKING ━━━ -->
+<div class="section">
+<div class="section-header">
+  <span class="section-icon">~/</span>
+  <span class="section-title">Speaking</span>
+  <span class="section-line"></span>
+</div>
+
+<div class="talk-entry">
+  <span class="talk-title">"A Playbook for Seamless Team Mergers"</span>
+  <span class="talk-detail"> -- Internal Tech Summit 2025</span>
+</div>
+<div class="talk-entry">
+  <span class="talk-title">"Skipping Network Calls in React Hooks"</span>
+  <span class="talk-detail"> -- Internal Tech Summit 2021</span>
+</div>
+</div>
+
+<!-- ━━━ EDUCATION ━━━ -->
+<div class="section">
+<div class="section-header">
+  <span class="section-icon">~/</span>
+  <span class="section-title">Education</span>
+  <span class="section-line"></span>
+</div>
+
+<div class="small-role">
+  <span class="small-role-title">Nanyang Technological University</span>
+  <span class="small-role-date">2006 ~ 2010</span>
+</div>
+<div class="edu-detail">First Class Honours. Dean's List. MOE Scholar.</div>
+
+<div class="small-role">
+  <span class="small-role-title">Founder Institute</span>
+  <span class="small-role-date">2013</span>
+</div>
+<div class="edu-detail">World's largest pre-seed startup accelerator program.</div>
+</div>
+
+<!-- ━━━ INTERESTS ━━━ -->
+<div class="section">
+<div class="section-header">
+  <span class="section-icon">~/</span>
+  <span class="section-title">Interests</span>
+  <span class="section-line"></span>
+</div>
+<div class="interests">
+  Competitive cyclist (<strong>National Champion 2025</strong>). Recreational runner.
+</div>
+</div>
+
+<!-- ━━━ STATUS BAR ━━━ -->
+<div class="status-bar">
+  <span>Last updated: March 2026</span>
+  <span>Built with monospace + ASCII art</span>
+</div>
+
+</body>
+</html>
