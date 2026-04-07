@@ -2,158 +2,280 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>WhatsApp Direct</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    height: 100dvh;
+    height: 100vh;
+    overflow: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @supports (height: 100dvh) {
+    html, body { height: 100dvh; }
+  }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: #f0f2f5;
-    color: #4b4b4b;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f6f3ee;
+    color: #3a3530;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 16px;
+    position: relative;
+  }
+
+  /* subtle grain texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    opacity: 0.3;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
   }
 
   .card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 40px 32px;
-    max-width: 420px;
-    width: 100%;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    text-align: center;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(40px) saturate(1.4);
+    -webkit-backdrop-filter: blur(40px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 44px 36px 36px;
+    max-width: 380px;
+    width: calc(100% - 48px);
+    box-shadow:
+      0 1px 2px rgba(58, 53, 48, 0.04),
+      0 8px 32px rgba(58, 53, 48, 0.06),
+      0 24px 60px rgba(58, 53, 48, 0.04);
+    animation: cardIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
-  .logo {
-    font-size: 48px;
-    margin-bottom: 16px;
+  @keyframes cardIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.98);
+    }
   }
 
-  .description {
-    font-size: 15px;
-    color: #667781;
-    line-height: 1.5;
+  .header {
     margin-bottom: 32px;
+  }
+
+  .icon-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+  }
+
+  .wa-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: #25d366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+  }
+
+  .wa-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: #1a1714;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    color: #8a8279;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
   }
 
   .hint {
     display: none;
-    font-size: 13px;
-    color: #a0aeb6;
-    margin-top: 8px;
+    font-size: 12px;
+    color: #b0a99f;
+    margin-top: 4px;
+    font-style: italic;
   }
 
   @media (min-width: 1000px) {
     .hint { display: block; }
   }
 
-  .input-row {
+  .fields {
     display: flex;
-    gap: 12px;
-    margin-bottom: 24px;
+    gap: 10px;
+    margin-bottom: 20px;
   }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .field-code { width: 76px; flex-shrink: 0; }
+  .field-phone { flex: 1; }
 
   label {
-    display: block;
-    font-size: 12px;
-    color: #667781;
-    text-align: left;
-    margin-bottom: 4px;
+    font-size: 11px;
     font-weight: 500;
+    color: #8a8279;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
 
-  .code-field { width: 80px; flex-shrink: 0; }
-  .phone-field { flex: 1; }
-
-  input {
-    width: 100%;
-    padding: 10px 12px;
-    font-size: 16px;
-    border: 1.5px solid #d1d7db;
-    border-radius: 8px;
-    outline: none;
-    transition: border-color 0.2s;
-    font-family: inherit;
-  }
-
-  input:focus {
-    border-color: #00a884;
-  }
-
-  .prefix {
+  .input-wrap {
     position: relative;
   }
 
-  .prefix input {
-    padding-left: 24px;
+  input {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 16px;
+    font-family: 'DM Sans', sans-serif;
+    color: #1a1714;
+    background: rgba(246, 243, 238, 0.6);
+    border: 1.5px solid rgba(58, 53, 48, 0.1);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
   }
 
-  .prefix::before {
-    content: "+";
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input:focus {
+    border-color: #25d366;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
+  }
+
+  input::placeholder {
+    color: #c4bdb5;
+  }
+
+  .prefix-input {
+    padding-left: 26px;
+  }
+
+  .prefix-symbol {
     position: absolute;
-    left: 12px;
+    left: 14px;
     top: 50%;
     transform: translateY(-50%);
-    color: #667781;
+    color: #8a8279;
     font-size: 16px;
+    pointer-events: none;
   }
 
   button {
     width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: 600;
+    padding: 13px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
     color: #fff;
-    background: #00a884;
+    background: #1a1714;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    letter-spacing: 0.02em;
+    transition: transform 0.2s, opacity 0.2s, box-shadow 0.2s;
+    -webkit-tap-highlight-color: transparent;
   }
 
   button:hover:not(:disabled) {
-    background: #008f72;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(26, 23, 20, 0.18);
+  }
+
+  button:active:not(:disabled) {
+    transform: translateY(0);
   }
 
   button:disabled {
-    background: #d1d7db;
+    opacity: 0.25;
     cursor: not-allowed;
+  }
+
+  button svg {
+    transition: transform 0.25s;
+  }
+
+  button:hover:not(:disabled) svg {
+    transform: translateX(2px);
   }
 </style>
 </head>
 <body>
 
 <div class="card">
-  <div class="logo">💬</div>
-  <div class="description">
-    Send WhatsApp messages without creating a new contact.
-    <div class="hint">Open this URL on mobile to launch WhatsApp directly.</div>
+  <div class="header">
+    <div class="icon-row">
+      <div class="wa-icon">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="white"/>
+          <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.11-1.14l-.29-.174-3.01.79.8-2.93-.19-.3A7.96 7.96 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z" fill="white"/>
+        </svg>
+      </div>
+      <h1>Quick Message</h1>
+    </div>
+    <p class="subtitle">
+      Message any number on WhatsApp — no contact needed.
+      <span class="hint">Open on mobile to launch WhatsApp directly.</span>
+    </p>
   </div>
 
-  <div class="input-row">
-    <div class="code-field">
+  <div class="fields">
+    <div class="field field-code">
       <label for="country-code">Code</label>
-      <div class="prefix">
-        <input type="number" id="country-code" value="65">
+      <div class="input-wrap">
+        <span class="prefix-symbol">+</span>
+        <input type="number" id="country-code" value="65" class="prefix-input">
       </div>
     </div>
-    <div class="phone-field">
-      <label for="phone-number">Phone</label>
-      <input type="number" id="phone-number" autofocus>
+    <div class="field field-phone">
+      <label for="phone-number">Phone number</label>
+      <div class="input-wrap">
+        <input type="number" id="phone-number" placeholder="8123 4567" autofocus>
+      </div>
     </div>
   </div>
 
   <button id="send-btn" disabled onclick="openWhatsApp()">
     Open in WhatsApp
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
   </button>
 </div>
 
