@@ -1003,6 +1003,39 @@
     html{scroll-behavior:auto}
   }
 
+  /* ───── LANGUAGE SWITCH ───── */
+  .lang-switch{
+    position:fixed;
+    top:18px;
+    right:18px;
+    z-index:1100;
+    font-family:var(--font-ui);
+    font-size:13px;
+    font-weight:600;
+    color:var(--ink);
+    background:rgba(245,239,228,0.9);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.4);
+    border-radius:100px;
+    padding:7px 30px 7px 14px;
+    cursor:pointer;
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    box-shadow:0 4px 14px rgba(31,26,20,0.12);
+    background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M2 4l3 3 3-3' stroke='%231f1a14' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 12px center;
+    transition:background 0.2s, box-shadow 0.2s, transform 0.2s;
+    letter-spacing:0.02em;
+  }
+  .lang-switch:hover{
+    background-color:#fff;
+    box-shadow:0 6px 18px rgba(31,26,20,0.18);
+  }
+  .lang-switch:focus{outline:none;box-shadow:0 0 0 3px rgba(217,120,52,0.35)}
+
   /* fade-in on scroll */
   .reveal{
     opacity:0;
@@ -1016,6 +1049,12 @@
 </style>
 </head>
 <body>
+
+<!-- ═══════════════ LANGUAGE SWITCH ═══════════════ -->
+<select class="lang-switch" id="lang-switch" aria-label="Language / 语言">
+  <option value="zh">中文</option>
+  <option value="en">English</option>
+</select>
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <header class="hero">
@@ -1033,19 +1072,19 @@
   </svg>
 
   <div class="hero-content">
-    <div class="hero-tag">Sep 9 — 13, 2026 · 学校假期</div>
-    <h1>
+    <div class="hero-tag" data-en="Sep 9 — 13, 2026 · School Holidays">Sep 9 — 13, 2026 · 学校假期</div>
+    <h1 data-en='Mt Prau<br>with the Kids<em>Mt Prau · Borobudur · Jomblang</em>'>
       普劳火山<br>亲子之旅
       <em>Mt Prau · Borobudur · Jomblang</em>
     </h1>
     <div class="hero-meta">
-      <span>🇸🇬 <strong>新加坡出发</strong></span>
-      <span>⛰️ <strong>2,590 m</strong> 海拔</span>
-      <span>☁️ 云海日出</span>
-      <span>5 天 4 夜</span>
+      <span data-en="🇸🇬 <strong>From Singapore</strong>">🇸🇬 <strong>新加坡出发</strong></span>
+      <span data-en="⛰️ <strong>2,590 m</strong> elevation">⛰️ <strong>2,590 m</strong> 海拔</span>
+      <span data-en="☁️ Sea-of-clouds sunrise">☁️ 云海日出</span>
+      <span data-en="5 days · 4 nights">5 天 4 夜</span>
     </div>
   </div>
-  <div class="scroll-hint">向下滑动 · scroll</div>
+  <div class="scroll-hint" data-en="Scroll · ↓">向下滑动 · scroll</div>
 </header>
 
 <!-- ═══════════════ INTRO ═══════════════ -->
@@ -1053,13 +1092,13 @@
   <div class="container">
     <div class="intro-grid">
       <div>
-        <div class="eyebrow">关于这趟旅程 · About</div>
-        <h2>这是我的<br>初步计划<em>Just an idea I'm putting together. Tell me what you think.</em></h2>
-        <p class="lead">
+        <div class="eyebrow" data-en="About this trip · About">关于这趟旅程 · About</div>
+        <h2 data-en="Just a draft<br>I'm putting together<em>Tell me what you think.</em>">这是我的<br>初步计划<em>Just an idea I'm putting together. Tell me what you think.</em></h2>
+        <p class="lead" data-en="In September 2026, during the Singapore school holidays, I'm planning to take the kids to Yogyakarta, Indonesia, and hike <em>Gunung Prau</em> — one of the most family-friendly volcanoes in Central Java. September is the dry season, with a high chance of seeing <em>lautan awan</em> (a sea of clouds) at dawn as the sun rises between Sindoro, Sumbing and Merbabu in the distance.">
           2026 年 9 月新加坡学校假期，我打算带娃飞去印尼日惹（Yogyakarta），徒步爬 <em>Gunung Prau</em>——爪哇中部最容易亲近的火山之一。
           九月正值旱季，几乎每天清晨都有几率看到 <em>lautan awan</em>（云海），太阳从远处的 Sindoro、Sumbing、Merbabu 几座火山之间升起。
         </p>
-        <p class="lead" style="margin-top:18px">
+        <p class="lead" style="margin-top:18px" data-en="This page is mostly notes for myself, but I'm sharing it for any other parents who might be interested. Every flight, stay and package needs to be <em>booked separately by each family</em> — I've just pulled the info together as a starting point. If you're keen to go too, let's compare dates and chat.">
           这页是我整理给自己看的，也分享给可能感兴趣的家长。所有行程、住宿、套餐都需要 <em>各家自行预订</em>——
           我只是把信息凑齐了一份草稿，方便大家参考。如果你也有兴趣去，欢迎一起聊聊、对一下日期。
         </p>
@@ -1068,22 +1107,22 @@
         <div class="stats">
           <div class="stat">
             <div class="stat-num">2,590</div>
-            <div class="stat-label">米海拔 · m</div>
+            <div class="stat-label" data-en="meters · summit">米海拔 · m</div>
           </div>
           <div class="stat">
             <div class="stat-num">+600</div>
-            <div class="stat-label">米爬升 · gain</div>
+            <div class="stat-label" data-en="meters · ascent">米爬升 · gain</div>
           </div>
           <div class="stat">
             <div class="stat-num">~8 km</div>
-            <div class="stat-label">总徒步 · D1+D2</div>
+            <div class="stat-label" data-en="total hike · D1+D2">总徒步 · D1+D2</div>
           </div>
           <div class="stat">
             <div class="stat-num">~6h</div>
-            <div class="stat-label">徒步用时</div>
+            <div class="stat-label" data-en="time on foot">徒步用时</div>
           </div>
         </div>
-        <p style="font-size:13px;color:var(--muted);margin-top:14px;font-style:italic">
+        <p style="font-size:13px;color:var(--muted);margin-top:14px;font-style:italic" data-en="Patak Banteng route: trailhead ~1,990 m → summit 2,590 m · ~4 km one way · 3.5h up / 2.5h down · 60–80% chance of seeing the cloud sea.">
           Patak Banteng 路线：起点 ~1,990 m → 山顶 2,590 m · 单程约 4 km · 上 3.5h / 下 2.5h · 看云海概率 60–80%。
         </p>
       </div>
@@ -1094,9 +1133,9 @@
 <!-- ═══════════════ MAP ═══════════════ -->
 <section class="map-section">
   <div class="container">
-    <div class="eyebrow">地图 · Map</div>
-    <h2>整趟路线<em>The full route, in order.</em></h2>
-    <p class="lead">从 YIA 机场出发，先去婆罗浮屠，再向北到普劳山，下山后回日惹市区，去洞穴玩一天，最后从机场飞回。<br>箭头按行程顺序连接。</p>
+    <div class="eyebrow" data-en="Map · The route">地图 · Map</div>
+    <h2 data-en="The full route<em>In order, day by day.</em>">整趟路线<em>The full route, in order.</em></h2>
+    <p class="lead" data-en="From YIA airport we drive to Borobudur, then head north to Mt Prau, return to Yogyakarta city, spend a day at the cave, and fly back.<br>Arrows follow the order of the trip.">从 YIA 机场出发，先去婆罗浮屠，再向北到普劳山，下山后回日惹市区，去洞穴玩一天，最后从机场飞回。<br>箭头按行程顺序连接。</p>
 
     <div class="map-wrap">
       <div id="trip-map" role="img" aria-label="Trip route map: airport, Borobudur, Mt Prau, Yogyakarta, Jomblang"></div>
@@ -1107,8 +1146,8 @@
 <!-- ═══════════════ ITINERARY ═══════════════ -->
 <section class="itinerary">
   <div class="container">
-    <div class="eyebrow">行程安排 · Itinerary</div>
-    <h2>每天大概做什么<em>Day by day. 5 days, 4 nights.</em></h2>
+    <div class="eyebrow" data-en="Itinerary · Day by day">行程安排 · Itinerary</div>
+    <h2 data-en="What we'd do each day<em>5 days, 4 nights.</em>">每天大概做什么<em>Day by day. 5 days, 4 nights.</em></h2>
 
     <!-- DAY 1 -->
     <article class="day">
@@ -1117,18 +1156,18 @@
           <div class="day-num">01</div>
           <div class="day-date">Sep 9 · Wed</div>
         </div>
-        <div class="day-title">飞抵日惹 · 婆罗浮屠 <small>Fly to Yogyakarta · Borobudur</small></div>
+        <div class="day-title" data-en='Fly to Yogyakarta · Borobudur <small>Day 1 · Arrival</small>'>飞抵日惹 · 婆罗浮屠 <small>Fly to Yogyakarta · Borobudur</small></div>
       </div>
       <div>
         <ul class="timeline">
-          <li><time>08:05</time>新加坡 SIN 樟宜机场起飞（Scoot 直飞，约 2h25min）</li>
-          <li><time>09:30</time>抵达日惹 YIA 国际机场（当地时间）</li>
-          <li><time>10:30</time>驱车前往 <strong>Borobudur 婆罗浮屠</strong>（约 1 小时）</li>
-          <li><time>12:00</time>午餐 + 参观佛塔，登塔需提前预约通票（含导览，约 2 小时）</li>
-          <li><time>15:00</time>启程前往 <strong>Dieng / Patak Banteng</strong> 山下营地（约 3.5–4 小时车程）</li>
-          <li><time>19:00</time>抵达山下民宿，简餐 + 休整，准备第二天上山</li>
+          <li data-en="<time>08:05</time>Depart Singapore Changi (Scoot direct, ~2h 25min)"><time>08:05</time>新加坡 SIN 樟宜机场起飞（Scoot 直飞，约 2h25min）</li>
+          <li data-en="<time>09:30</time>Arrive Yogyakarta YIA Airport (local time)"><time>09:30</time>抵达日惹 YIA 国际机场（当地时间）</li>
+          <li data-en="<time>10:30</time>Drive to <strong>Borobudur Temple</strong> (~1h)"><time>10:30</time>驱车前往 <strong>Borobudur 婆罗浮屠</strong>（约 1 小时）</li>
+          <li data-en="<time>12:00</time>Lunch + temple tour. Stupa-top access requires pre-booked timed tickets (with guide, ~2h)"><time>12:00</time>午餐 + 参观佛塔，登塔需提前预约通票（含导览，约 2 小时）</li>
+          <li data-en="<time>15:00</time>Drive to <strong>Dieng / Patak Banteng</strong> homestay at trailhead (~3.5–4h)"><time>15:00</time>启程前往 <strong>Dieng / Patak Banteng</strong> 山下营地（约 3.5–4 小时车程）</li>
+          <li data-en="<time>19:00</time>Arrive at homestay. Light dinner + rest, ready for tomorrow's climb."><time>19:00</time>抵达山下民宿，简餐 + 休整，准备第二天上山</li>
         </ul>
-        <div class="day-note">
+        <div class="day-note" data-en="<strong>Heads up:</strong> Borobudur is closed on Mondays — Sep 9 is a Wednesday, so we're fine. Only 150 stupa-top tickets are released per hour; book 7 days ahead at ticket.borobudurpark.com.">
           <strong>提示：</strong>Borobudur 周一闭馆，9 月 9 日是周三。佛塔登顶门票每小时仅 150 张，建议提前 7 天在 ticket.borobudurpark.com 预订。
         </div>
       </div>
@@ -1141,20 +1180,20 @@
           <div class="day-num">02</div>
           <div class="day-date">Sep 10 · Thu</div>
         </div>
-        <div class="day-title">登顶 Day 1 · 山顶扎营 <small>Hike up · Camp at summit · ~4 km · +600 m</small></div>
+        <div class="day-title" data-en='Hike up · Camp at the summit <small>~4 km · +600 m</small>'>登顶 Day 1 · 山顶扎营 <small>Hike up · Camp at summit · ~4 km · +600 m</small></div>
       </div>
       <div>
         <ul class="timeline">
-          <li><time>09:00</time>早餐 + 装备整理，与 porter 和向导集合</li>
-          <li><time>10:00</time>从 Patak Banteng 登山口出发（也可乘 ojek 摩托至 Pos 1，缩短约 1 小时步行）</li>
-          <li><time>10:30</time>徒步上山：Pos 1 → Pos 2 → Pos 3 → 山顶</li>
-          <li><time>14:00</time>抵达山顶大草原（含休息时间约 3.5–4.5 小时）</li>
-          <li><time>14:30</time>Porter 协助搭帐篷、布置营地，热饮 + 小食</li>
-          <li><time>17:30</time>看夕阳，远眺 Sindoro 与 Sumbing 火山</li>
-          <li><time>18:30</time>晚餐（向导团队烹饪）</li>
-          <li><time>20:30</time>早睡，山顶夜晚约 0–5°C</li>
+          <li data-en="<time>09:00</time>Breakfast + gear check, meet porters and guide"><time>09:00</time>早餐 + 装备整理，与 porter 和向导集合</li>
+          <li data-en="<time>10:00</time>Set off from Patak Banteng trailhead (or take an ojek motorbike up to Pos 1 to skip ~1h of walking)"><time>10:00</time>从 Patak Banteng 登山口出发（也可乘 ojek 摩托至 Pos 1，缩短约 1 小时步行）</li>
+          <li data-en="<time>10:30</time>Hike up: Pos 1 → Pos 2 → Pos 3 → summit"><time>10:30</time>徒步上山：Pos 1 → Pos 2 → Pos 3 → 山顶</li>
+          <li data-en="<time>14:00</time>Reach the summit grassland (~3.5–4.5h with breaks)"><time>14:00</time>抵达山顶大草原（含休息时间约 3.5–4.5 小时）</li>
+          <li data-en="<time>14:30</time>Porters set up tents and camp, hot drinks + snacks"><time>14:30</time>Porter 协助搭帐篷、布置营地，热饮 + 小食</li>
+          <li data-en="<time>17:30</time>Sunset, with Sindoro and Sumbing on the horizon"><time>17:30</time>看夕阳，远眺 Sindoro 与 Sumbing 火山</li>
+          <li data-en="<time>18:30</time>Dinner (cooked by the guide team)"><time>18:30</time>晚餐（向导团队烹饪）</li>
+          <li data-en="<time>20:30</time>Early to bed — summit nights are 0–5°C"><time>20:30</time>早睡，山顶夜晚约 0–5°C</li>
         </ul>
-        <div class="day-note">
+        <div class="day-note" data-en="<strong>On the difficulty:</strong> The Patak Banteng route is widely considered the easiest and most family-friendly way up Prau. No technical climbing, no exposed ridges. What kids need most is patience and warm clothes, not skill.">
           <strong>关于体力：</strong>此线路（Patak Banteng 路线）公认是 Prau 最简单、最适合新手与亲子的一条。无技术攀登、无暴露山脊。
           孩子需要的更多是耐心和保暖，不是技巧。
         </div>
@@ -1168,21 +1207,21 @@
           <div class="day-num">03</div>
           <div class="day-date">Sep 11 · Fri</div>
         </div>
-        <div class="day-title">登顶 + 日出 · 下山 <small>Summit push · Sunrise · Descent · ~4–5 km · −600 m</small></div>
+        <div class="day-title" data-en='Summit push + sunrise · Descent <small>~4–5 km · −600 m</small>'>登顶 + 日出 · 下山 <small>Summit push · Sunrise · Descent · ~4–5 km · −600 m</small></div>
       </div>
       <div>
         <ul class="timeline">
-          <li><time>04:00</time>起床，穿好保暖层（山顶 0–5°C）</li>
-          <li><time>04:30</time>头灯出发，从营地往真正的山顶推进（约 20–60 分钟，黑 + 冷，跟紧向导）</li>
-          <li><time>05:15</time>抵达观景制高点，泡热茶等待</li>
-          <li><time>05:35</time>日出，云海在脚下展开（9 月概率约 60–80%）</li>
-          <li><time>06:30</time>下到营地，早餐 + 收帐篷</li>
-          <li><time>08:00</time>开始下山（约 2–2.5 小时）</li>
-          <li><time>10:30</time>回到山下营地，热水澡 + 午餐</li>
-          <li><time>13:00</time>启程返回日惹（约 3.5–4 小时车程）</li>
-          <li><time>17:30</time>抵达日惹市区，入住酒店</li>
+          <li data-en="<time>04:00</time>Wake up, layer up (summit is 0–5°C)"><time>04:00</time>起床，穿好保暖层（山顶 0–5°C）</li>
+          <li data-en="<time>04:30</time>Headlamps on, push from camp to the true summit (~20–60 min, dark and cold, stay close to the guide)"><time>04:30</time>头灯出发，从营地往真正的山顶推进（约 20–60 分钟，黑 + 冷，跟紧向导）</li>
+          <li data-en="<time>05:15</time>Arrive at the viewpoint, brew hot tea while we wait"><time>05:15</time>抵达观景制高点，泡热茶等待</li>
+          <li data-en="<time>05:35</time>Sunrise, with the cloud sea unfolding below (~60–80% chance in September)"><time>05:35</time>日出，云海在脚下展开（9 月概率约 60–80%）</li>
+          <li data-en="<time>06:30</time>Back to camp, breakfast + pack up tents"><time>06:30</time>下到营地，早餐 + 收帐篷</li>
+          <li data-en="<time>08:00</time>Begin the descent (~2–2.5h)"><time>08:00</time>开始下山（约 2–2.5 小时）</li>
+          <li data-en="<time>10:30</time>Back at the trailhead homestay, hot shower + lunch"><time>10:30</time>回到山下营地，热水澡 + 午餐</li>
+          <li data-en="<time>13:00</time>Drive back to Yogyakarta (~3.5–4h)"><time>13:00</time>启程返回日惹（约 3.5–4 小时车程）</li>
+          <li data-en="<time>17:30</time>Check into the hotel in Yogyakarta city"><time>17:30</time>抵达日惹市区，入住酒店</li>
         </ul>
-        <div class="day-note">
+        <div class="day-note" data-en="<strong>About the &quot;summit push&quot;:</strong> Camp is usually around Bukit Teletubbies (~2,550 m), which is still 20–60 minutes and ~50 m of climbing from the highest viewpoint. It's dark, windy, and kids may be groggy — so this isn't a &quot;wake up and you're there&quot; moment. Plan the headlamps, warm layers and hot drinks.">
           <strong>关于"山顶推进"：</strong>营地通常设在 Bukit Teletubbies 一带（~2,550 m），离最高观景点还要走 20–60 分钟、再爬 ~50 m。
           天黑、风大、孩子可能困倦——所以不是"起床就到"，需要计划好头灯、保暖、和热饮。
         </div>
@@ -1196,19 +1235,19 @@
           <div class="day-num">04</div>
           <div class="day-date">Sep 12 · Sat</div>
         </div>
-        <div class="day-title">约姆布朗洞 + 卡里苏奇 <small>Jomblang Cave + Kali Suci</small></div>
+        <div class="day-title" data-en="Jomblang Cave + Kali Suci <small>Cave + cave-river tubing</small>">约姆布朗洞 + 卡里苏奇 <small>Jomblang Cave + Kali Suci</small></div>
       </div>
       <div>
         <ul class="timeline">
-          <li><time>06:30</time>酒店出发（约 1.5 小时车程到 Gunung Kidul）</li>
-          <li><time>08:30</time>抵达 <strong>Goa Jomblang</strong>，装备讲解 · 孩子提前确认 tandem 安排</li>
-          <li><time>10:00</time>速降进 60 米深的天井（孩子由向导带，绑在大人 / 向导身上）</li>
-          <li><time>11:00</time>"天堂之光"——阳光从洞顶斜射的奇景</li>
-          <li><time>12:30</time>午餐</li>
-          <li><time>14:00</time>前往 <strong>Kali Suci 地下河漂流</strong>（皮筏，孩子也能玩）</li>
-          <li><time>17:00</time>返回日惹市区，逛 Malioboro 街买点纪念品</li>
+          <li data-en="<time>06:30</time>Leave the hotel (~1.5h drive to Gunung Kidul)"><time>06:30</time>酒店出发（约 1.5 小时车程到 Gunung Kidul）</li>
+          <li data-en="<time>08:30</time>Arrive at <strong>Goa Jomblang</strong>, gear briefing · confirm the kid's tandem arrangement"><time>08:30</time>抵达 <strong>Goa Jomblang</strong>，装备讲解 · 孩子提前确认 tandem 安排</li>
+          <li data-en="<time>10:00</time>Rappel 60 m down into the sinkhole (kids descend tandem, harnessed to an adult / guide)"><time>10:00</time>速降进 60 米深的天井（孩子由向导带，绑在大人 / 向导身上）</li>
+          <li data-en="<time>11:00</time>&quot;Heavenly light&quot; — a shaft of sunlight beams down through the cave roof"><time>11:00</time>"天堂之光"——阳光从洞顶斜射的奇景</li>
+          <li data-en="<time>12:30</time>Lunch"><time>12:30</time>午餐</li>
+          <li data-en="<time>14:00</time>Head to <strong>Kali Suci underground river tubing</strong> (rubber tubes, kid-friendly)"><time>14:00</time>前往 <strong>Kali Suci 地下河漂流</strong>（皮筏，孩子也能玩）</li>
+          <li data-en="<time>17:00</time>Back to Yogya city, stroll Malioboro Street for souvenirs"><time>17:00</time>返回日惹市区，逛 Malioboro 街买点纪念品</li>
         </ul>
-        <div class="day-note">
+        <div class="day-note" data-en="<strong>Bringing a 7-year-old to Jomblang:</strong> Several operators accept kids 5+, descending <strong>tandem</strong> — the child is strapped to an adult or guide, not handling rope alone. To do: WhatsApp goajomblang.com ahead to confirm (1) tandem and (2) kid-sized boots (limited stock, arrive early). If a parent finds it too intense, the family can split up that day — stay on the surface, or swap to nearby Goa Pindul tubing instead.">
           <strong>关于带 7 岁孩子去 Jomblang：</strong>多家操作商接受 5 岁以上的孩子，方式是 <strong>tandem</strong>——孩子绑在大人或向导身上一起下降，不是单独操作绳索。
           要做的：提前 WhatsApp 联系 goajomblang.com 确认 tandem + 儿童尺码靴子（数量有限，要早到）。
           如果家长觉得太刺激，也可以那天分头——不下降的留在地面 / 改去附近的 Goa Pindul 漂流洞。
@@ -1223,14 +1262,14 @@
           <div class="day-num">05</div>
           <div class="day-date">Sep 13 · Sun</div>
         </div>
-        <div class="day-title">飞回新加坡 <small>Fly back home</small></div>
+        <div class="day-title" data-en="Fly back to Singapore <small>Day 5 · Home</small>">飞回新加坡 <small>Fly back home</small></div>
       </div>
       <div>
         <ul class="timeline">
-          <li><time>08:00</time>酒店早餐 + 退房</li>
-          <li><time>09:00</time>前往 YIA 机场</li>
-          <li><time>10:30</time>YIA 起飞（Scoot 直飞）</li>
-          <li><time>13:55</time>抵达新加坡 SIN，回家</li>
+          <li data-en="<time>08:00</time>Breakfast at the hotel + check out"><time>08:00</time>酒店早餐 + 退房</li>
+          <li data-en="<time>09:00</time>Head to YIA airport"><time>09:00</time>前往 YIA 机场</li>
+          <li data-en="<time>10:30</time>YIA departure (Scoot direct)"><time>10:30</time>YIA 起飞（Scoot 直飞）</li>
+          <li data-en="<time>13:55</time>Arrive Singapore SIN, home"><time>13:55</time>抵达新加坡 SIN，回家</li>
         </ul>
       </div>
     </article>
@@ -1240,8 +1279,8 @@
 <!-- ═══════════════ HIGHLIGHTS ═══════════════ -->
 <section class="highlights">
   <div class="container">
-    <div class="eyebrow">三个目的地 · Places</div>
-    <h2>这趟去哪些地方<em>Three stops in Central Java.</em></h2>
+    <div class="eyebrow" data-en="Three stops · Places">三个目的地 · Places</div>
+    <h2 data-en="Where this trip goes<em>Three stops in Central Java.</em>">这趟去哪些地方<em>Three stops in Central Java.</em></h2>
 
     <div class="cards">
       <article class="card">
@@ -1250,13 +1289,13 @@
           <span class="card-tag">Day 1</span>
         </div>
         <div class="card-body">
-          <h3>婆罗浮屠</h3>
+          <h3 data-en="Borobudur">婆罗浮屠</h3>
           <div class="card-en">Borobudur Temple</div>
-          <p>9 世纪的世界最大佛教建筑群，2,672 块浮雕。机场出来后顺路就能去，2–3 小时够看。</p>
+          <p data-en="The world's largest Buddhist monument, 9th century, 2,672 relief panels. It's right on the way from the airport, and 2–3 hours is enough.">9 世纪的世界最大佛教建筑群，2,672 块浮雕。机场出来后顺路就能去，2–3 小时够看。</p>
           <div class="card-meta">
-            <span>⏱ 2–3 小时</span>
-            <span>📍 距日惹 40km</span>
-            <span>🎟 需提前预约</span>
+            <span data-en="⏱ 2–3 hours">⏱ 2–3 小时</span>
+            <span data-en="📍 40 km from Yogya">📍 距日惹 40km</span>
+            <span data-en="🎟 Book in advance">🎟 需提前预约</span>
           </div>
         </div>
       </article>
@@ -1267,13 +1306,13 @@
           <span class="card-tag">Day 2 — 3</span>
         </div>
         <div class="card-body">
-          <h3>普劳山</h3>
+          <h3 data-en="Mt Prau">普劳山</h3>
           <div class="card-en">Gunung Prau · 2,590 m</div>
-          <p>这趟的主要目的地。山顶是大片草原，能看到周围 5 座火山。九月几乎每天有云海。</p>
+          <p data-en="The main draw of the trip. The summit is a wide grassland with 5 surrounding volcanoes in view. The cloud sea shows up almost every morning in September.">这趟的主要目的地。山顶是大片草原，能看到周围 5 座火山。九月几乎每天有云海。</p>
           <div class="card-meta">
-            <span>⏱ 上 3.5h / 下 2.5h</span>
-            <span>🏕 山顶过夜</span>
-            <span>👶 适合 6 岁+</span>
+            <span data-en="⏱ 3.5h up / 2.5h down">⏱ 上 3.5h / 下 2.5h</span>
+            <span data-en="🏕 Overnight at summit">🏕 山顶过夜</span>
+            <span data-en="👶 Ages 6+">👶 适合 6 岁+</span>
           </div>
         </div>
       </article>
@@ -1284,13 +1323,13 @@
           <span class="card-tag">Day 4</span>
         </div>
         <div class="card-body">
-          <h3>约姆布朗洞</h3>
+          <h3 data-en="Jomblang Cave">约姆布朗洞</h3>
           <div class="card-en">Goa Jomblang</div>
-          <p>用绳索速降进 60 米深的天井。中午有"天堂之光"——一束阳光打在地面。孩子由向导带着用 tandem 方式下降。</p>
+          <p data-en="Rappel by rope into a 60 m deep sinkhole. Around noon, &quot;heavenly light&quot; — a single shaft of sun on the cave floor. Kids descend tandem with a guide.">用绳索速降进 60 米深的天井。中午有"天堂之光"——一束阳光打在地面。孩子由向导带着用 tandem 方式下降。</p>
           <div class="card-meta">
-            <span>⏱ 3–4 小时</span>
-            <span>🪢 60m 速降</span>
-            <span>👶 5 岁起可由向导带</span>
+            <span data-en="⏱ 3–4 hours">⏱ 3–4 小时</span>
+            <span data-en="🪢 60 m rappel">🪢 60m 速降</span>
+            <span data-en="👶 Tandem from age 5">👶 5 岁起可由向导带</span>
           </div>
         </div>
       </article>
@@ -1301,30 +1340,30 @@
 <!-- ═══════════════ TIMING ═══════════════ -->
 <section class="timing">
   <div class="container">
-    <div class="eyebrow">日出当天 · Morning of Day 3</div>
-    <h2>几点起床？几点日出？<em>So you can plan for the cold.</em></h2>
-    <p class="lead" style="color:#cdc3b3">9 月 11 日早晨在山顶的时间表。仅供参考，向导会现场调整。</p>
+    <div class="eyebrow" data-en="Sunrise day · Morning of Day 3">日出当天 · Morning of Day 3</div>
+    <h2 data-en="What time to wake? When does the sun rise?<em>So you can plan for the cold.</em>">几点起床？几点日出？<em>So you can plan for the cold.</em></h2>
+    <p class="lead" style="color:#cdc3b3" data-en="Sep 11 summit-morning timeline. Indicative — your guide will adjust on the day.">9 月 11 日早晨在山顶的时间表。仅供参考，向导会现场调整。</p>
 
     <div class="clock-grid">
       <div class="clock">
         <div class="clock-time">04:00</div>
-        <div class="clock-label">起床</div>
-        <div class="clock-note">Wake up · 0–5°C</div>
+        <div class="clock-label" data-en="Wake up">起床</div>
+        <div class="clock-note" data-en="0–5°C · Layer up">Wake up · 0–5°C</div>
       </div>
       <div class="clock">
         <div class="clock-time">04:30</div>
-        <div class="clock-label">登顶</div>
-        <div class="clock-note">头灯出发 · 20–60 min</div>
+        <div class="clock-label" data-en="Summit push">登顶</div>
+        <div class="clock-note" data-en="Headlamps · 20–60 min">头灯出发 · 20–60 min</div>
       </div>
       <div class="clock">
         <div class="clock-time">05:35</div>
-        <div class="clock-label">日出</div>
-        <div class="clock-note">Sunrise · 云海最美</div>
+        <div class="clock-label" data-en="Sunrise">日出</div>
+        <div class="clock-note" data-en="Cloud sea at its peak">Sunrise · 云海最美</div>
       </div>
       <div class="clock">
         <div class="clock-time">08:00</div>
-        <div class="clock-label">下撤</div>
-        <div class="clock-note">Begin descent</div>
+        <div class="clock-label" data-en="Descend">下撤</div>
+        <div class="clock-note" data-en="Begin descent">Begin descent</div>
       </div>
     </div>
   </div>
@@ -1333,155 +1372,155 @@
 <!-- ═══════════════ PRICING ═══════════════ -->
 <section class="pricing">
   <div class="container">
-    <div class="eyebrow">费用估算 · Pricing</div>
-    <h2>大致预算<em>Rough numbers I've been quoted. Verify before you book.</em></h2>
-    <p class="lead">以下是我在网上查到 / 询过的报价，<em>仅供参考</em>。每家都需要自己去对应的渠道直接预订，不是打包行程。<br>登山套餐人数越多人均越便宜——所以如果有几家凑成一队，会划算不少。</p>
+    <div class="eyebrow" data-en="Pricing · Estimates">费用估算 · Pricing</div>
+    <h2 data-en="Rough budget<em>Numbers I've been quoted. Verify before you book.</em>">大致预算<em>Rough numbers I've been quoted. Verify before you book.</em></h2>
+    <p class="lead" data-en="These are quotes I've found online or been given directly — <em>indicative only</em>. Each family books with the relevant provider directly; this isn't a packaged tour.<br>The hiking package gets cheaper per person as the group grows — so a few families joining up makes a real difference.">以下是我在网上查到 / 询过的报价，<em>仅供参考</em>。每家都需要自己去对应的渠道直接预订，不是打包行程。<br>登山套餐人数越多人均越便宜——所以如果有几家凑成一队，会划算不少。</p>
 
     <div class="price-stack">
       <div class="price-row">
-        <div class="price-name">
+        <div class="price-name" data-en="Return flights<small>Scoot SIN ⇄ YIA · direct</small>">
           往返机票
           <small>Scoot SIN ⇄ YIA · direct</small>
         </div>
-        <div class="price-amt">
+        <div class="price-amt" data-en="SGD 312<small>per person</small>">
           SGD 312
           <small>per person</small>
         </div>
-        <div class="price-detail">去程 Sep 9 · 08:05 SIN → 09:30 YIA · 回程 Sep 13 · 10:30 YIA → 13:55 SIN</div>
+        <div class="price-detail" data-en="Outbound Sep 9 · 08:05 SIN → 09:30 YIA · Return Sep 13 · 10:30 YIA → 13:55 SIN">去程 Sep 9 · 08:05 SIN → 09:30 YIA · 回程 Sep 13 · 10:30 YIA → 13:55 SIN</div>
       </div>
 
       <div class="price-row">
-        <div class="price-name">
+        <div class="price-name" data-en="Mt Prau hike package<small>Premium Class 2H1M · per pair</small>">
           普劳登山套餐
           <small>Premium Class 2H1M · per pair</small>
         </div>
-        <div class="price-amt">
+        <div class="price-amt" data-en="IDR 3,750,000<small>≈ SGD 305 / 2 pax</small>">
           IDR 3,750,000
           <small>≈ SGD 305 / 2 人</small>
         </div>
-        <div class="price-detail">含向导、porter、帐篷、睡袋、防潮垫、餐食、ojek 摩托接驳。人均约 SGD 150。</div>
+        <div class="price-detail" data-en="Includes guide, porters, tent, sleeping bag, pad, meals, ojek motorbike shuttle. ~SGD 150 per person.">含向导、porter、帐篷、睡袋、防潮垫、餐食、ojek 摩托接驳。人均约 SGD 150。</div>
       </div>
 
       <div class="price-row">
-        <div class="price-name">
+        <div class="price-name" data-en="Ground transport<small>YIA ⇄ Borobudur ⇄ Dieng ⇄ Yogya · private vehicle, full trip</small>">
           地面交通
           <small>YIA ⇄ Borobudur ⇄ Dieng ⇄ Yogya · 全程包车</small>
         </div>
-        <div class="price-amt">
+        <div class="price-amt" data-en="IDR 1,700,000<small>per group · whole vehicle</small>">
           IDR 1,700,000
           <small>per group · 整车</small>
         </div>
-        <div class="price-detail">人数越多人均越便宜——4 人均摊后每人不到 SGD 35。</div>
+        <div class="price-detail" data-en="Cheaper per person with more pax — split 4 ways, that's under SGD 35 each.">人数越多人均越便宜——4 人均摊后每人不到 SGD 35。</div>
       </div>
 
       <div class="price-row">
-        <div class="price-name">
+        <div class="price-name" data-en="Everything else<small>Hotel · meals · attraction tickets · Jomblang</small>">
           其他支出
           <small>住宿 · 餐食 · 景点门票 · Jomblang</small>
         </div>
-        <div class="price-amt">
+        <div class="price-amt" data-en="~SGD 200<small>per person · est.</small>">
           ~SGD 200
           <small>per person · est.</small>
         </div>
-        <div class="price-detail">日惹 2 晚酒店、Borobudur 通票（成人 SGD 38 / 儿童 SGD 26）、Jomblang 速降 + Kalisuci（含包车午餐 ~SGD 165）。</div>
+        <div class="price-detail" data-en="2 hotel nights in Yogya, Borobudur ticket (adult SGD 38 / child SGD 26), Jomblang rappel + Kalisuci (with private car & lunch ~SGD 165).">日惹 2 晚酒店、Borobudur 通票（成人 SGD 38 / 儿童 SGD 26）、Jomblang 速降 + Kalisuci（含包车午餐 ~SGD 165）。</div>
       </div>
     </div>
 
-    <h3 style="margin-top:60px;font-size:18px">登山套餐 · 人数越多越便宜</h3>
+    <h3 style="margin-top:60px;font-size:18px" data-en="Hike package · cheaper with more people">登山套餐 · 人数越多越便宜</h3>
     <div class="group-table">
       <div class="group-table-head">
-        <span>人数</span>
-        <span>人均</span>
-        <span>总价</span>
+        <span data-en="Group">人数</span>
+        <span data-en="Per person">人均</span>
+        <span data-en="Total">总价</span>
       </div>
       <div class="group-row">
-        <strong>2 人</strong>
+        <strong data-en="2 pax">2 人</strong>
         <span class="perp">IDR 1,875,000</span>
         <span class="total">IDR 3,750,000</span>
       </div>
       <div class="group-row group-highlight">
-        <strong>4 人</strong>
+        <strong data-en="4 pax">4 人</strong>
         <span class="perp">IDR 1,255,000</span>
         <span class="total">IDR 5,020,000</span>
       </div>
       <div class="group-row group-highlight">
-        <strong>6 人</strong>
+        <strong data-en="6 pax">6 人</strong>
         <span class="perp">IDR 1,210,000</span>
         <span class="total">IDR 7,260,000</span>
       </div>
       <div class="group-row">
-        <strong>8 人</strong>
+        <strong data-en="8 pax">8 人</strong>
         <span class="perp">IDR 1,200,000</span>
         <span class="total">IDR 9,600,000</span>
       </div>
       <div class="group-row">
-        <strong>10 人</strong>
+        <strong data-en="10 pax">10 人</strong>
         <span class="perp">IDR 1,085,000</span>
         <span class="total">IDR 10,850,000</span>
       </div>
     </div>
-    <p class="group-note">数据来源：portergunungsumbing.com Premium Class 2H1M 套餐报价表。</p>
+    <p class="group-note" data-en="Source: portergunungsumbing.com Premium Class 2H1M package quote.">数据来源：portergunungsumbing.com Premium Class 2H1M 套餐报价表。</p>
   </div>
 </section>
 
 <!-- ═══════════════ PACK LIST ═══════════════ -->
 <section class="pack">
   <div class="container">
-    <div class="eyebrow">行装清单 · What to pack</div>
-    <h2>给孩子的装备清单<em>It's cold up there — pack like winter.</em></h2>
+    <div class="eyebrow" data-en="Packing · What to bring">行装清单 · What to pack</div>
+    <h2 data-en="Packing list for the kids<em>It's cold up there — pack like winter.</em>">给孩子的装备清单<em>It's cold up there — pack like winter.</em></h2>
 
     <div class="pack-grid">
       <div class="pack-col">
         <h4>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z"/></svg>
-          保暖衣物
+          <span data-en="Warm layers">保暖衣物</span>
         </h4>
         <ul>
-          <li>羽绒服 / 厚摇粒绒</li>
-          <li>防风外套</li>
-          <li>保暖内衣 + 长裤</li>
-          <li>毛线帽 + 手套 + 围脖</li>
-          <li>厚袜 2 双（羊毛或速干）</li>
+          <li data-en="Down jacket / heavy fleece">羽绒服 / 厚摇粒绒</li>
+          <li data-en="Windproof shell">防风外套</li>
+          <li data-en="Thermal base layers (top + bottom)">保暖内衣 + 长裤</li>
+          <li data-en="Beanie + gloves + neck gaiter">毛线帽 + 手套 + 围脖</li>
+          <li data-en="2 pairs thick socks (wool or quick-dry)">厚袜 2 双（羊毛或速干）</li>
         </ul>
       </div>
       <div class="pack-col">
         <h4>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13c0-3 2-5 5-5h8c3 0 5 2 5 5v3l-2 4H5l-2-4v-3z"/><path d="M8 8V6a4 4 0 014-4 4 4 0 014 4v2"/></svg>
-          徒步装备
+          <span data-en="Hiking gear">徒步装备</span>
         </h4>
         <ul>
-          <li>登山鞋 / 防滑运动鞋</li>
-          <li>登山杖（下山保护膝盖）</li>
-          <li>家长一个 20L 小包就够（4 小时徒步轻装上）</li>
-          <li>重装备 porter 背 · 孩子只带零食 + 水壶</li>
-          <li>头灯 + 备用电池</li>
-          <li>雨衣 / 防水罩</li>
+          <li data-en="Hiking shoes / grippy trainers">登山鞋 / 防滑运动鞋</li>
+          <li data-en="Trekking poles (saves knees on the way down)">登山杖（下山保护膝盖）</li>
+          <li data-en="A 20L day pack per parent is plenty (4-hour hike, light load)">家长一个 20L 小包就够（4 小时徒步轻装上）</li>
+          <li data-en="Heavy gear goes with the porter · kids carry only snacks + water">重装备 porter 背 · 孩子只带零食 + 水壶</li>
+          <li data-en="Headlamp + spare batteries">头灯 + 备用电池</li>
+          <li data-en="Rain jacket / pack cover">雨衣 / 防水罩</li>
         </ul>
       </div>
       <div class="pack-col">
         <h4>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12V8a7 7 0 0114 0v4M5 12h14M5 12v6a2 2 0 002 2h10a2 2 0 002-2v-6"/></svg>
-          饮食
+          <span data-en="Food & water">饮食</span>
         </h4>
         <ul>
-          <li>每人 1.5–2 升水（路上无水源）</li>
-          <li>能量棒 / 巧克力 / 坚果</li>
-          <li>保温水壶（装热水）</li>
-          <li>孩子爱吃的零食（士气补给）</li>
-          <li>正餐由 porter 团队准备，不用自带</li>
+          <li data-en="1.5–2 L water per person (no water sources on route)">每人 1.5–2 升水（路上无水源）</li>
+          <li data-en="Energy bars / chocolate / nuts">能量棒 / 巧克力 / 坚果</li>
+          <li data-en="Insulated bottle for hot water">保温水壶（装热水）</li>
+          <li data-en="Favorite snacks for the kids (morale fuel)">孩子爱吃的零食（士气补给）</li>
+          <li data-en="Meals are cooked by the porter team — no need to pack any">正餐由 porter 团队准备，不用自带</li>
         </ul>
       </div>
       <div class="pack-col">
         <h4>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          其他
+          <span data-en="Everything else">其他</span>
         </h4>
         <ul>
-          <li>防晒霜 + 太阳镜</li>
-          <li>湿巾 + 卷纸（山上无厕所）</li>
-          <li>简易急救包</li>
-          <li>充电宝</li>
-          <li>少量印尼盾现金</li>
+          <li data-en="Sunscreen + sunglasses">防晒霜 + 太阳镜</li>
+          <li data-en="Wet wipes + toilet paper (no toilets on the mountain)">湿巾 + 卷纸（山上无厕所）</li>
+          <li data-en="Basic first-aid kit">简易急救包</li>
+          <li data-en="Power bank">充电宝</li>
+          <li data-en="A bit of Indonesian rupiah cash">少量印尼盾现金</li>
         </ul>
       </div>
     </div>
@@ -1491,42 +1530,42 @@
 <!-- ═══════════════ FAQ ═══════════════ -->
 <section class="faq">
   <div class="container-narrow">
-    <div class="eyebrow">常见问题 · FAQ</div>
-    <h2>常被问到的几件事<em>Things parents usually ask.</em></h2>
+    <div class="eyebrow" data-en="FAQ · Common questions">常见问题 · FAQ</div>
+    <h2 data-en="What parents usually ask<em>Things people bring up.</em>">常被问到的几件事<em>Things parents usually ask.</em></h2>
 
     <div style="margin-top:30px">
       <details>
-        <summary>这趟安全吗？最近不是有新加坡人在印尼火山遇难？</summary>
-        <p>这是个值得正面回答的问题。2026 年 5 月 8 日，两名新加坡男子（29 岁和 27 岁）在 <strong>哈马黑拉岛（Halmahera）的 Mt Dukono 火山</strong> 喷发中遇难，5 月 10 日被找到。这是一座 <em>活火山</em>，长期处于喷发状态，并不是常规徒步目的地。</p>
-        <p>我们要去的 <strong>Mt Prau</strong> 性质完全不同：它是一座 <em>休眠火山</em>，没有有记录的历史喷发，也不在印尼火山监测局（PVMBG）的活跃警戒名单上。山顶被开发成草原营地，每年接待大量本地家庭和学生团体，是中爪哇最入门、最大众的徒步线路。</p>
-        <p>当然山区天气仍然要尊重——所以会请当地向导带队、雇 porter、不脱队、不夜行、保暖装备齐全。任何身体不适或天气异常都以安全优先，向导有权改路线。</p>
+        <summary data-en="Is this trip safe? Didn't some Singaporeans recently die on an Indonesian volcano?">这趟安全吗？最近不是有新加坡人在印尼火山遇难？</summary>
+        <p data-en="It's a fair question and worth addressing head-on. On May 8, 2026, two Singaporean men (29 and 27) died in an eruption of <strong>Mt Dukono on Halmahera Island</strong>; their bodies were recovered May 10. Dukono is an <em>active volcano</em> in a near-constant state of eruption, and it isn't a standard trekking destination.">这是个值得正面回答的问题。2026 年 5 月 8 日，两名新加坡男子（29 岁和 27 岁）在 <strong>哈马黑拉岛（Halmahera）的 Mt Dukono 火山</strong> 喷发中遇难，5 月 10 日被找到。这是一座 <em>活火山</em>，长期处于喷发状态，并不是常规徒步目的地。</p>
+        <p data-en="The <strong>Mt Prau</strong> we're going to is a completely different beast: a <em>dormant volcano</em> with no recorded eruption history, and it isn't on Indonesia's volcanology agency (PVMBG) active-alert list. The summit grassland has been developed for camping, hosts huge numbers of local families and student groups every year, and is one of Central Java's most beginner-friendly hikes.">我们要去的 <strong>Mt Prau</strong> 性质完全不同：它是一座 <em>休眠火山</em>，没有有记录的历史喷发，也不在印尼火山监测局（PVMBG）的活跃警戒名单上。山顶被开发成草原营地，每年接待大量本地家庭和学生团体，是中爪哇最入门、最大众的徒步线路。</p>
+        <p data-en="Mountain weather still demands respect, of course — so we'll go with a local guide, hire porters, stay together, avoid night travel, and pack proper warm gear. Any sign of illness or unusual weather defaults to caution, and the guide has the final call on the route.">当然山区天气仍然要尊重——所以会请当地向导带队、雇 porter、不脱队、不夜行、保暖装备齐全。任何身体不适或天气异常都以安全优先，向导有权改路线。</p>
       </details>
       <details>
-        <summary>孩子多大可以爬？</summary>
-        <p>Patak Banteng 路线本身没有技术难度，6 岁以上、能连续走路 1 小时的孩子，配合家长鼓励都能完成。8 岁以上更轻松。挑战不在于陡，而在于"长"——单程 3.5 小时左右，再加上山顶的低温。</p>
+        <summary data-en="What's the minimum age for the hike?">孩子多大可以爬？</summary>
+        <p data-en="The Patak Banteng route has no technical sections. Kids 6+ who can walk continuously for an hour, with parental encouragement, can finish it. 8+ is comfortable. The challenge isn't steepness — it's the &quot;long&quot; part: ~3.5 hours one way, plus cold at the summit.">Patak Banteng 路线本身没有技术难度，6 岁以上、能连续走路 1 小时的孩子，配合家长鼓励都能完成。8 岁以上更轻松。挑战不在于陡，而在于"长"——单程 3.5 小时左右，再加上山顶的低温。</p>
       </details>
       <details>
-        <summary>会不会很冷？</summary>
-        <p>山顶夜晚 0–5°C，有风的时候体感更低。白天 10–18°C 比较舒适。睡袋、羽绒服、保暖帽是必备。Premium 套餐含睡袋和防潮垫，但建议自带保暖内衣。</p>
+        <summary data-en="How cold does it get?">会不会很冷？</summary>
+        <p data-en="Summit nights are 0–5°C, colder with wind. Daytime is a comfortable 10–18°C. Sleeping bag, down jacket, and warm hat are essential. The Premium package includes the sleeping bag and pad, but bring your own thermal base layer.">山顶夜晚 0–5°C，有风的时候体感更低。白天 10–18°C 比较舒适。睡袋、羽绒服、保暖帽是必备。Premium 套餐含睡袋和防潮垫，但建议自带保暖内衣。</p>
       </details>
       <details>
-        <summary>有没有高原反应？</summary>
-        <p>2,590 米属于中等海拔，绝大多数人不会有明显高反。可能会感觉稍微喘一些。提前一周注意休息、保持饮水即可。如果孩子有心肺基础病，需要先咨询医生。</p>
+        <summary data-en="Any altitude sickness risk?">有没有高原反应？</summary>
+        <p data-en="2,590 m is moderate altitude — most people won't have significant AMS, maybe just a bit of breathlessness. Rest well the week before and stay hydrated. Kids with cardio or pulmonary conditions should consult a doctor first.">2,590 米属于中等海拔，绝大多数人不会有明显高反。可能会感觉稍微喘一些。提前一周注意休息、保持饮水即可。如果孩子有心肺基础病，需要先咨询医生。</p>
       </details>
       <details>
-        <summary>下雨怎么办？</summary>
-        <p>9 月是中爪哇旱季，月均降雨量仅约 49mm，是全年最干燥的几个月之一。但山区天气多变，雨衣还是要带。如果出发当天天气极差，向导会建议改期或缩短行程。</p>
+        <summary data-en="What if it rains?">下雨怎么办？</summary>
+        <p data-en="September is dry season in Central Java — the monthly average is only ~49 mm, among the driest months of the year. Mountain weather is still unpredictable, so bring rain gear. If the forecast is genuinely awful on the day, the guide may recommend rescheduling or shortening the trip.">9 月是中爪哇旱季，月均降雨量仅约 49mm，是全年最干燥的几个月之一。但山区天气多变，雨衣还是要带。如果出发当天天气极差，向导会建议改期或缩短行程。</p>
       </details>
       <details>
-        <summary>7 岁的孩子能下 Jomblang Cave 吗？</summary>
-        <p>能。多家操作商接受 5 岁以上的孩子，方式是 <strong>tandem 联体下降</strong>——孩子用安全带绑在大人或向导身上一起下，不是自己操作绳索。
+        <summary data-en="Can a 7-year-old do Jomblang Cave?">7 岁的孩子能下 Jomblang Cave 吗？</summary>
+        <p data-en="Yes. Several operators take kids 5+ via <strong>tandem descent</strong> — the child is harnessed onto an adult or guide and goes down together, not handling rope on their own. Family blogs report 6-year-olds completing it, and TripAdvisor reviews include kids 7–9.<br>Practically, you'll want to WhatsApp <a href=&quot;https://goajomblang.com&quot; style=&quot;color:var(--sun-2)&quot;>goajomblang.com</a> ahead and confirm two things: (1) tandem descent, (2) availability of kid-sized boots (limited stock). If a parent isn't comfortable, the family can split that day — non-rappellers can swap to nearby Goa Pindul for tubing, which the whole family can do.">能。多家操作商接受 5 岁以上的孩子，方式是 <strong>tandem 联体下降</strong>——孩子用安全带绑在大人或向导身上一起下，不是自己操作绳索。
         网上能查到 6 岁孩子顺利完成的家庭游记，TripAdvisor 上也有 7–9 岁的孩子组队下去的案例。<br>
         实际操作上，需要提前 WhatsApp 联系 <a href="https://goajomblang.com" style="color:var(--sun-2)">goajomblang.com</a> 确认两件事：(1) 安排 tandem，(2) 有没有儿童尺码的靴子（数量很少）。
         如果家长不放心，也可以那天分头——不下降的可以改去 Goa Pindul 漂流洞，全家都能玩。</p>
       </details>
       <details>
-        <summary>需要签证吗？</summary>
-        <p>新加坡护照前往印尼免签 30 天。建议护照有效期至少 6 个月。</p>
+        <summary data-en="Do we need a visa?">需要签证吗？</summary>
+        <p data-en="Singapore passport holders enter Indonesia visa-free for 30 days. Make sure your passport has at least 6 months of validity.">新加坡护照前往印尼免签 30 天。建议护照有效期至少 6 个月。</p>
       </details>
     </div>
   </div>
@@ -1535,17 +1574,17 @@
 <!-- ═══════════════ CTA ═══════════════ -->
 <section class="cta">
   <div class="cta-inner container-narrow">
-    <div class="eyebrow" style="color:#ffd479">一起聊聊 · Let's chat</div>
-    <h2>有兴趣？告诉我<em>I'd love some company on this one.</em></h2>
-    <p>这只是我的初步想法，行程还能调整。<br>如果你家娃也喜欢户外，欢迎一起对一下日期、聊聊细节。<br>各家自行预订，但凑成一队登山会便宜很多。</p>
+    <div class="eyebrow" style="color:#ffd479" data-en="Let's chat · Get in touch">一起聊聊 · Let's chat</div>
+    <h2 data-en="Interested? Let me know<em>I'd love some company on this one.</em>">有兴趣？告诉我<em>I'd love some company on this one.</em></h2>
+    <p data-en="This is just an early draft and the plan can flex.<br>If your kids enjoy the outdoors too, let's compare dates and talk through the details.<br>Each family books their own pieces, but joining up for the hike makes it cheaper for everyone.">这只是我的初步想法，行程还能调整。<br>如果你家娃也喜欢户外，欢迎一起对一下日期、聊聊细节。<br>各家自行预订，但凑成一队登山会便宜很多。</p>
   </div>
 </section>
 
 <!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
   <div class="container">
-    <p>2026 Mt Prau Family Trip · 一份草稿 · <a href="https://huchen.dev">huchen.dev</a></p>
-    <p style="margin-top:8px;opacity:0.5">行程与价格仅供参考 · 各项服务请各家自行预订</p>
+    <p data-en='2026 Mt Prau Family Trip · A working draft · <a href="https://huchen.dev">huchen.dev</a>'>2026 Mt Prau Family Trip · 一份草稿 · <a href="https://huchen.dev">huchen.dev</a></p>
+    <p style="margin-top:8px;opacity:0.5" data-en="Itinerary and prices are indicative · book each service yourself">行程与价格仅供参考 · 各项服务请各家自行预订</p>
   </div>
 </footer>
 
@@ -1608,12 +1647,13 @@
     city:   '<svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M15 11V5l-3-3-3 3v2H3v14h18V11h-6zm-8 8H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm6 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm6 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/></svg>',
     cave:   '<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 3C7 3 3 7 3 12v9h6v-6c0-1.66 1.34-3 3-3s3 1.34 3 3v6h6v-9c0-5-4-9-9-9z"/></svg>',
   };
+  const isEN = () => document.documentElement.getAttribute('data-lang') === 'en';
   const P = {
-    yia:        { lat:-7.9006, lng:110.0573, color:'#3a513f', name:'YIA 机场',     en:"Yogyakarta Int'l Airport", day:'抵达 / 离开 · Day 1 & 5', kind:'icon', glyph:G.air },
-    borobudur:  { lat:-7.6079, lng:110.2038, color:'#d97834', name:'婆罗浮屠',     en:'Borobudur Temple',         day:'Day 1',                   kind:'icon', glyph:G.temple },
-    prau:       { lat:-7.2092, lng:109.9244, color:'#b85a1f', name:'普劳山 营地', en:'Mt Prau · Patak Banteng', day:'Day 2 & 3',               kind:'icon', glyph:G.mtn },
-    yogya:      { lat:-7.7956, lng:110.3695, color:'#766b5c', name:'日惹市区',     en:'Yogyakarta · base',       day:'D3 晚 & D4 晚住宿',       kind:'icon', glyph:G.city, small:true },
-    jomblang:   { lat:-8.0303, lng:110.6386, color:'#3a5a72', name:'约姆布朗洞',   en:'Goa Jomblang',            day:'Day 4',                   kind:'icon', glyph:G.cave },
+    yia:        { lat:-7.9006, lng:110.0573, color:'#3a513f', zh:{name:'YIA 机场',     day:'抵达 / 离开 · Day 1 & 5'}, en:{name:"Yogyakarta Int'l Airport", day:'Arrival / Departure · Day 1 & 5'}, sub:"YIA",            kind:'icon', glyph:G.air },
+    borobudur:  { lat:-7.6079, lng:110.2038, color:'#d97834', zh:{name:'婆罗浮屠',     day:'Day 1'},                   en:{name:'Borobudur Temple',         day:'Day 1'},                            sub:'Borobudur',      kind:'icon', glyph:G.temple },
+    prau:       { lat:-7.2092, lng:109.9244, color:'#b85a1f', zh:{name:'普劳山 营地', day:'Day 2 & 3'},               en:{name:'Mt Prau · summit camp',    day:'Day 2 & 3'},                        sub:'Patak Banteng',  kind:'icon', glyph:G.mtn },
+    yogya:      { lat:-7.7956, lng:110.3695, color:'#766b5c', zh:{name:'日惹市区',     day:'D3 晚 & D4 晚住宿'},       en:{name:'Yogyakarta · base',        day:'Stay nights of D3 & D4'},           sub:'Yogyakarta',     kind:'icon', glyph:G.city, small:true },
+    jomblang:   { lat:-8.0303, lng:110.6386, color:'#3a5a72', zh:{name:'约姆布朗洞',   day:'Day 4'},                   en:{name:'Goa Jomblang',             day:'Day 4'},                            sub:'Goa Jomblang',   kind:'icon', glyph:G.cave },
   };
   const allPoints = Object.values(P);
 
@@ -1627,6 +1667,9 @@
 
   const map = L.map('trip-map', {
     scrollWheelZoom: false,
+    dragging: !L.Browser.mobile,        // disable touch drag on mobile so the page can scroll through the map
+    tap: !L.Browser.mobile,
+    touchZoom: !L.Browser.mobile,
     zoomControl: true,
     attributionControl: true,
   }).fitBounds(bounds);
@@ -1647,8 +1690,14 @@
       iconAnchor: [size/2, size],
       popupAnchor: [0, -size + 4],
     });
-    L.marker([p.lat, p.lng], { icon }).addTo(map)
-      .bindPopup(`<b>${p.name}</b><em>${p.en}</em>${p.day}`);
+    const marker = L.marker([p.lat, p.lng], { icon }).addTo(map);
+    const renderPopup = () => {
+      const lang = isEN() ? 'en' : 'zh';
+      return `<b>${p[lang].name}</b><em>${p.sub}</em>${p[lang].day}`;
+    };
+    marker.bindPopup(renderPopup());
+    marker._renderPopup = renderPopup;
+    (window._mapMarkers = window._mapMarkers || []).push(marker);
   });
 
   // ── curved dotted arrows ──
@@ -1724,6 +1773,55 @@
   drawArrow(P.jomblang,  P.yogya,     DAY_COLORS.d4,  0.30, null,     null);
   drawArrow(P.yogya,     P.yia,       DAY_COLORS.d5, -0.30, '~45min', 'D5');
   } // end initMap
+
+  // ───── Language switch ─────
+  (function () {
+    const STORAGE_KEY = 'huchen-lang';
+    const select = document.getElementById('lang-switch');
+    const root = document.documentElement;
+
+    // Snapshot the original Chinese on first paint so we can switch back.
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.setAttribute('data-zh', el.innerHTML);
+    });
+    document.querySelectorAll('[data-en-h4]').forEach(el => {
+      // unused fallback hook; kept for potential future use
+    });
+
+    function applyLang(lang) {
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang === 'en' ? 'en' : 'zh-Hans');
+      document.title = lang === 'en'
+        ? '2026 Mt Prau Family Trip · Borobudur · Jomblang'
+        : '2026 普劳火山亲子之旅 · Mt Prau Family Trip';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const target = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-zh');
+        if (target != null) el.innerHTML = target;
+      });
+      // Re-render any open / bound map popups with new language.
+      (window._mapMarkers || []).forEach(m => {
+        if (m._renderPopup) {
+          const html = m._renderPopup();
+          if (m.getPopup()) m.getPopup().setContent(html);
+          else m.bindPopup(html);
+        }
+      });
+      try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+      if (select) select.value = lang;
+    }
+
+    let initial = 'zh';
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved === 'en' || saved === 'zh') initial = saved;
+    } catch (e) {}
+
+    applyLang(initial);
+
+    if (select) {
+      select.addEventListener('change', e => applyLang(e.target.value));
+    }
+  })();
 </script>
 
 </body>
