@@ -9,7 +9,7 @@
 <meta property="og:description" content="9 月学校假期 5 天 4 夜，新加坡出发。在凑伴儿，有兴趣的家长一起来研究。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <!-- Leaflet — start downloading early but non-blocking. Map init waits for the script to load. -->
 <link rel="preconnect" href="https://unpkg.com" crossorigin>
 <link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin>
@@ -1001,6 +1001,63 @@
   @media (prefers-reduced-motion:reduce){
     *{animation:none !important;transition:none !important}
     html{scroll-behavior:auto}
+  }
+
+  /* ───── ENGLISH MODE TYPOGRAPHY ─────
+     Reuses fonts that are already loaded for the Chinese version
+     (Cormorant Garamond + Inter), so no extra network requests.
+     Scope: only when the language switch is set to English. */
+  [data-lang="en"] body{
+    font-family:var(--font-ui);
+    font-size:17px;
+    line-height:1.65;
+  }
+  [data-lang="en"] .hero h1,
+  [data-lang="en"] h2,
+  [data-lang="en"] h3,
+  [data-lang="en"] .day-title,
+  [data-lang="en"] .price-name,
+  [data-lang="en"] .clock-label,
+  [data-lang="en"] .pack-col h4,
+  [data-lang="en"] summary,
+  [data-lang="en"] .map-legend-text strong{
+    font-family:var(--font-en);
+    font-weight:500;
+    letter-spacing:0;
+  }
+  [data-lang="en"] .hero h1{
+    font-weight:600;
+    letter-spacing:-0.015em;
+    line-height:1.02;
+  }
+  [data-lang="en"] h2{
+    font-weight:600;
+    letter-spacing:-0.005em;
+    line-height:1.15;
+  }
+  [data-lang="en"] h3{
+    font-weight:600;
+    font-size:24px;
+  }
+  [data-lang="en"] .day-title{
+    font-size:26px;
+    font-weight:600;
+  }
+  [data-lang="en"] .lead{
+    font-size:18px;
+    line-height:1.7;
+  }
+  [data-lang="en"] summary{
+    font-size:19px;
+    font-weight:600;
+  }
+  [data-lang="en"] .hero h1 em,
+  [data-lang="en"] h2 em,
+  [data-lang="en"] .day-title small,
+  [data-lang="en"] .lead em,
+  [data-lang="en"] .card-en{
+    font-style:italic;
+    font-weight:400;
   }
 
   /* ───── LANGUAGE SWITCH ───── */
