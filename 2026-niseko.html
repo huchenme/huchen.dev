@@ -477,6 +477,36 @@
   }
   .hotel-chip strong{font-weight:600;color:var(--ink)}
   .hotel-chip small{color:var(--muted);font-size:11px}
+  .hotel-chip.is-booked{
+    border-color:var(--green);
+    background:rgba(90,122,82,0.06);
+  }
+  .hotel-chip.is-booked::after{
+    content:'已订';
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:0.06em;
+    color:var(--green);
+    background:rgba(90,122,82,0.12);
+    padding:2px 7px;
+    border-radius:100px;
+    margin-left:4px;
+  }
+  .hotel-chip.is-tbd{
+    border-style:dashed;
+    background:transparent;
+  }
+  .hotel-chip.is-tbd::after{
+    content:'待定';
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:0.06em;
+    color:var(--muted);
+    background:rgba(107,119,133,0.12);
+    padding:2px 7px;
+    border-radius:100px;
+    margin-left:4px;
+  }
 
   .plan{
     list-style:none;
@@ -788,7 +818,7 @@
     <a class="nav-pill" href="#d2" data-iso="2026-08-27"><span class="dow">Thu</span><span class="num">27</span><span class="mon">Aug</span></a>
     <a class="nav-pill" href="#d3" data-iso="2026-08-28"><span class="dow">Fri</span><span class="num">28</span><span class="mon">Aug</span></a>
     <a class="nav-pill" href="#d4" data-iso="2026-08-29"><span class="dow">Sat</span><span class="num">29</span><span class="mon">Aug</span></a>
-    <a class="nav-pill is-race" href="#d5" data-iso="2026-08-30"><span class="dow">Race</span><span class="num">30</span><span class="mon">Aug</span></a>
+    <a class="nav-pill" href="#d5" data-iso="2026-08-30"><span class="dow">Race</span><span class="num">30</span><span class="mon">Aug</span></a>
     <a class="nav-pill" href="#d6" data-iso="2026-08-31"><span class="dow">Mon</span><span class="num">31</span><span class="mon">Aug</span></a>
     <a class="nav-pill" href="#d7" data-iso="2026-09-01"><span class="dow">Tue</span><span class="num">1</span><span class="mon">Sep</span></a>
     <a class="nav-pill" href="#d8" data-iso="2026-09-02"><span class="dow">Wed</span><span class="num">2</span><span class="mon">Sep</span></a>
@@ -902,7 +932,7 @@
         </div>
       </div>
       <div class="day-photo"><img src="/img/niseko/lake-toya.jpg" alt="洞爷湖 Lake Toya" loading="lazy" decoding="async"></div>
-      <div class="hotel-chip">
+      <div class="hotel-chip is-booked">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
         <span>
           <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Toya+SunPalace+Resort+%26+Spa" target="_blank" rel="noopener"><strong>Toya SunPalace Resort &amp; Spa</strong></a>
@@ -938,7 +968,7 @@
           <div class="day-title">洞爷湖 → Niseko<small>装备测试 · check into Skye Niseko</small></div>
         </div>
       </div>
-      <div class="hotel-chip">
+      <div class="hotel-chip is-booked">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
         <span>
           <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Skye+Niseko" target="_blank" rel="noopener"><strong>Skye Niseko</strong></a>
@@ -973,9 +1003,12 @@
           <div class="day-title">Niseko 适应日<small>Stay fresh · feel iconic Niseko roads</small></div>
         </div>
       </div>
-      <div class="hotel-chip">
+      <div class="hotel-chip is-booked">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
-        <span><strong>Skye Niseko</strong></span>
+        <span>
+          <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Skye+Niseko" target="_blank" rel="noopener"><strong>Skye Niseko</strong></a>
+          <span class="addr"><span class="copy" data-copy="北海道虻田郡倶知安町字山田204-7">北海道虻田郡倶知安町字山田204-7</span></span>
+        </span>
       </div>
       <ul class="plan">
         <li>可选：<strong>60–90 分钟开腿骑</strong>，跑一段 Panorama Line，不冲</li>
@@ -1006,9 +1039,12 @@
           <div class="day-title">恢复日<small>Fresh legs &gt; extra riding</small></div>
         </div>
       </div>
-      <div class="hotel-chip">
+      <div class="hotel-chip is-booked">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
-        <span><strong>Skye Niseko</strong></span>
+        <span>
+          <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Skye+Niseko" target="_blank" rel="noopener"><strong>Skye Niseko</strong></a>
+          <span class="addr"><span class="copy" data-copy="北海道虻田郡倶知安町字山田204-7">北海道虻田郡倶知安町字山田204-7</span></span>
+        </span>
       </div>
       <ul class="plan">
         <li>选手：<strong>30–45 分钟轻松摇</strong>，剩下时间躺平</li>
@@ -1043,9 +1079,12 @@
         <div class="name">Niseko Classic 140 km · Hokkaido 2026</div>
       </div>
       <div class="day-photo"><img src="/img/niseko/race.jpg" alt="Cycling road race" loading="lazy" decoding="async"></div>
-      <div class="hotel-chip">
+      <div class="hotel-chip is-booked">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
-        <span><strong>Skye Niseko</strong></span>
+        <span>
+          <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Skye+Niseko" target="_blank" rel="noopener"><strong>Skye Niseko</strong></a>
+          <span class="addr"><span class="copy" data-copy="北海道虻田郡倶知安町字山田204-7">北海道虻田郡倶知安町字山田204-7</span></span>
+        </span>
       </div>
 
       <!-- Race-day schedule -->
@@ -1097,11 +1136,11 @@
         </div>
       </div>
       <div class="day-photo"><img src="/img/niseko/otaru.jpg" alt="小樽 Otaru canal" loading="lazy" decoding="async"></div>
-      <div class="hotel-chip">
+      <div class="hotel-chip is-tbd">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
         <span>
           <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Otaru+Station" target="_blank" rel="noopener"><strong>小樽站附近</strong></a>
-          <span class="addr">具体酒店待定 · pick something near JR Otaru station</span>
+          <span class="addr">具体酒店待定</span>
         </span>
       </div>
       <ul class="plan">
@@ -1136,7 +1175,7 @@
         </div>
       </div>
       <div class="day-photo"><img src="/img/niseko/furano.jpg" alt="富良野 Farm Tomita" loading="lazy" decoding="async"></div>
-      <div class="hotel-chip">
+      <div class="hotel-chip is-tbd">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
         <span>
           <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tonya%27s+Furano+Yayoicho" target="_blank" rel="noopener"><strong>Tonya's, Furano</strong></a>
@@ -1172,9 +1211,12 @@
         </div>
       </div>
       <div class="day-photo"><img src="/img/niseko/biei.jpg" alt="美瑛 Biei patchwork fields" loading="lazy" decoding="async"></div>
-      <div class="hotel-chip">
+      <div class="hotel-chip is-tbd">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
-        <span><strong>Tonya's, Furano</strong></span>
+        <span>
+          <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tonya%27s+Furano+Yayoicho" target="_blank" rel="noopener"><strong>Tonya's, Furano</strong></a>
+          <span class="addr"><span class="copy" data-copy="北海道富良野市弥生町3-104">北海道富良野市弥生町3-104</span></span>
+        </span>
       </div>
       <ul class="plan">
         <li>可选：<strong>Patchwork Road 拼布之路</strong> 60–90 分钟轻骑</li>
@@ -1205,9 +1247,12 @@
           <div class="day-title">自然 + 备用<small>Weather backup · rest · revisit favorites</small></div>
         </div>
       </div>
-      <div class="hotel-chip">
+      <div class="hotel-chip is-tbd">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
-        <span><strong>Tonya's, Furano</strong></span>
+        <span>
+          <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tonya%27s+Furano+Yayoicho" target="_blank" rel="noopener"><strong>Tonya's, Furano</strong></a>
+          <span class="addr"><span class="copy" data-copy="北海道富良野市弥生町3-104">北海道富良野市弥生町3-104</span></span>
+        </span>
       </div>
       <ul class="plan">
         <li>不骑车</li>
@@ -1237,9 +1282,12 @@
           <div class="day-title">富良野 → CTS → 上海<small>Conservative · 不骑车</small></div>
         </div>
       </div>
-      <div class="hotel-chip">
+      <div class="hotel-chip is-tbd">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
-        <span><strong>上海浦东机场酒店</strong> &nbsp;<small>PVG airport hotel</small></span>
+        <span>
+          <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Pudong+Airport+hotels" target="_blank" rel="noopener"><strong>浦东机场酒店</strong></a>
+          <span class="addr">PVG airport hotel · 待定</span>
+        </span>
       </div>
       <ul class="plan">
         <li><time>~07:30</time>富良野出发（07:30–08:00）</li>
