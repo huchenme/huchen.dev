@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <style>
   *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
   :root{
@@ -475,6 +476,135 @@
     gap:6px;
   }
 
+  /* ───── MAP ───── */
+  .map-section{
+    background:var(--cream-2);
+  }
+  .map-wrap{
+    margin-top:36px;
+    border:1px solid var(--line);
+    background:#fff;
+    overflow:hidden;
+    position:relative;
+  }
+  #trip-map{
+    height:520px;
+    width:100%;
+    background:#e8ddc8;
+  }
+  /* legend */
+  .map-legend{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0;
+    border-top:1px solid var(--line);
+    background:#fff;
+  }
+  .map-legend-item{
+    padding:14px 18px;
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+  }
+  .map-legend-item:last-child{border-bottom:none}
+  .map-pin{
+    width:28px;height:28px;
+    border-radius:50%;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:14px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  }
+  .map-pin-1{background:#3a513f}
+  .map-pin-2{background:#d97834}
+  .map-pin-3{background:#b85a1f}
+  .map-pin-4{background:#3a5a72}
+  .map-pin-5{background:#766b5c}
+  .map-legend-text strong{
+    display:block;
+    font-family:'Noto Serif SC',serif;
+    font-weight:600;
+    color:var(--ink);
+    margin-bottom:2px;
+  }
+  .map-legend-text small{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--muted);
+    font-size:13px;
+  }
+  .map-legend-text p{
+    color:var(--ink-2);
+    font-size:13px;
+    margin-top:4px;
+  }
+  /* leaflet override — minimal monochrome aesthetic */
+  .leaflet-container{
+    font-family:'Inter','Noto Serif SC',sans-serif !important;
+    background:#e8ddc8 !important;
+  }
+  .leaflet-tile-pane{
+    filter:sepia(0.2) saturate(0.7) contrast(0.95) brightness(1.05);
+  }
+  .leaflet-control-attribution{
+    font-size:10px !important;
+    background:rgba(245,239,228,0.85) !important;
+    color:var(--muted) !important;
+  }
+  .leaflet-control-attribution a{color:var(--sun-2) !important}
+  .custom-marker{
+    background:transparent;
+    border:none;
+  }
+  .custom-marker .pin{
+    width:36px;height:36px;
+    border-radius:50% 50% 50% 0;
+    transform:rotate(-45deg);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:16px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.25);
+    border:2px solid #fff;
+  }
+  .custom-marker .pin span{transform:rotate(45deg)}
+  .leaflet-popup-content-wrapper{
+    border-radius:6px !important;
+    background:#fff !important;
+    box-shadow:0 8px 24px rgba(31,26,20,0.15) !important;
+  }
+  .leaflet-popup-content{
+    margin:14px 16px !important;
+    font-family:'Noto Serif SC',sans-serif !important;
+    font-size:13px !important;
+    color:var(--ink-2) !important;
+  }
+  .leaflet-popup-content b{
+    font-size:15px;
+    color:var(--ink);
+    display:block;
+    margin-bottom:2px;
+  }
+  .leaflet-popup-content em{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--muted);
+    font-size:12px;
+    display:block;
+    margin-bottom:6px;
+  }
+
   /* ───── TIMING (sunrise/wake) ───── */
   .timing{
     background:linear-gradient(180deg, #1f3344 0%, #2c4256 100%);
@@ -829,6 +959,10 @@
     .clock-grid{grid-template-columns:repeat(4,1fr)}
     .pack-grid{grid-template-columns:repeat(2,1fr)}
     .price-row{padding:24px 28px}
+    #trip-map{height:600px}
+    .map-legend{grid-template-columns:repeat(2,1fr)}
+    .map-legend-item{border-right:1px solid var(--line)}
+    .map-legend-item:nth-child(2n){border-right:none}
   }
   @media (min-width:960px){
     .pack-grid{grid-template-columns:repeat(4,1fr)}
@@ -1118,6 +1252,61 @@
   </div>
 </section>
 
+<!-- ═══════════════ MAP ═══════════════ -->
+<section class="map-section">
+  <div class="container">
+    <div class="eyebrow">地图 · Map</div>
+    <h2>路线分布<em>Where the trip happens, geographically.</em></h2>
+    <p class="lead">中爪哇的核心三角：日惹（基地）、北边的婆罗浮屠、东南的洞穴、西北的 Dieng 高原与 Mt Prau。<br>所有车程都是从 YIA 机场或日惹市区出发。</p>
+
+    <div class="map-wrap">
+      <div id="trip-map" role="img" aria-label="Trip locations map: YIA airport, Yogyakarta city, Borobudur, Patak Banteng basecamp, and Goa Jomblang"></div>
+      <div class="map-legend">
+        <div class="map-legend-item">
+          <div class="map-pin map-pin-1"><span style="font-style:normal;font-family:Inter,sans-serif;font-size:11px;font-weight:700">A</span></div>
+          <div class="map-legend-text">
+            <strong>YIA 机场</strong>
+            <small>Yogyakarta Int'l Airport</small>
+            <p>抵达 / 离开点 · Day 1 & Day 5</p>
+          </div>
+        </div>
+        <div class="map-legend-item">
+          <div class="map-pin map-pin-2"><span style="font-style:normal;font-family:Inter,sans-serif;font-size:11px;font-weight:700">B</span></div>
+          <div class="map-legend-text">
+            <strong>婆罗浮屠</strong>
+            <small>Borobudur Temple</small>
+            <p>距 YIA 约 1h 车程 · Day 1</p>
+          </div>
+        </div>
+        <div class="map-legend-item">
+          <div class="map-pin map-pin-3"><span style="font-style:normal;font-family:Inter,sans-serif;font-size:11px;font-weight:700">C</span></div>
+          <div class="map-legend-text">
+            <strong>Patak Banteng 营地</strong>
+            <small>Mt Prau basecamp · 1,990 m</small>
+            <p>距日惹 ~3.5–4h 车程 · Day 2 & 3</p>
+          </div>
+        </div>
+        <div class="map-legend-item">
+          <div class="map-pin map-pin-4"><span style="font-style:normal;font-family:Inter,sans-serif;font-size:11px;font-weight:700">D</span></div>
+          <div class="map-legend-text">
+            <strong>约姆布朗洞</strong>
+            <small>Goa Jomblang</small>
+            <p>距日惹 ~1.5h 车程 · Day 4</p>
+          </div>
+        </div>
+        <div class="map-legend-item" style="grid-column:1/-1">
+          <div class="map-pin map-pin-5"><span style="font-style:normal;font-family:Inter,sans-serif;font-size:11px;font-weight:700">E</span></div>
+          <div class="map-legend-text">
+            <strong>日惹市区</strong>
+            <small>Yogyakarta City · base</small>
+            <p>Day 3 & 4 晚上住宿，Malioboro 街、gudeg 老店都在附近</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════ TIMING ═══════════════ -->
 <section class="timing">
   <div class="container">
@@ -1369,6 +1558,7 @@
   </div>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
   // gentle reveal on scroll
   const io = new IntersectionObserver((entries) => {
@@ -1384,6 +1574,67 @@
     el.classList.add('reveal');
     io.observe(el);
   });
+
+  // ───── trip map ─────
+  const points = [
+    { id:'A', lat:-7.9006, lng:110.0573, color:'#3a513f', name:'YIA 机场', en:'Yogyakarta Int\'l Airport', day:'Day 1 & Day 5' },
+    { id:'B', lat:-7.6079, lng:110.2038, color:'#d97834', name:'婆罗浮屠', en:'Borobudur Temple', day:'Day 1' },
+    { id:'C', lat:-7.2092, lng:109.9244, color:'#b85a1f', name:'Patak Banteng 营地', en:'Mt Prau basecamp · 1,990 m', day:'Day 2 & Day 3' },
+    { id:'D', lat:-8.0303, lng:110.6386, color:'#3a5a72', name:'约姆布朗洞', en:'Goa Jomblang', day:'Day 4' },
+    { id:'E', lat:-7.7956, lng:110.3695, color:'#766b5c', name:'日惹市区', en:'Yogyakarta City', day:'Day 3 & 4 住宿' },
+  ];
+
+  // bounds: fit all points with some padding
+  const lats = points.map(p => p.lat);
+  const lngs = points.map(p => p.lng);
+  const bounds = [
+    [Math.min(...lats) - 0.15, Math.min(...lngs) - 0.15],
+    [Math.max(...lats) + 0.15, Math.max(...lngs) + 0.15],
+  ];
+
+  const map = L.map('trip-map', {
+    scrollWheelZoom: false,
+    zoomControl: true,
+    attributionControl: true,
+  }).fitBounds(bounds);
+
+  // CartoDB Positron — minimal light tiles, no API key
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 18,
+  }).addTo(map);
+
+  // custom pin markers
+  points.forEach(p => {
+    const icon = L.divIcon({
+      className: 'custom-marker',
+      html: `<div class="pin" style="background:${p.color}"><span>${p.id}</span></div>`,
+      iconSize: [36, 36],
+      iconAnchor: [18, 36],
+      popupAnchor: [0, -32],
+    });
+    L.marker([p.lat, p.lng], { icon }).addTo(map)
+      .bindPopup(`<b>${p.name}</b><em>${p.en}</em>${p.day}`);
+  });
+
+  // dashed line connecting Day 1 flow: YIA → Borobudur → Prau
+  const day1Line = [points[0], points[1], points[2]].map(p => [p.lat, p.lng]);
+  L.polyline(day1Line, {
+    color: '#b85a1f',
+    weight: 2,
+    opacity: 0.6,
+    dashArray: '6, 6',
+  }).addTo(map);
+
+  // Day 4: Yogyakarta → Jomblang
+  const day4Line = [points[4], points[3]].map(p => [p.lat, p.lng]);
+  L.polyline(day4Line, {
+    color: '#3a5a72',
+    weight: 2,
+    opacity: 0.6,
+    dashArray: '6, 6',
+  }).addTo(map);
 </script>
 
 </body>
