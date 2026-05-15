@@ -1,1 +1,5 @@
 .DS_Store
+.gstack/
+.playwright-mcp/
+prau-mobile*.png
+prau-mobile*.jpeg

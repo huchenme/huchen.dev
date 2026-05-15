@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 普劳火山亲子之旅 · Mt Prau Family Trip</title>
+<meta name="description" content="2026 年 9 月新加坡学校假期，我打算带娃去印尼爬普劳火山（Mt Prau），顺便逛婆罗浮屠（Borobudur）和约姆布朗洞（Jomblang Cave）。在凑伴儿。">
+<meta property="og:title" content="2026 普劳火山亲子之旅 · Mt Prau Family Trip">
+<meta property="og:description" content="9 月学校假期 5 天 4 夜，新加坡出发。在凑伴儿，有兴趣的家长一起来研究。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --cream:#f5efe4;
+    --cream-2:#ebe3d3;
+    --ink:#1f1a14;
+    --ink-2:#3d342a;
+    --muted:#766b5c;
+    --line:#d9cfbb;
+    --sun:#d97834;
+    --sun-2:#b85a1f;
+    --sky:#3a5a72;
+    --sky-deep:#1f3344;
+    --pine:#3a513f;
+    --gold:#c89856;
+  }
+  html{
+    scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
+  }
+  body{
+    font-family:'Noto Serif SC','Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:16px;
+    overflow-x:hidden;
+  }
+
+  /* paper grain */
+  body::before{
+    content:'';
+    position:fixed;inset:0;
+    background-image:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity:0.06;
+    pointer-events:none;
+    z-index:1000;
+    mix-blend-mode:multiply;
+  }
+
+  .container{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  .container-narrow{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ───── HERO ───── */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    min-height:100dvh;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    overflow:hidden;
+    color:#fbf6ec;
+    background:#1a2a35;
+  }
+  .hero-bg{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 30%, #e9b066 0%, transparent 60%),
+      linear-gradient(180deg, #2c1810 0%, #5e2a14 18%, #c25a25 38%, #e9a35a 55%, #f3d399 70%, #d9cab2 85%, #8a8270 100%);
+  }
+  .hero-sun{
+    position:absolute;
+    left:50%;
+    top:34%;
+    width:180px;height:180px;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle, #fff7e0 0%, #ffd479 35%, transparent 70%);
+    border-radius:50%;
+    filter:blur(2px);
+  }
+  .hero-mountains{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    width:100%;
+    height:auto;
+    display:block;
+  }
+  .hero-mountains-back{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    width:100%;
+    height:auto;
+    opacity:0.5;
+  }
+  .hero-clouds{
+    position:absolute;
+    bottom:38%;
+    left:0;right:0;
+    height:80px;
+    background:
+      radial-gradient(ellipse 200px 30px at 15% 60%, rgba(255,250,240,0.7), transparent),
+      radial-gradient(ellipse 280px 36px at 50% 80%, rgba(255,250,240,0.6), transparent),
+      radial-gradient(ellipse 220px 28px at 80% 50%, rgba(255,250,240,0.65), transparent);
+    filter:blur(1px);
+    pointer-events:none;
+  }
+  .hero-content{
+    position:relative;
+    z-index:2;
+    padding:0 24px 80px;
+    max-width:1080px;
+    margin:0 auto;
+    width:100%;
+  }
+  .hero-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 14px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:100px;
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    margin-bottom:24px;
+    font-family:'Inter',sans-serif;
+    font-weight:500;
+  }
+  .hero-tag::before{
+    content:'';
+    width:6px;height:6px;
+    border-radius:50%;
+    background:#7ed957;
+    box-shadow:0 0 8px #7ed957;
+  }
+  .hero h1{
+    font-family:'Noto Serif SC',serif;
+    font-size:clamp(40px, 8vw, 84px);
+    font-weight:600;
+    line-height:1.05;
+    letter-spacing:-0.02em;
+    margin-bottom:18px;
+    text-shadow:0 2px 30px rgba(0,0,0,0.3);
+  }
+  .hero h1 em{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:400;
+    color:#ffe0b3;
+    font-size:0.7em;
+    display:block;
+    margin-top:8px;
+    letter-spacing:0;
+  }
+  .hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 28px;
+    font-size:14px;
+    font-family:'Inter',sans-serif;
+    opacity:0.95;
+    letter-spacing:0.02em;
+  }
+  .hero-meta span{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .hero-meta strong{
+    font-weight:600;
+  }
+  .scroll-hint{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:3;
+    font-size:11px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.7);
+    font-family:'Inter',sans-serif;
+    animation:bounce 2.4s ease-in-out infinite;
+  }
+  @keyframes bounce{
+    0%,100%{transform:translateX(-50%) translateY(0);opacity:0.7}
+    50%{transform:translateX(-50%) translateY(6px);opacity:1}
+  }
+
+  /* ───── SECTION GENERIC ───── */
+  section{
+    padding:90px 0;
+    position:relative;
+  }
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--sun-2);
+    margin-bottom:14px;
+  }
+  h2{
+    font-family:'Noto Serif SC',serif;
+    font-size:clamp(28px, 4.2vw, 44px);
+    font-weight:600;
+    line-height:1.2;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    margin-bottom:18px;
+  }
+  h2 em{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:400;
+    color:var(--muted);
+    font-size:0.55em;
+    display:block;
+    margin-top:6px;
+    letter-spacing:0;
+  }
+  h3{
+    font-family:'Noto Serif SC',serif;
+    font-size:22px;
+    font-weight:600;
+    color:var(--ink);
+    margin-bottom:10px;
+    letter-spacing:-0.005em;
+  }
+  p{
+    color:var(--ink-2);
+  }
+  .lead{
+    font-size:19px;
+    line-height:1.75;
+    color:var(--ink-2);
+    max-width:640px;
+  }
+  .lead em{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--sun-2);
+  }
+
+  /* ───── INTRO ───── */
+  .intro{
+    background:var(--cream);
+    padding-top:110px;
+  }
+  .intro-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:48px;
+    align-items:start;
+  }
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-top:40px;
+  }
+  .stat{
+    background:var(--cream);
+    padding:24px 20px;
+  }
+  .stat-num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:42px;
+    font-weight:500;
+    color:var(--sun-2);
+    line-height:1;
+    margin-bottom:6px;
+  }
+  .stat-label{
+    font-family:'Inter',sans-serif;
+    font-size:12px;
+    color:var(--muted);
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+  }
+
+  /* ───── ITINERARY ───── */
+  .itinerary{
+    background:var(--cream-2);
+  }
+  .itinerary::before{
+    content:'';
+    position:absolute;
+    top:0;left:0;right:0;
+    height:1px;
+    background:var(--line);
+  }
+  .day{
+    border-top:1px solid var(--line);
+    padding:36px 0;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .day:last-child{border-bottom:1px solid var(--line)}
+  .day-head{
+    display:flex;
+    align-items:baseline;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .day-num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:48px;
+    font-weight:500;
+    color:var(--sun);
+    line-height:0.9;
+    font-style:italic;
+  }
+  .day-date{
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    color:var(--muted);
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  .day-title{
+    font-family:'Noto Serif SC',serif;
+    font-size:24px;
+    font-weight:600;
+    color:var(--ink);
+    width:100%;
+    margin-top:-4px;
+  }
+  .day-title small{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:400;
+    color:var(--muted);
+    font-size:0.7em;
+    margin-left:8px;
+  }
+  .timeline{
+    list-style:none;
+    padding:0;
+    border-left:1px dashed var(--line);
+    margin-left:8px;
+  }
+  .timeline li{
+    position:relative;
+    padding:8px 0 8px 28px;
+    font-size:15px;
+    color:var(--ink-2);
+  }
+  .timeline li::before{
+    content:'';
+    position:absolute;
+    left:-5px;top:16px;
+    width:9px;height:9px;
+    border-radius:50%;
+    background:var(--cream);
+    border:2px solid var(--sun);
+  }
+  .timeline time{
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    color:var(--ink);
+    font-size:13px;
+    letter-spacing:0.04em;
+    margin-right:12px;
+    display:inline-block;
+    min-width:62px;
+  }
+  .day-note{
+    background:rgba(217,120,52,0.08);
+    border-left:3px solid var(--sun);
+    padding:14px 16px;
+    font-size:14px;
+    color:var(--ink-2);
+    margin-top:8px;
+    border-radius:0 8px 8px 0;
+  }
+  .day-note strong{
+    color:var(--sun-2);
+    font-weight:600;
+  }
+
+  /* ───── HIGHLIGHTS ───── */
+  .highlights{
+    background:var(--cream);
+  }
+  .cards{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:24px;
+    margin-top:40px;
+  }
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    overflow:hidden;
+    transition:transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
+  }
+  .card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 40px rgba(31,26,20,0.08);
+  }
+  .card-img{
+    aspect-ratio:4/3;
+    background:var(--cream-2);
+    background-size:cover;
+    background-position:center;
+    position:relative;
+  }
+  .card-img::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    box-shadow:inset 0 -40px 80px rgba(0,0,0,0.15);
+  }
+  .card-tag{
+    position:absolute;
+    top:14px;left:14px;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(10px);
+    padding:4px 10px;
+    font-family:'Inter',sans-serif;
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+    z-index:2;
+  }
+  .card-body{
+    padding:24px 22px 26px;
+  }
+  .card-en{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--sun-2);
+    font-size:15px;
+    margin-bottom:4px;
+  }
+  .card-body p{
+    font-size:15px;
+    color:var(--ink-2);
+    margin-bottom:14px;
+  }
+  .card-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px 18px;
+    font-family:'Inter',sans-serif;
+    font-size:12px;
+    color:var(--muted);
+    padding-top:14px;
+    border-top:1px solid var(--line);
+  }
+  .card-meta span{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+
+  /* ───── TIMING (sunrise/wake) ───── */
+  .timing{
+    background:linear-gradient(180deg, #1f3344 0%, #2c4256 100%);
+    color:#f5efe4;
+    position:relative;
+    overflow:hidden;
+  }
+  .timing::before{
+    content:'';
+    position:absolute;
+    top:0;right:0;
+    width:300px;height:300px;
+    background:radial-gradient(circle, rgba(217,120,52,0.3), transparent 70%);
+    border-radius:50%;
+  }
+  .timing h2{color:#f5efe4}
+  .timing .eyebrow{color:#f5b67a}
+  .timing p{color:#cdc3b3}
+  .clock-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.1);
+    margin-top:36px;
+    position:relative;
+    z-index:1;
+  }
+  .clock{
+    background:rgba(255,255,255,0.03);
+    padding:24px 20px;
+  }
+  .clock-time{
+    font-family:'Cormorant Garamond',serif;
+    font-size:34px;
+    font-weight:500;
+    color:#ffd479;
+    line-height:1;
+    margin-bottom:8px;
+    letter-spacing:-0.01em;
+  }
+  .clock-label{
+    font-family:'Noto Serif SC',serif;
+    font-size:14px;
+    color:#f5efe4;
+    margin-bottom:4px;
+    font-weight:500;
+  }
+  .clock-note{
+    font-family:'Inter',sans-serif;
+    font-size:11px;
+    color:#9b9082;
+    letter-spacing:0.04em;
+  }
+
+  /* ───── PRICING ───── */
+  .pricing{
+    background:var(--cream);
+  }
+  .price-stack{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    margin-top:36px;
+  }
+  .price-row{
+    background:#fff;
+    border:1px solid var(--line);
+    padding:22px 24px;
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:8px 16px;
+    align-items:start;
+  }
+  .price-name{
+    font-family:'Noto Serif SC',serif;
+    font-size:17px;
+    font-weight:600;
+    color:var(--ink);
+    grid-column:1;
+  }
+  .price-name small{
+    display:block;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:400;
+    color:var(--muted);
+    font-size:14px;
+    margin-top:2px;
+  }
+  .price-amt{
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:17px;
+    color:var(--sun-2);
+    text-align:right;
+    white-space:nowrap;
+    grid-column:2;
+  }
+  .price-amt small{
+    display:block;
+    font-family:'Inter',sans-serif;
+    font-weight:400;
+    font-size:11px;
+    color:var(--muted);
+    letter-spacing:0.04em;
+    margin-top:2px;
+    text-transform:uppercase;
+  }
+  .price-detail{
+    grid-column:1 / -1;
+    font-size:14px;
+    color:var(--muted);
+    padding-top:8px;
+    border-top:1px dashed var(--line);
+    margin-top:6px;
+  }
+
+  .group-table{
+    margin-top:36px;
+    background:#fff;
+    border:1px solid var(--line);
+    overflow:hidden;
+  }
+  .group-table-head{
+    background:var(--ink);
+    color:var(--cream);
+    padding:14px 20px;
+    font-family:'Inter',sans-serif;
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    font-weight:600;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:8px;
+  }
+  .group-row{
+    padding:14px 20px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:8px;
+    border-bottom:1px solid var(--line);
+    font-size:15px;
+    align-items:center;
+  }
+  .group-row:last-child{border-bottom:none}
+  .group-row strong{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:500;
+    color:var(--ink);
+    font-size:18px;
+  }
+  .group-row .perp{
+    color:var(--ink-2);
+    font-family:'Inter',sans-serif;
+    font-weight:500;
+  }
+  .group-row .total{
+    color:var(--sun-2);
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    text-align:right;
+  }
+  .group-highlight{
+    background:rgba(217,120,52,0.06);
+  }
+  .group-note{
+    margin-top:14px;
+    font-size:13px;
+    color:var(--muted);
+    font-style:italic;
+  }
+
+  /* ───── PACK LIST ───── */
+  .pack{
+    background:var(--cream-2);
+  }
+  .pack-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:24px;
+    margin-top:36px;
+  }
+  .pack-col{
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:24px 22px;
+  }
+  .pack-col h4{
+    font-family:'Noto Serif SC',serif;
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:14px;
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .pack-col h4 svg{
+    width:18px;height:18px;
+    color:var(--sun-2);
+    flex-shrink:0;
+  }
+  .pack-col ul{
+    list-style:none;
+    padding:0;
+  }
+  .pack-col li{
+    padding:6px 0;
+    font-size:14.5px;
+    color:var(--ink-2);
+    border-bottom:1px dashed var(--line);
+    display:flex;
+    gap:8px;
+    align-items:flex-start;
+  }
+  .pack-col li:last-child{border-bottom:none}
+  .pack-col li::before{
+    content:'·';
+    color:var(--sun);
+    font-weight:700;
+    font-size:18px;
+    line-height:1.2;
+  }
+
+  /* ───── FAQ ───── */
+  .faq{
+    background:var(--cream);
+  }
+  details{
+    border-top:1px solid var(--line);
+    padding:18px 0;
+  }
+  details:last-of-type{border-bottom:1px solid var(--line)}
+  summary{
+    cursor:pointer;
+    font-family:'Noto Serif SC',serif;
+    font-size:17px;
+    font-weight:600;
+    color:var(--ink);
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:14px;
+    padding:4px 0;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:'+';
+    font-family:'Cormorant Garamond',serif;
+    font-size:28px;
+    color:var(--sun);
+    transition:transform 0.3s;
+    flex-shrink:0;
+    line-height:1;
+  }
+  details[open] summary::after{
+    transform:rotate(45deg);
+  }
+  details p{
+    margin-top:14px;
+    color:var(--ink-2);
+    font-size:15px;
+    line-height:1.75;
+  }
+
+  /* ───── CTA ───── */
+  .cta{
+    background:linear-gradient(180deg, #2c1810 0%, #5e2a14 60%, #b85a1f 100%);
+    color:#fbf6ec;
+    text-align:center;
+    padding:120px 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .cta::before{
+    content:'';
+    position:absolute;
+    top:30%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:400px;height:400px;
+    background:radial-gradient(circle, #ffd479 0%, transparent 60%);
+    opacity:0.5;
+    border-radius:50%;
+  }
+  .cta-inner{
+    position:relative;
+    z-index:1;
+  }
+  .cta h2{
+    color:#fbf6ec;
+    margin-bottom:14px;
+  }
+  .cta p{
+    color:#f5d8b3;
+    font-size:18px;
+    margin-bottom:36px;
+    max-width:540px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:16px 30px;
+    background:#25d366;
+    color:#fff;
+    text-decoration:none;
+    border-radius:100px;
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:16px;
+    letter-spacing:0.01em;
+    transition:transform 0.25s, box-shadow 0.25s;
+    box-shadow:0 8px 24px rgba(37,211,102,0.3);
+    cursor:pointer;
+    border:none;
+  }
+  .btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 32px rgba(37,211,102,0.4);
+  }
+  .btn:active{transform:translateY(0)}
+  .btn svg{width:18px;height:18px}
+
+  /* ───── FOOTER ───── */
+  footer{
+    background:#1a1714;
+    color:#8a8279;
+    padding:40px 0;
+    text-align:center;
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    letter-spacing:0.04em;
+  }
+  footer a{color:#c89856;text-decoration:none}
+  footer a:hover{color:#e6b673}
+
+  /* ───── RESPONSIVE ───── */
+  @media (min-width:720px){
+    section{padding:110px 0}
+    .intro-grid{grid-template-columns:1.2fr 1fr;gap:80px}
+    .stats{grid-template-columns:repeat(4,1fr)}
+    .day{grid-template-columns:240px 1fr;gap:48px}
+    .day-head{flex-direction:column;align-items:flex-start;gap:6px}
+    .cards{grid-template-columns:repeat(3,1fr)}
+    .clock-grid{grid-template-columns:repeat(4,1fr)}
+    .pack-grid{grid-template-columns:repeat(2,1fr)}
+    .price-row{padding:24px 28px}
+  }
+  @media (min-width:960px){
+    .pack-grid{grid-template-columns:repeat(4,1fr)}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important}
+    html{scroll-behavior:auto}
+  }
+
+  /* fade-in on scroll */
+  .reveal{
+    opacity:0;
+    transform:translateY(20px);
+    transition:opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-sun"></div>
+  <div class="hero-clouds"></div>
+
+  <!-- back mountain layer -->
+  <svg class="hero-mountains-back" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,400 L0,260 L120,180 L240,220 L360,140 L480,200 L600,150 L720,210 L840,160 L960,200 L1080,170 L1200,220 L1320,180 L1440,240 L1440,400 Z" fill="#5a4438" opacity="0.6"/>
+  </svg>
+  <!-- front mountain layer -->
+  <svg class="hero-mountains" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,400 L0,300 L100,240 L200,280 L320,200 L440,260 L560,210 L680,270 L800,220 L920,280 L1040,230 L1160,290 L1280,240 L1440,300 L1440,400 Z" fill="#2a1a14"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-tag">Sep 9 — 13, 2026 · 学校假期</div>
+    <h1>
+      普劳火山<br>亲子之旅
+      <em>Mt Prau · Borobudur · Jomblang</em>
+    </h1>
+    <div class="hero-meta">
+      <span>🇸🇬 <strong>新加坡出发</strong></span>
+      <span>⛰️ <strong>2,590 m</strong> 海拔</span>
+      <span>☁️ 云海日出</span>
+      <span>5 天 4 夜</span>
+    </div>
+  </div>
+  <div class="scroll-hint">向下滑动 · scroll</div>
+</header>
+
+<!-- ═══════════════ INTRO ═══════════════ -->
+<section class="intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <div class="eyebrow">关于这趟旅程 · About</div>
+        <h2>这是我的<br>初步计划<em>Just an idea I'm putting together. Tell me what you think.</em></h2>
+        <p class="lead">
+          2026 年 9 月新加坡学校假期，我打算带娃飞去印尼日惹（Yogyakarta），徒步爬 <em>Gunung Prau</em>——爪哇中部最容易亲近的火山之一。
+          九月正值旱季，几乎每天清晨都有几率看到 <em>lautan awan</em>（云海），太阳从远处的 Sindoro、Sumbing、Merbabu 几座火山之间升起。
+        </p>
+        <p class="lead" style="margin-top:18px">
+          这页是我整理给自己看的，也分享给可能感兴趣的家长。所有行程、住宿、套餐都需要 <em>各家自行预订</em>——
+          我只是把信息凑齐了一份草稿，方便大家参考。如果你也有兴趣去，欢迎一起聊聊、对一下日期。
+        </p>
+      </div>
+      <div>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">5</div>
+            <div class="stat-label">天 · Days</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">2,590</div>
+            <div class="stat-label">米海拔 · m</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">3.5h</div>
+            <div class="stat-label">登顶用时</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">~80%</div>
+            <div class="stat-label">看云海概率</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ITINERARY ═══════════════ -->
+<section class="itinerary">
+  <div class="container">
+    <div class="eyebrow">行程安排 · Itinerary</div>
+    <h2>每天大概做什么<em>Day by day. 5 days, 4 nights.</em></h2>
+
+    <!-- DAY 1 -->
+    <article class="day">
+      <div class="day-head">
+        <div>
+          <div class="day-num">01</div>
+          <div class="day-date">Sep 9 · Wed</div>
+        </div>
+        <div class="day-title">飞抵日惹 · 婆罗浮屠 <small>Fly to Yogyakarta · Borobudur</small></div>
+      </div>
+      <div>
+        <ul class="timeline">
+          <li><time>08:05</time>新加坡 SIN 樟宜机场起飞（Scoot 直飞，约 2h25min）</li>
+          <li><time>09:30</time>抵达日惹 YIA 国际机场（当地时间）</li>
+          <li><time>10:30</time>驱车前往 <strong>Borobudur 婆罗浮屠</strong>（约 1 小时）</li>
+          <li><time>12:00</time>午餐 + 参观佛塔，登塔需提前预约通票（含导览，约 2 小时）</li>
+          <li><time>15:00</time>启程前往 <strong>Dieng / Patak Banteng</strong> 山下营地（约 3.5–4 小时车程）</li>
+          <li><time>19:00</time>抵达山下民宿，简餐 + 休整，准备第二天上山</li>
+        </ul>
+        <div class="day-note">
+          <strong>提示：</strong>Borobudur 周一闭馆，9 月 9 日是周三。佛塔登顶门票每小时仅 150 张，建议提前 7 天在 ticket.borobudurpark.com 预订。
+        </div>
+      </div>
+    </article>
+
+    <!-- DAY 2 -->
+    <article class="day">
+      <div class="day-head">
+        <div>
+          <div class="day-num">02</div>
+          <div class="day-date">Sep 10 · Thu</div>
+        </div>
+        <div class="day-title">登顶 Day 1 · 山顶扎营 <small>Hike up · Camp at summit</small></div>
+      </div>
+      <div>
+        <ul class="timeline">
+          <li><time>09:00</time>早餐 + 装备整理，与 porter 和向导集合</li>
+          <li><time>10:00</time>从 Patak Banteng 登山口出发（也可乘 ojek 摩托至 Pos 1，缩短约 1 小时步行）</li>
+          <li><time>10:30</time>徒步上山：Pos 1 → Pos 2 → Pos 3 → 山顶</li>
+          <li><time>14:00</time>抵达山顶大草原（含休息时间约 3.5–4.5 小时）</li>
+          <li><time>14:30</time>Porter 协助搭帐篷、布置营地，热饮 + 小食</li>
+          <li><time>17:30</time>看夕阳，远眺 Sindoro 与 Sumbing 火山</li>
+          <li><time>18:30</time>晚餐（向导团队烹饪）</li>
+          <li><time>20:30</time>早睡，山顶夜晚约 0–5°C</li>
+        </ul>
+        <div class="day-note">
+          <strong>关于体力：</strong>此线路（Patak Banteng 路线）公认是 Prau 最简单、最适合新手与亲子的一条。无技术攀登、无暴露山脊。
+          孩子需要的更多是耐心和保暖，不是技巧。
+        </div>
+      </div>
+    </article>
+
+    <!-- DAY 3 -->
+    <article class="day">
+      <div class="day-head">
+        <div>
+          <div class="day-num">03</div>
+          <div class="day-date">Sep 11 · Fri</div>
+        </div>
+        <div class="day-title">云海日出 · 下山 <small>Sunrise · Descent</small></div>
+      </div>
+      <div>
+        <ul class="timeline">
+          <li><time>04:30</time>起床，穿好保暖层走出帐篷</li>
+          <li><time>05:00</time>找观景点，泡热茶等待</li>
+          <li><time>05:35</time>日出，云海在脚下展开（9 月概率约 60–80%）</li>
+          <li><time>06:30</time>早餐 + 收营地</li>
+          <li><time>08:00</time>开始下山（约 2–2.5 小时）</li>
+          <li><time>10:30</time>回到山下营地，热水澡 + 午餐</li>
+          <li><time>13:00</time>启程返回日惹（约 3.5–4 小时车程）</li>
+          <li><time>17:30</time>抵达日惹市区，入住酒店</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- DAY 4 -->
+    <article class="day">
+      <div class="day-head">
+        <div>
+          <div class="day-num">04</div>
+          <div class="day-date">Sep 12 · Sat</div>
+        </div>
+        <div class="day-title">约姆布朗洞 + 卡里苏奇 <small>Jomblang Cave + Kali Suci</small></div>
+      </div>
+      <div>
+        <ul class="timeline">
+          <li><time>06:30</time>酒店出发（约 1.5 小时车程到 Gunung Kidul）</li>
+          <li><time>08:30</time>抵达 <strong>Goa Jomblang</strong>，装备讲解 · 孩子提前确认 tandem 安排</li>
+          <li><time>10:00</time>速降进 60 米深的天井（孩子由向导带，绑在大人 / 向导身上）</li>
+          <li><time>11:00</time>"天堂之光"——阳光从洞顶斜射的奇景</li>
+          <li><time>12:30</time>午餐</li>
+          <li><time>14:00</time>前往 <strong>Kali Suci 地下河漂流</strong>（皮筏，孩子也能玩）</li>
+          <li><time>17:00</time>返回日惹市区，逛 Malioboro 街买点纪念品</li>
+        </ul>
+        <div class="day-note">
+          <strong>关于带 7 岁孩子去 Jomblang：</strong>多家操作商接受 5 岁以上的孩子，方式是 <strong>tandem</strong>——孩子绑在大人或向导身上一起下降，不是单独操作绳索。
+          要做的：提前 WhatsApp 联系 goajomblang.com 确认 tandem + 儿童尺码靴子（数量有限，要早到）。
+          如果家长觉得太刺激，也可以那天分头——不下降的留在地面 / 改去附近的 Goa Pindul 漂流洞。
+        </div>
+      </div>
+    </article>
+
+    <!-- DAY 5 -->
+    <article class="day">
+      <div class="day-head">
+        <div>
+          <div class="day-num">05</div>
+          <div class="day-date">Sep 13 · Sun</div>
+        </div>
+        <div class="day-title">飞回新加坡 <small>Fly back home</small></div>
+      </div>
+      <div>
+        <ul class="timeline">
+          <li><time>08:00</time>酒店早餐 + 退房</li>
+          <li><time>09:00</time>前往 YIA 机场</li>
+          <li><time>10:30</time>YIA 起飞（Scoot 直飞）</li>
+          <li><time>13:55</time>抵达新加坡 SIN，回家</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ═══════════════ HIGHLIGHTS ═══════════════ -->
+<section class="highlights">
+  <div class="container">
+    <div class="eyebrow">三个目的地 · Places</div>
+    <h2>这趟去哪些地方<em>Three stops in Central Java.</em></h2>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-img" style="background-image:url('https://d1bv4heaa2n05k.cloudfront.net/user-images/1483965934366/1shutterstock-115097959_main_1483965939733.jpeg');">
+          <span class="card-tag">Day 1</span>
+        </div>
+        <div class="card-body">
+          <h3>婆罗浮屠</h3>
+          <div class="card-en">Borobudur Temple</div>
+          <p>9 世纪的世界最大佛教建筑群，2,672 块浮雕。机场出来后顺路就能去，2–3 小时够看。</p>
+          <div class="card-meta">
+            <span>⏱ 2–3 小时</span>
+            <span>📍 距日惹 40km</span>
+            <span>🎟 需提前预约</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img" style="background-image:url('https://javaprivatetour.com/img/destinasi/89b366dbdf79b41b2fa1abe44bdd6401.jpg');">
+          <span class="card-tag">Day 2 — 3</span>
+        </div>
+        <div class="card-body">
+          <h3>普劳山</h3>
+          <div class="card-en">Gunung Prau · 2,590 m</div>
+          <p>这趟的主要目的地。山顶是大片草原，能看到周围 5 座火山。九月几乎每天有云海。</p>
+          <div class="card-meta">
+            <span>⏱ 上 3.5h / 下 2.5h</span>
+            <span>🏕 山顶过夜</span>
+            <span>👶 适合 6 岁+</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img" style="background-image:url('https://cdn.i-scmp.com/sites/default/files/styles/1020x680/public/d8/images/methode/2020/01/29/b6c32f18-3f4a-11ea-a16e-39b824591591_image_hires_111434.jpg?itok=si2bSGzf&v=1580267686');">
+          <span class="card-tag">Day 4</span>
+        </div>
+        <div class="card-body">
+          <h3>约姆布朗洞</h3>
+          <div class="card-en">Goa Jomblang</div>
+          <p>用绳索速降进 60 米深的天井。中午有"天堂之光"——一束阳光打在地面。孩子由向导带着用 tandem 方式下降。</p>
+          <div class="card-meta">
+            <span>⏱ 3–4 小时</span>
+            <span>🪢 60m 速降</span>
+            <span>👶 5 岁起可由向导带</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TIMING ═══════════════ -->
+<section class="timing">
+  <div class="container">
+    <div class="eyebrow">日出当天 · Morning of Day 3</div>
+    <h2>几点起床？几点日出？<em>So you can plan for the cold.</em></h2>
+    <p class="lead" style="color:#cdc3b3">9 月 11 日早晨在山顶的时间表。仅供参考，向导会现场调整。</p>
+
+    <div class="clock-grid">
+      <div class="clock">
+        <div class="clock-time">04:30</div>
+        <div class="clock-label">起床</div>
+        <div class="clock-note">Wake up · 山顶 0–5°C</div>
+      </div>
+      <div class="clock">
+        <div class="clock-time">05:00</div>
+        <div class="clock-label">就位</div>
+        <div class="clock-note">Find viewpoint</div>
+      </div>
+      <div class="clock">
+        <div class="clock-time">05:35</div>
+        <div class="clock-label">日出</div>
+        <div class="clock-note">Sunrise · 云海最美</div>
+      </div>
+      <div class="clock">
+        <div class="clock-time">08:00</div>
+        <div class="clock-label">下撤</div>
+        <div class="clock-note">Begin descent</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PRICING ═══════════════ -->
+<section class="pricing">
+  <div class="container">
+    <div class="eyebrow">费用估算 · Pricing</div>
+    <h2>大致预算<em>Rough numbers I've been quoted. Verify before you book.</em></h2>
+    <p class="lead">以下是我在网上查到 / 询过的报价，<em>仅供参考</em>。每家都需要自己去对应的渠道直接预订，不是打包行程。<br>登山套餐人数越多人均越便宜——所以如果有几家凑成一队，会划算不少。</p>
+
+    <div class="price-stack">
+      <div class="price-row">
+        <div class="price-name">
+          往返机票
+          <small>Scoot SIN ⇄ YIA · direct</small>
+        </div>
+        <div class="price-amt">
+          SGD 312
+          <small>per person</small>
+        </div>
+        <div class="price-detail">去程 Sep 9 · 08:05 SIN → 09:30 YIA · 回程 Sep 13 · 10:30 YIA → 13:55 SIN</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">
+          普劳登山套餐
+          <small>Premium Class 2H1M · per pair</small>
+        </div>
+        <div class="price-amt">
+          IDR 3,750,000
+          <small>≈ SGD 305 / 2 人</small>
+        </div>
+        <div class="price-detail">含向导、porter、帐篷、睡袋、防潮垫、餐食、ojek 摩托接驳。人均约 SGD 150。</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">
+          地面交通
+          <small>YIA ⇄ Borobudur ⇄ Dieng ⇄ Yogya · 全程包车</small>
+        </div>
+        <div class="price-amt">
+          IDR 1,700,000
+          <small>per group · 整车</small>
+        </div>
+        <div class="price-detail">人数越多人均越便宜——4 人均摊后每人不到 SGD 35。</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">
+          其他支出
+          <small>住宿 · 餐食 · 景点门票 · Jomblang</small>
+        </div>
+        <div class="price-amt">
+          ~SGD 200
+          <small>per person · est.</small>
+        </div>
+        <div class="price-detail">日惹 2 晚酒店、Borobudur 通票（成人 SGD 38 / 儿童 SGD 26）、Jomblang 速降 + Kalisuci（含包车午餐 ~SGD 165）。</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:60px;font-size:18px">登山套餐 · 人数越多越便宜</h3>
+    <div class="group-table">
+      <div class="group-table-head">
+        <span>人数</span>
+        <span>人均</span>
+        <span>总价</span>
+      </div>
+      <div class="group-row">
+        <strong>2 人</strong>
+        <span class="perp">IDR 1,875,000</span>
+        <span class="total">IDR 3,750,000</span>
+      </div>
+      <div class="group-row group-highlight">
+        <strong>4 人</strong>
+        <span class="perp">IDR 1,255,000</span>
+        <span class="total">IDR 5,020,000</span>
+      </div>
+      <div class="group-row group-highlight">
+        <strong>6 人</strong>
+        <span class="perp">IDR 1,210,000</span>
+        <span class="total">IDR 7,260,000</span>
+      </div>
+      <div class="group-row">
+        <strong>8 人</strong>
+        <span class="perp">IDR 1,200,000</span>
+        <span class="total">IDR 9,600,000</span>
+      </div>
+      <div class="group-row">
+        <strong>10 人</strong>
+        <span class="perp">IDR 1,085,000</span>
+        <span class="total">IDR 10,850,000</span>
+      </div>
+    </div>
+    <p class="group-note">数据来源：portergunungsumbing.com Premium Class 2H1M 套餐报价表。</p>
+  </div>
+</section>
+
+<!-- ═══════════════ PACK LIST ═══════════════ -->
+<section class="pack">
+  <div class="container">
+    <div class="eyebrow">行装清单 · What to pack</div>
+    <h2>给孩子的装备清单<em>It's cold up there — pack like winter.</em></h2>
+
+    <div class="pack-grid">
+      <div class="pack-col">
+        <h4>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z"/></svg>
+          保暖衣物
+        </h4>
+        <ul>
+          <li>羽绒服 / 厚摇粒绒</li>
+          <li>防风外套</li>
+          <li>保暖内衣 + 长裤</li>
+          <li>毛线帽 + 手套 + 围脖</li>
+          <li>厚袜 2 双（羊毛或速干）</li>
+        </ul>
+      </div>
+      <div class="pack-col">
+        <h4>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13c0-3 2-5 5-5h8c3 0 5 2 5 5v3l-2 4H5l-2-4v-3z"/><path d="M8 8V6a4 4 0 014-4 4 4 0 014 4v2"/></svg>
+          徒步装备
+        </h4>
+        <ul>
+          <li>登山鞋 / 防滑运动鞋</li>
+          <li>登山杖（下山保护膝盖）</li>
+          <li>30L 背包（孩子用 20L 也行）</li>
+          <li>头灯 + 备用电池</li>
+          <li>雨衣 / 防水罩</li>
+        </ul>
+      </div>
+      <div class="pack-col">
+        <h4>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12V8a7 7 0 0114 0v4M5 12h14M5 12v6a2 2 0 002 2h10a2 2 0 002-2v-6"/></svg>
+          饮食
+        </h4>
+        <ul>
+          <li>2–3 升水（路上无水源）</li>
+          <li>能量棒 / 巧克力 / 坚果</li>
+          <li>保温水壶（装热水）</li>
+          <li>孩子爱吃的零食（士气补给）</li>
+        </ul>
+      </div>
+      <div class="pack-col">
+        <h4>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          其他
+        </h4>
+        <ul>
+          <li>防晒霜 + 太阳镜</li>
+          <li>湿巾 + 卷纸（山上无厕所）</li>
+          <li>简易急救包</li>
+          <li>充电宝</li>
+          <li>少量印尼盾现金</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section class="faq">
+  <div class="container-narrow">
+    <div class="eyebrow">常见问题 · FAQ</div>
+    <h2>常被问到的几件事<em>Things parents usually ask.</em></h2>
+
+    <div style="margin-top:30px">
+      <details>
+        <summary>这趟安全吗？最近不是有新加坡人在印尼火山遇难？</summary>
+        <p>这是个值得正面回答的问题。2026 年 5 月 8 日，两名新加坡男子（29 岁和 27 岁）在 <strong>哈马黑拉岛（Halmahera）的 Mt Dukono 火山</strong> 喷发中遇难，5 月 10 日被找到。这是一座 <em>活火山</em>，长期处于喷发状态，并不是常规徒步目的地。</p>
+        <p>我们要去的 <strong>Mt Prau</strong> 性质完全不同：它是一座 <em>休眠火山</em>，没有有记录的历史喷发，也不在印尼火山监测局（PVMBG）的活跃警戒名单上。山顶被开发成草原营地，每年接待大量本地家庭和学生团体，是中爪哇最入门、最大众的徒步线路。</p>
+        <p>当然山区天气仍然要尊重——所以会请当地向导带队、雇 porter、不脱队、不夜行、保暖装备齐全。任何身体不适或天气异常都以安全优先，向导有权改路线。</p>
+      </details>
+      <details>
+        <summary>孩子多大可以爬？</summary>
+        <p>Patak Banteng 路线本身没有技术难度，6 岁以上、能连续走路 1 小时的孩子，配合家长鼓励都能完成。8 岁以上更轻松。挑战不在于陡，而在于"长"——单程 3.5 小时左右，再加上山顶的低温。</p>
+      </details>
+      <details>
+        <summary>会不会很冷？</summary>
+        <p>山顶夜晚 0–5°C，有风的时候体感更低。白天 10–18°C 比较舒适。睡袋、羽绒服、保暖帽是必备。Premium 套餐含睡袋和防潮垫，但建议自带保暖内衣。</p>
+      </details>
+      <details>
+        <summary>有没有高原反应？</summary>
+        <p>2,590 米属于中等海拔，绝大多数人不会有明显高反。可能会感觉稍微喘一些。提前一周注意休息、保持饮水即可。如果孩子有心肺基础病，需要先咨询医生。</p>
+      </details>
+      <details>
+        <summary>下雨怎么办？</summary>
+        <p>9 月是中爪哇旱季，月均降雨量仅约 49mm，是全年最干燥的几个月之一。但山区天气多变，雨衣还是要带。如果出发当天天气极差，向导会建议改期或缩短行程。</p>
+      </details>
+      <details>
+        <summary>7 岁的孩子能下 Jomblang Cave 吗？</summary>
+        <p>能。多家操作商接受 5 岁以上的孩子，方式是 <strong>tandem 联体下降</strong>——孩子用安全带绑在大人或向导身上一起下，不是自己操作绳索。
+        网上能查到 6 岁孩子顺利完成的家庭游记，TripAdvisor 上也有 7–9 岁的孩子组队下去的案例。<br>
+        实际操作上，需要提前 WhatsApp 联系 <a href="https://goajomblang.com" style="color:var(--sun-2)">goajomblang.com</a> 确认两件事：(1) 安排 tandem，(2) 有没有儿童尺码的靴子（数量很少）。
+        如果家长不放心，也可以那天分头——不下降的可以改去 Goa Pindul 漂流洞，全家都能玩。</p>
+      </details>
+      <details>
+        <summary>需要签证吗？</summary>
+        <p>新加坡护照前往印尼免签 30 天。建议护照有效期至少 6 个月。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="cta">
+  <div class="cta-inner container-narrow">
+    <div class="eyebrow" style="color:#ffd479">一起聊聊 · Let's chat</div>
+    <h2>有兴趣？告诉我<em>I'd love some company on this one.</em></h2>
+    <p>这只是我的初步想法，行程还能调整。<br>如果你家娃也喜欢户外，欢迎一起对一下日期、聊聊细节。<br>各家自行预订，但凑成一队登山会便宜很多。</p>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="container">
+    <p>2026 Mt Prau Family Trip · 一份草稿 · <a href="https://huchen.dev">huchen.dev</a></p>
+    <p style="margin-top:8px;opacity:0.5">行程与价格仅供参考 · 各项服务请各家自行预订</p>
+  </div>
+</footer>
+
+<script>
+  // gentle reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('section').forEach(el => {
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+</script>
+
+</body>
+</html>
