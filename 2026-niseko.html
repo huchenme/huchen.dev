@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 Hokkaido · Gran Fondo + Family</title>
+<meta name="description" content="2026 Aug 26 – Sep 5 · Hokkaido road trip · Gran Fondo World Championships in Niseko + family time in Toya, Otaru, Furano, Biei.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --font-cn:'PingFang SC','Source Han Sans SC','Noto Sans CJK SC','Hiragino Sans GB','Microsoft YaHei',-apple-system,system-ui,sans-serif;
+    --font-en:'Cormorant Garamond',Georgia,serif;
+    --font-ui:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
+    --bg:#f7f6f1;
+    --bg-2:#eceae0;
+    --ink:#15202b;
+    --ink-2:#2c3e50;
+    --muted:#6b7785;
+    --line:#d8d4c5;
+    --line-2:#e5e1d2;
+    --primary:#1f5673;       /* hokkaido blue */
+    --primary-2:#0c3a52;
+    --accent:#c8553d;        /* race red */
+    --green:#5a7a52;         /* nature green */
+    --gold:#b88746;
+    --bike:#1f5673;
+    --car:#6b7785;
+    --rest:#8a6f4a;
+  }
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--font-cn);
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.65;
+    font-size:16px;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:'';
+    position:fixed;inset:0;
+    background-image:url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+    opacity:0.04;
+    pointer-events:none;
+    z-index:1000;
+    mix-blend-mode:multiply;
+  }
+
+  .container{
+    max-width:920px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  /* ───── STICKY DATE NAV ───── */
+  .topnav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(247,246,241,0.92);
+    backdrop-filter:blur(20px) saturate(1.4);
+    -webkit-backdrop-filter:blur(20px) saturate(1.4);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 12px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .nav-inner::-webkit-scrollbar{display:none}
+  .nav-brand{
+    flex-shrink:0;
+    font-family:var(--font-ui);
+    font-weight:700;
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+    padding:8px 6px;
+    margin-right:4px;
+    border-right:1px solid var(--line);
+    padding-right:14px;
+  }
+  .nav-brand small{
+    display:block;
+    font-weight:500;
+    color:var(--muted);
+    font-size:9px;
+    letter-spacing:0.1em;
+    margin-top:2px;
+  }
+  .nav-pill{
+    flex-shrink:0;
+    scroll-snap-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-width:54px;
+    padding:6px 10px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:#fff;
+    color:var(--ink-2);
+    text-decoration:none;
+    font-family:var(--font-ui);
+    line-height:1.1;
+    transition:transform 0.15s, background 0.15s, border-color 0.15s, color 0.15s;
+    cursor:pointer;
+  }
+  .nav-pill:hover{
+    border-color:var(--primary);
+    color:var(--primary);
+  }
+  .nav-pill .dow{
+    font-size:9px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .nav-pill .num{
+    font-size:17px;
+    font-weight:700;
+    margin-top:2px;
+  }
+  .nav-pill .mon{
+    font-size:9px;
+    font-weight:500;
+    color:var(--muted);
+    letter-spacing:0.04em;
+    margin-top:1px;
+  }
+  .nav-pill.is-race{
+    background:var(--accent);
+    border-color:var(--accent);
+    color:#fff;
+  }
+  .nav-pill.is-race .dow,.nav-pill.is-race .mon{color:rgba(255,255,255,0.85)}
+  .nav-pill.is-active{
+    background:var(--primary);
+    border-color:var(--primary);
+    color:#fff;
+    transform:translateY(-1px);
+  }
+  .nav-pill.is-active .dow,.nav-pill.is-active .mon{color:rgba(255,255,255,0.85)}
+  .nav-pill.is-today{
+    box-shadow:0 0 0 2px var(--gold), 0 4px 10px rgba(184,135,70,0.3);
+  }
+
+  /* ───── HERO ───── */
+  .hero{
+    padding:48px 0 56px;
+    border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg, #fdfcf7 0%, var(--bg) 100%);
+  }
+  .hero-eyebrow{
+    font-family:var(--font-ui);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--primary);
+    margin-bottom:12px;
+  }
+  .hero h1{
+    font-size:clamp(28px, 6vw, 40px);
+    font-weight:700;
+    line-height:1.15;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    margin-bottom:8px;
+  }
+  .hero h1 em{
+    font-family:var(--font-en);
+    font-style:italic;
+    font-weight:400;
+    color:var(--muted);
+    font-size:0.6em;
+    display:block;
+    margin-top:6px;
+    letter-spacing:0;
+  }
+  .hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 24px;
+    margin-top:14px;
+    font-family:var(--font-ui);
+    font-size:13px;
+    color:var(--muted);
+  }
+  .hero-meta strong{
+    color:var(--ink);
+    font-weight:600;
+  }
+  .hero-stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-top:28px;
+  }
+  .h-stat{
+    background:var(--bg);
+    padding:16px 14px;
+  }
+  .h-stat-num{
+    font-family:var(--font-en);
+    font-size:30px;
+    font-weight:500;
+    color:var(--primary);
+    line-height:1;
+    margin-bottom:4px;
+  }
+  .h-stat-label{
+    font-family:var(--font-ui);
+    font-size:11px;
+    color:var(--muted);
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
+
+  /* ───── DAY CARDS ───── */
+  .days{
+    padding:40px 0 80px;
+  }
+  .day{
+    scroll-margin-top:100px;
+    padding:32px 0;
+    border-bottom:1px solid var(--line-2);
+  }
+  .day:first-child{padding-top:8px}
+  .day:last-child{border-bottom:none}
+
+  .day-head{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    margin-bottom:18px;
+  }
+  .day-date{
+    flex-shrink:0;
+    width:64px;
+    text-align:center;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    padding:8px 4px;
+    background:#fff;
+  }
+  .day-date .num{
+    font-family:var(--font-en);
+    font-size:30px;
+    font-weight:500;
+    line-height:1;
+    color:var(--ink);
+    font-style:italic;
+  }
+  .day-date .mon{
+    font-family:var(--font-ui);
+    font-size:10px;
+    font-weight:600;
+    color:var(--muted);
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    margin-top:2px;
+  }
+  .day-date .dow{
+    font-family:var(--font-ui);
+    font-size:9px;
+    font-weight:600;
+    color:var(--primary);
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    margin-top:6px;
+    padding-top:6px;
+    border-top:1px solid var(--line-2);
+  }
+  .day.is-race .day-date{
+    background:var(--accent);
+    border-color:var(--accent);
+  }
+  .day.is-race .day-date .num{color:#fff}
+  .day.is-race .day-date .mon,.day.is-race .day-date .dow{color:rgba(255,255,255,0.85);border-top-color:rgba(255,255,255,0.25)}
+
+  .day-headline{flex:1;min-width:0}
+  .day-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:var(--font-ui);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+  .day-tag::before{
+    content:'';
+    width:6px;height:6px;
+    border-radius:50%;
+    background:currentColor;
+  }
+  .day-tag.t-bike{color:var(--bike)}
+  .day-tag.t-car{color:var(--car)}
+  .day-tag.t-rest{color:var(--rest)}
+  .day-tag.t-race{color:var(--accent)}
+  .day-tag.t-flight{color:var(--green)}
+
+  .day-title{
+    font-size:22px;
+    font-weight:700;
+    line-height:1.25;
+    color:var(--ink);
+    letter-spacing:-0.005em;
+  }
+  .day-title small{
+    display:block;
+    font-family:var(--font-en);
+    font-style:italic;
+    font-weight:400;
+    color:var(--muted);
+    font-size:0.65em;
+    margin-top:4px;
+    letter-spacing:0;
+  }
+
+  /* hotel chip */
+  .hotel-chip{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 12px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:100px;
+    font-family:var(--font-ui);
+    font-size:12px;
+    color:var(--ink-2);
+    margin-bottom:18px;
+  }
+  .hotel-chip svg{
+    width:13px;height:13px;
+    color:var(--primary);
+    flex-shrink:0;
+  }
+  .hotel-chip strong{font-weight:600;color:var(--ink)}
+  .hotel-chip small{color:var(--muted);font-size:11px}
+
+  /* plan list */
+  .plan{
+    list-style:none;
+    margin:8px 0 0;
+    padding:0;
+    border-left:1.5px solid var(--line);
+    padding-left:18px;
+    margin-left:6px;
+  }
+  .plan li{
+    position:relative;
+    padding:6px 0;
+    font-size:15px;
+    color:var(--ink-2);
+  }
+  .plan li::before{
+    content:'';
+    position:absolute;
+    left:-23px;
+    top:14px;
+    width:8px;height:8px;
+    border-radius:50%;
+    background:var(--bg);
+    border:1.5px solid var(--primary);
+  }
+  .day.is-race .plan li::before{border-color:var(--accent)}
+  .plan li strong{color:var(--ink);font-weight:600}
+  .plan li time{
+    display:inline-block;
+    font-family:var(--font-ui);
+    font-weight:600;
+    color:var(--primary);
+    font-size:12px;
+    letter-spacing:0.04em;
+    margin-right:10px;
+    min-width:54px;
+  }
+
+  /* reasoning */
+  .reason{
+    margin-top:18px;
+    padding:12px 14px;
+    background:rgba(31,86,115,0.05);
+    border-left:3px solid var(--primary);
+    border-radius:0 6px 6px 0;
+    font-size:14px;
+    color:var(--ink-2);
+  }
+  .reason strong{color:var(--primary);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;font-family:var(--font-ui);margin-right:6px}
+  .day.is-race .reason{
+    background:rgba(200,85,61,0.06);
+    border-left-color:var(--accent);
+  }
+  .day.is-race .reason strong{color:var(--accent)}
+
+  /* race banner */
+  .race-banner{
+    background:linear-gradient(135deg, #c8553d 0%, #963d2a 100%);
+    color:#fff;
+    padding:18px 20px;
+    border-radius:10px;
+    margin-bottom:18px;
+    font-family:var(--font-ui);
+  }
+  .race-banner .label{
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    opacity:0.9;
+    margin-bottom:4px;
+  }
+  .race-banner .name{
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:-0.005em;
+  }
+
+  /* ───── PHILOSOPHY ───── */
+  .philosophy{
+    padding:32px 0 40px;
+    background:var(--bg-2);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .philosophy h3{
+    font-family:var(--font-ui);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--primary);
+    margin-bottom:12px;
+  }
+  .philosophy ul{
+    list-style:none;
+    padding:0;
+  }
+  .philosophy li{
+    padding:8px 0;
+    font-size:15px;
+    color:var(--ink-2);
+    border-bottom:1px dashed var(--line);
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  .philosophy li:last-child{border-bottom:none}
+  .philosophy li::before{
+    content:'·';
+    color:var(--primary);
+    font-weight:700;
+    font-size:20px;
+    line-height:1.1;
+    flex-shrink:0;
+  }
+
+  /* ───── ROUTES ───── */
+  .routes{
+    padding:32px 0;
+  }
+  .routes h3{
+    font-family:var(--font-ui);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--bike);
+    margin-bottom:12px;
+  }
+  .route{
+    padding:14px 0;
+    border-bottom:1px solid var(--line-2);
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:14px;
+  }
+  .route:last-child{border-bottom:none}
+  .route-name{flex:1}
+  .route-name strong{
+    display:block;
+    font-size:15px;
+    color:var(--ink);
+    font-weight:600;
+  }
+  .route-name small{
+    display:block;
+    font-family:var(--font-en);
+    font-style:italic;
+    color:var(--muted);
+    font-size:13px;
+  }
+  .route-name p{
+    font-size:13px;
+    color:var(--muted);
+    margin-top:4px;
+  }
+  .route-tag{
+    flex-shrink:0;
+    font-family:var(--font-ui);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--bike);
+    background:rgba(31,86,115,0.08);
+    padding:3px 8px;
+    border-radius:4px;
+  }
+
+  /* ───── NOTES ───── */
+  .notes{
+    padding:32px 0 60px;
+    border-top:1px solid var(--line);
+  }
+  .notes h3{
+    font-family:var(--font-ui);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:12px;
+  }
+
+  /* ───── FOOTER ───── */
+  footer{
+    background:var(--ink);
+    color:#8a95a3;
+    padding:32px 0;
+    text-align:center;
+    font-family:var(--font-ui);
+    font-size:12px;
+    letter-spacing:0.04em;
+  }
+
+  /* ───── RESPONSIVE ───── */
+  @media (min-width:720px){
+    .hero{padding:80px 0 70px}
+    .hero-stats{grid-template-columns:repeat(4,1fr)}
+    .day{padding:48px 0}
+    .day-date{width:84px;padding:12px 6px}
+    .day-date .num{font-size:42px}
+    .day-title{font-size:26px}
+    .container{padding:0 32px}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ STICKY NAV ═══════════════ -->
+<nav class="topnav" aria-label="Trip dates">
+  <div class="nav-inner" id="dateNav">
+    <div class="nav-brand">Hokkaido<small>2026</small></div>
+    <a class="nav-pill" href="#d1" data-iso="2026-08-26"><span class="dow">Wed</span><span class="num">26</span><span class="mon">Aug</span></a>
+    <a class="nav-pill" href="#d2" data-iso="2026-08-27"><span class="dow">Thu</span><span class="num">27</span><span class="mon">Aug</span></a>
+    <a class="nav-pill" href="#d3" data-iso="2026-08-28"><span class="dow">Fri</span><span class="num">28</span><span class="mon">Aug</span></a>
+    <a class="nav-pill" href="#d4" data-iso="2026-08-29"><span class="dow">Sat</span><span class="num">29</span><span class="mon">Aug</span></a>
+    <a class="nav-pill is-race" href="#d5" data-iso="2026-08-30"><span class="dow">Race</span><span class="num">30</span><span class="mon">Aug</span></a>
+    <a class="nav-pill" href="#d6" data-iso="2026-08-31"><span class="dow">Mon</span><span class="num">31</span><span class="mon">Aug</span></a>
+    <a class="nav-pill" href="#d7" data-iso="2026-09-01"><span class="dow">Tue</span><span class="num">1</span><span class="mon">Sep</span></a>
+    <a class="nav-pill" href="#d8" data-iso="2026-09-02"><span class="dow">Wed</span><span class="num">2</span><span class="mon">Sep</span></a>
+    <a class="nav-pill" href="#d9" data-iso="2026-09-03"><span class="dow">Thu</span><span class="num">3</span><span class="mon">Sep</span></a>
+    <a class="nav-pill" href="#d10" data-iso="2026-09-04"><span class="dow">Fri</span><span class="num">4</span><span class="mon">Sep</span></a>
+    <a class="nav-pill" href="#d11" data-iso="2026-09-05"><span class="dow">Sat</span><span class="num">5</span><span class="mon">Sep</span></a>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Aug 26 — Sep 5, 2026 · 11 days</div>
+    <h1>北海道之旅<em>Gran Fondo World Champ + 家庭自驾</em></h1>
+    <div class="hero-meta">
+      <span>🚴 <strong>Race:</strong> Niseko Gran Fondo · Aug 30</span>
+      <span>👨‍👩‍👦 <strong>Family:</strong> wife + 2yo son</span>
+      <span>🚐 <strong>Mode:</strong> rental van · self drive</span>
+    </div>
+    <div class="hero-stats">
+      <div class="h-stat">
+        <div class="h-stat-num">11</div>
+        <div class="h-stat-label">天 · Days</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-num">5</div>
+        <div class="h-stat-label">基地 · Bases</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-num">2</div>
+        <div class="h-stat-label">骑行日 · Rides</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-num">~700km</div>
+        <div class="h-stat-label">总自驾</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PHILOSOPHY ═══════════════ -->
+<section class="philosophy">
+  <div class="container">
+    <h3>Trip Philosophy · 行程原则</h3>
+    <ul>
+      <li>Only 2 meaningful rides after arrival — Lake Toya bike check + optional Biei scenic ride.</li>
+      <li>After race day, prioritize recovery, nature, and family flexibility instead of training volume.</li>
+      <li>Minimize hotel changes and avoid overly packed schedules.</li>
+      <li>Use Furano as the practical base; visit Biei as day trips.</li>
+      <li>Keep at least one flexible half-day every day for naps, weather, or unexpected delays.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══════════════ DAYS ═══════════════ -->
+<section class="days">
+  <div class="container">
+
+    <!-- DAY 1 -->
+    <article class="day" id="d1">
+      <div class="day-head">
+        <div class="day-date">
+          <div class="num">26</div><div class="mon">Aug</div><div class="dow">Wed</div>
+        </div>
+        <div class="day-headline">
+          <div class="day-tag t-flight">Arrival · 抵达</div>
+          <div class="day-title">Singapore → CTS → Lake Toya<small>Land at New Chitose, drive 2h to Lake Toya Onsen</small></div>
+        </div>
+      </div>
+      <div class="hotel-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
+        <span><strong>Lake Toya Onsen</strong> &nbsp;<small>湖畔温泉酒店</small></span>
+      </div>
+      <ul class="plan">
+        <li><time>12:30</time>抵达 New Chitose Airport (CTS)</li>
+        <li><time>~14:30</time>办完入境、提租车后出发（预留 1.5–2 小时缓冲）</li>
+        <li><time>~16:30</time>抵达 Lake Toya（车程 ~2h）</li>
+        <li>Check in，组装自行车（如果有体力），早早吃晚饭休息</li>
+        <li><strong>Do not</strong> schedule any sightseeing today — recovery first</li>
+      </ul>
+      <div class="reason"><strong>Why</strong>Long-haul flight + toddler + rental van pickup is already a lot. Lake Toya is scenic but still manageable after travel.</div>
+    </article>
+
+    <!-- DAY 2 -->
+    <article class="day" id="d2">
+      <div class="day-head">
+        <div class="day-date">
+          <div class="num">27</div><div class="mon">Aug</div><div class="dow">Thu</div>
+        </div>
+        <div class="day-headline">
+          <div class="day-tag t-bike">Soft launch · 装备日</div>
+          <div class="day-title">Lake Toya → Niseko<small>Bike check ride · transfer to Skye Niseko</small></div>
+        </div>
+      </div>
+      <div class="hotel-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
+        <span><strong>Skye Niseko</strong> &nbsp;<small>已预订 · booked</small></span>
+      </div>
+      <ul class="plan">
+        <li>Optional easy <strong>Lake Toya loop</strong> (~40 km max) — bike setup + leg check, no efforts</li>
+        <li><strong>Lake Hill Farm</strong> — relaxed family time, open grass for the toddler</li>
+        <li>Drive to Niseko in afternoon (~1–1.5h)</li>
+        <li>Check into Skye Niseko, keep evening relaxed</li>
+      </ul>
+      <div class="reason"><strong>Why</strong>This is a soft-launch day. The ride is for setup and adapting to Hokkaido roads, not fitness.</div>
+    </article>
+
+    <!-- DAY 3 -->
+    <article class="day" id="d3">
+      <div class="day-head">
+        <div class="day-date">
+          <div class="num">28</div><div class="mon">Aug</div><div class="dow">Fri</div>
+        </div>
+        <div class="day-headline">
+          <div class="day-tag t-bike">Light training · 轻量训练</div>
+          <div class="day-title">Niseko Light Training Day<small>Stay fresh · feel iconic Niseko roads</small></div>
+        </div>
+      </div>
+      <div class="hotel-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
+        <span><strong>Skye Niseko</strong></span>
+      </div>
+      <ul class="plan">
+        <li>Optional <strong>60–90 min opener ride</strong> on the Niseko Panorama Line, no hard efforts</li>
+        <li>Afternoon family time at <strong>Milk Kobo</strong></li>
+        <li>Optional gondola ride if weather is good</li>
+      </ul>
+      <div class="reason"><strong>Why</strong>Stay fresh before race day while still experiencing iconic Niseko roads.</div>
+    </article>
+
+    <!-- DAY 4 -->
+    <article class="day" id="d4">
+      <div class="day-head">
+        <div class="day-date">
+          <div class="num">29</div><div class="mon">Aug</div><div class="dow">Sat</div>
+        </div>
+        <div class="day-headline">
+          <div class="day-tag t-rest">Pre-race · 赛前一天</div>
+          <div class="day-title">Recovery Day<small>Fresh legs &gt; extra riding</small></div>
+        </div>
+      </div>
+      <div class="hotel-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
+        <span><strong>Skye Niseko</strong></span>
+      </div>
+      <ul class="plan">
+        <li>Optional <strong>30–45 min easy spin</strong> only</li>
+        <li>Hydrate, prep nutrition, rest</li>
+        <li>Short walks only · early sleep</li>
+      </ul>
+      <div class="reason"><strong>Why</strong>No fitness gains here. Fresh legs matter more than any extra riding.</div>
+    </article>
+
+    <!-- DAY 5 — RACE -->
+    <article class="day is-race" id="d5">
+      <div class="day-head">
+        <div class="day-date">
+          <div class="num">30</div><div class="mon">Aug</div><div class="dow">Race</div>
+        </div>
+        <div class="day-headline">
+          <div class="day-tag t-race">Race day · 比赛日</div>
+          <div class="day-title">Gran Fondo World Championships<small>The whole reason we came.</small></div>
+        </div>
+      </div>
+      <div class="race-banner">
+        <div class="label">UCI Gran Fondo World Championships</div>
+        <div class="name">Niseko, Hokkaido · 2026</div>
+      </div>
+      <div class="hotel-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
+        <span><strong>Skye Niseko</strong></span>
+      </div>
+      <ul class="plan">
+        <li><strong>Race</strong> · full focus</li>
+        <li>Post-race recovery meal + onsen</li>
+        <li>Minimal movement after race</li>
+      </ul>
+      <div class="reason"><strong>Why</strong>The key athletic objective of the trip.</div>
+    </article>
+
+    <!-- DAY 6 -->
+    <article class="day" id="d6">
+      <div class="day-head">
+        <div class="day-date">
+          <div class="num">31</div><div class="mon">Aug</div><div class="dow">Mon</div>
+        </div>
+        <div class="day-headline">
+          <div class="day-tag t-car">Drive · 美食日</div>
+          <div class="day-title">Niseko → Otaru Seafood Day<small>Decompression · Sankaku Market · canal walk</small></div>
+        </div>
+      </div>
+      <div class="hotel-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
+        <span><strong>Near Otaru Station</strong> &nbsp;<small>小樽站附近</small></span>
+      </div>
+      <ul class="plan">
+        <li>No riding</li>
+        <li>Drive Niseko → Otaru (~1.5h)</li>
+        <li>Lunch at <strong>Sankaku Market</strong> — fresh seafood bowls (海鮮丼)</li>
+        <li>Short walk around Otaru Canal area</li>
+        <li>Keep afternoon relaxed</li>
+      </ul>
+      <div class="reason"><strong>Why</strong>Post-race recovery matters more than squeezing in extra cycling. Otaru is for the seafood and atmosphere.</div>
+    </article>
+
+    <!-- DAY 7 -->
+    <article class="day" id="d7">
+      <div class="day-head">
+        <div class="day-date">
+          <div class="num">1</div><div class="mon">Sep</div><div class="dow">Tue</div>
+        </div>
+        <div class="day-headline">
+          <div class="day-tag t-car">Drive · 转场</div>
+          <div class="day-title">Otaru → Furano<small>Settle into the central Hokkaido base</small></div>
+        </div>
+      </div>
+      <div class="hotel-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
+        <span><strong>Tonya's, Furano</strong> &nbsp;<small>3-104 Yayoicho, Furano</small></span>
+      </div>
+      <ul class="plan">
+        <li>Drive Otaru → Furano (~2.5–3h)</li>
+        <li>Afternoon visit to <strong>Farm Tomita</strong> · expect late-summer flowers, not peak lavender</li>
+        <li>Early dinner, relaxed evening</li>
+      </ul>
+      <div class="reason"><strong>Why</strong>Furano is the practical base for the central Hokkaido nature section.</div>
+    </article>
+
+    <!-- DAY 8 -->
+    <article class="day" id="d8">
+      <div class="day-head">
+        <div class="day-date">
+          <div class="num">2</div><div class="mon">Sep</div><div class="dow">Wed</div>
+        </div>
+        <div class="day-headline">
+          <div class="day-tag t-bike">Scenic ride · 风景日</div>
+          <div class="day-title">Biei Scenic Day<small>The peak scenery day of the trip</small></div>
+        </div>
+      </div>
+      <div class="hotel-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
+        <span><strong>Tonya's, Furano</strong></span>
+      </div>
+      <ul class="plan">
+        <li>Optional easy ride on <strong>Biei Patchwork Road</strong> (60–90 min max)</li>
+        <li>Visit <strong>Shirogane Blue Pond</strong> 青池</li>
+        <li>Cafes, viewpoints, local farms — let the day breathe</li>
+      </ul>
+      <div class="reason"><strong>Why</strong>Best balance between cycling and family travel. Biei is the iconic Hokkaido landscape.</div>
+    </article>
+
+    <!-- DAY 9 -->
+    <article class="day" id="d9">
+      <div class="day-head">
+        <div class="day-date">
+          <div class="num">3</div><div class="mon">Sep</div><div class="dow">Thu</div>
+        </div>
+        <div class="day-headline">
+          <div class="day-tag t-rest">Buffer · 弹性日</div>
+          <div class="day-title">Flexible Nature Day<small>Weather backup · rest · revisit favorites</small></div>
+        </div>
+      </div>
+      <div class="hotel-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
+        <span><strong>Tonya's, Furano</strong></span>
+      </div>
+      <ul class="plan">
+        <li>No riding</li>
+        <li>Optional <strong>Shikisai no Oka</strong> 四季彩之丘 flower fields</li>
+        <li>Or just stay around Furano — naps, easy meals</li>
+      </ul>
+      <div class="reason"><strong>Why</strong>Buffer days are critical with toddlers and variable Hokkaido weather.</div>
+    </article>
+
+    <!-- DAY 10 -->
+    <article class="day" id="d10">
+      <div class="day-head">
+        <div class="day-date">
+          <div class="num">4</div><div class="mon">Sep</div><div class="dow">Fri</div>
+        </div>
+        <div class="day-headline">
+          <div class="day-tag t-flight">Departure · 离开</div>
+          <div class="day-title">Furano → CTS → Shanghai<small>Conservative, no morning ride</small></div>
+        </div>
+      </div>
+      <div class="hotel-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
+        <span><strong>Shanghai PVG airport hotel</strong></span>
+      </div>
+      <ul class="plan">
+        <li><time>~07:30</time>Leave Furano (07:30–08:00)</li>
+        <li><time>~10:30</time>Arrive CTS (~2.5h drive), return rental van</li>
+        <li><time>~13:30</time>Flight to Shanghai PVG</li>
+        <li>Overnight at airport hotel</li>
+      </ul>
+      <div class="reason"><strong>Why</strong>Departure days should be calm and conservative. No morning ride or extra activities.</div>
+    </article>
+
+    <!-- DAY 11 -->
+    <article class="day" id="d11">
+      <div class="day-head">
+        <div class="day-date">
+          <div class="num">5</div><div class="mon">Sep</div><div class="dow">Sat</div>
+        </div>
+        <div class="day-headline">
+          <div class="day-tag t-flight">Home · 回家</div>
+          <div class="day-title">Shanghai → Singapore<small>Recovery day after arrival</small></div>
+        </div>
+      </div>
+      <ul class="plan">
+        <li>Morning transfer + flight to Singapore</li>
+        <li>Recovery day after arrival — keep expectations low</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══════════════ ROUTES ═══════════════ -->
+<section class="routes">
+  <div class="container">
+    <h3>Cycling Routes · 骑行路线</h3>
+    <div class="route">
+      <div class="route-name">
+        <strong>Lake Toya Loop</strong>
+        <small>Easy scenic lake ride</small>
+        <p>Bike setup + leg check on Day 2. ~40 km, low traffic.</p>
+      </div>
+      <span class="route-tag">Day 2</span>
+    </div>
+    <div class="route">
+      <div class="route-name">
+        <strong>Niseko Panorama Line</strong>
+        <small>Iconic climbing road</small>
+        <p>Use lightly before race day. The road most people come to Niseko for.</p>
+      </div>
+      <span class="route-tag">Day 3</span>
+    </div>
+    <div class="route">
+      <div class="route-name">
+        <strong>Biei Patchwork Road</strong>
+        <small>Best scenic ride of the trip</small>
+        <p>Rolling hills, farmland, viewpoints. 60–90 min easy spin.</p>
+      </div>
+      <span class="route-tag">Day 8</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ NOTES ═══════════════ -->
+<section class="notes">
+  <div class="container">
+    <h3>Family Travel Notes · 家庭出行须知</h3>
+    <ul class="philosophy" style="all:revert">
+      <li style="padding:8px 0;font-size:14px;color:var(--ink-2);border-bottom:1px dashed var(--line);list-style:none;display:flex;gap:10px"><span style="color:var(--accent);font-weight:700">·</span>Do not over-plan individual days.</li>
+      <li style="padding:8px 0;font-size:14px;color:var(--ink-2);border-bottom:1px dashed var(--line);list-style:none;display:flex;gap:10px"><span style="color:var(--accent);font-weight:700">·</span>Always leave room for naps, weather changes, and meal delays.</li>
+      <li style="padding:8px 0;font-size:14px;color:var(--ink-2);border-bottom:1px dashed var(--line);list-style:none;display:flex;gap:10px"><span style="color:var(--accent);font-weight:700">·</span>Nature-focused travel works better than queue-heavy attractions with toddlers.</li>
+      <li style="padding:8px 0;font-size:14px;color:var(--ink-2);border-bottom:1px dashed var(--line);list-style:none;display:flex;gap:10px"><span style="color:var(--accent);font-weight:700">·</span>Driving in Hokkaido is relaxed but distances are longer than they appear on maps.</li>
+      <li style="padding:8px 0;font-size:14px;color:var(--ink-2);list-style:none;display:flex;gap:10px"><span style="color:var(--accent);font-weight:700">·</span>Convenience stores in Hokkaido are excellent for snacks and recovery food.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="container">
+    <p>2026 Hokkaido · self-use trip plan · <a href="https://huchen.dev" style="color:#b88746;text-decoration:none">huchen.dev</a></p>
+  </div>
+</footer>
+
+<script>
+  // ───── highlight today + scrollspy active day ─────
+  (function() {
+    const pills = Array.from(document.querySelectorAll('.nav-pill'));
+    const days = Array.from(document.querySelectorAll('.day'));
+
+    // mark today (if within trip dates)
+    const today = new Date().toISOString().slice(0, 10);
+    const todayPill = pills.find(p => p.dataset.iso === today);
+    if (todayPill) {
+      todayPill.classList.add('is-today');
+      // scroll the nav to today on first load
+      requestAnimationFrame(() => {
+        todayPill.scrollIntoView({ inline: 'center', block: 'nearest' });
+      });
+    }
+
+    // scrollspy: highlight current day in nav
+    const map = new Map();
+    days.forEach((d, i) => map.set(d.id, pills.find(p => p.getAttribute('href') === '#' + d.id)));
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        const pill = map.get(e.target.id);
+        if (!pill) return;
+        if (e.isIntersecting) {
+          pills.forEach(p => p.classList.remove('is-active'));
+          pill.classList.add('is-active');
+          // ensure active pill is visible in horizontal nav
+          pill.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+        }
+      });
+    }, {
+      rootMargin: '-30% 0px -60% 0px',
+      threshold: 0,
+    });
+
+    days.forEach(d => io.observe(d));
+
+    // also handle pill clicks: temporarily mark active immediately
+    pills.forEach(p => {
+      p.addEventListener('click', () => {
+        pills.forEach(x => x.classList.remove('is-active'));
+        p.classList.add('is-active');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
