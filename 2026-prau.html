@@ -10,6 +10,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<!-- Leaflet — start downloading early but non-blocking. Map init waits for the script to load. -->
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" media="print" onload="this.media='all'">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
 <style>
   *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
   :root{
@@ -1560,30 +1565,40 @@
     io.observe(el);
   });
 
-  // ───── load leaflet after page is interactive (doesn't block first paint) ─────
-  function loadLeaflet() {
-    const css = document.createElement('link');
-    css.rel = 'stylesheet';
-    css.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
-    css.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
-    css.crossOrigin = '';
-    document.head.appendChild(css);
-
-    const js = document.createElement('script');
-    js.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-    js.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
-    js.crossOrigin = '';
-    js.onload = initMap;
-    document.head.appendChild(js);
+  // ───── Leaflet is loaded via <script defer>, so it's ready by DOMContentLoaded ─────
+  // If for some reason L isn't there yet (slow CDN, blocked), retry on scroll-to-map.
+  function tryInitMap() {
+    if (typeof L !== 'undefined' && document.getElementById('trip-map')) {
+      initMap();
+    } else {
+      // poll briefly in case the deferred script is still parsing
+      const start = Date.now();
+      const poll = setInterval(() => {
+        if (typeof L !== 'undefined') {
+          clearInterval(poll);
+          initMap();
+        } else if (Date.now() - start > 8000) {
+          clearInterval(poll);
+          // last resort: inject script tag fresh
+          const s = document.createElement('script');
+          s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+          s.crossOrigin = '';
+          s.onload = initMap;
+          document.head.appendChild(s);
+        }
+      }, 100);
+    }
   }
-  // kick off after load event so it doesn't compete with critical resources
-  if (document.readyState === 'complete') {
-    loadLeaflet();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', tryInitMap);
   } else {
-    window.addEventListener('load', loadLeaflet, { once: true });
+    tryInitMap();
   }
 
+  let mapInitialized = false;
   function initMap() {
+  if (mapInitialized) return;
+  mapInitialized = true;
   // ───── trip map ─────
   // SVG glyphs for each pin
   const G = {
