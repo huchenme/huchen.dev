@@ -137,6 +137,25 @@
   .nav-pill.is-today{
     box-shadow:0 0 0 2px var(--gold), 0 4px 10px rgba(184,135,70,0.3);
   }
+  .nav-pill.is-section{
+    min-width:46px;
+    background:rgba(31,86,115,0.06);
+  }
+  .nav-pill.is-section svg{
+    width:18px;height:18px;
+    color:var(--primary);
+  }
+  .nav-pill.is-section .lbl{
+    font-size:9px;font-weight:600;
+    letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--muted);
+    margin-top:1px;
+  }
+  .nav-pill.is-section.is-active{
+    background:var(--primary);
+  }
+  .nav-pill.is-section.is-active svg{color:#fff}
+  .nav-pill.is-section.is-active .lbl{color:rgba(255,255,255,0.85)}
 
   /* ───── HERO ───── */
   .hero{
@@ -806,14 +825,129 @@
     *{animation:none !important;transition:none !important}
     html{scroll-behavior:auto}
   }
+
+  /* ───── PASSWORD GATE ───── */
+  body.locked > *:not(#gate){display:none !important}
+  #gate{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:linear-gradient(180deg, #15202b 0%, #0c3a52 100%);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    font-family:var(--font-cn);
+  }
+  #gate.gate-hidden{display:none}
+  .gate-card{
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:14px;
+    padding:32px 28px;
+    max-width:380px;
+    width:100%;
+    text-align:center;
+  }
+  .gate-icon{
+    width:46px;height:46px;
+    margin:0 auto 18px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,0.08);
+    border-radius:14px;
+    color:#a8c8d8;
+  }
+  .gate-card h2{
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  .gate-card p{
+    font-size:13px;
+    color:#a8c8d8;
+    margin-bottom:22px;
+  }
+  .gate-input{
+    width:100%;
+    padding:12px 14px;
+    font-size:18px;
+    font-family:var(--font-ui);
+    letter-spacing:0.3em;
+    text-align:center;
+    color:#fff;
+    background:rgba(255,255,255,0.08);
+    border:1.5px solid rgba(255,255,255,0.18);
+    border-radius:10px;
+    outline:none;
+    transition:border-color 0.2s, background 0.2s;
+    -webkit-appearance:none;
+    margin-bottom:12px;
+  }
+  .gate-input:focus{
+    border-color:#a8c8d8;
+    background:rgba(255,255,255,0.12);
+  }
+  .gate-input.shake{
+    border-color:#c8553d;
+    animation:shake 0.4s;
+  }
+  @keyframes shake{
+    0%,100%{transform:translateX(0)}
+    25%{transform:translateX(-6px)}
+    75%{transform:translateX(6px)}
+  }
+  .gate-btn{
+    width:100%;
+    padding:12px;
+    font-size:14px;
+    font-family:var(--font-ui);
+    font-weight:600;
+    letter-spacing:0.04em;
+    color:#0c3a52;
+    background:#a8c8d8;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    transition:background 0.2s;
+  }
+  .gate-btn:hover{background:#bcd8e6}
+  .gate-hint{
+    margin-top:14px;
+    font-size:11px;
+    color:rgba(255,255,255,0.45);
+    letter-spacing:0.04em;
+  }
 </style>
 </head>
-<body>
+<body class="locked">
+
+<!-- ═══════════════ PASSWORD GATE ═══════════════ -->
+<div id="gate" role="dialog" aria-label="Enter password">
+  <div class="gate-card">
+    <div class="gate-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2"/>
+        <path d="M7 11V7a5 5 0 0110 0v4"/>
+      </svg>
+    </div>
+    <h2>2026 北海道</h2>
+    <p>请输入密码访问</p>
+    <input type="password" inputmode="numeric" id="gateInput" class="gate-input" autocomplete="off" autofocus aria-label="Password">
+    <button type="button" id="gateBtn" class="gate-btn">解锁 · Unlock</button>
+    <div class="gate-hint">已认证后会记住此设备</div>
+  </div>
+</div>
 
 <!-- ═══════════════ STICKY NAV ═══════════════ -->
 <nav class="topnav" aria-label="行程日期">
   <div class="nav-inner" id="dateNav">
     <div class="nav-brand">Hokkaido<small>2026</small></div>
+    <a class="nav-pill is-section" href="#flights" aria-label="Flights">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5C13 2.67 12.33 2 11.5 2S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+      <span class="lbl">航班</span>
+    </a>
     <a class="nav-pill" href="#d1" data-iso="2026-08-26"><span class="dow">Wed</span><span class="num">26</span><span class="mon">Aug</span></a>
     <a class="nav-pill" href="#d2" data-iso="2026-08-27"><span class="dow">Thu</span><span class="num">27</span><span class="mon">Aug</span></a>
     <a class="nav-pill" href="#d3" data-iso="2026-08-28"><span class="dow">Fri</span><span class="num">28</span><span class="mon">Aug</span></a>
@@ -851,7 +985,7 @@
 </section>
 
 <!-- ═══════════════ FLIGHTS ═══════════════ -->
-<section class="flights">
+<section class="flights" id="flights" style="scroll-margin-top:80px">
   <div class="container">
     <h3>航班 · Flights</h3>
     <!-- Outbound -->
@@ -1136,11 +1270,11 @@
         </div>
       </div>
       <div class="day-photo"><img src="/img/niseko/otaru.jpg" alt="小樽 Otaru canal" loading="lazy" decoding="async"></div>
-      <div class="hotel-chip is-tbd">
+      <div class="hotel-chip is-booked">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
         <span>
-          <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Otaru+Station" target="_blank" rel="noopener"><strong>小樽站附近</strong></a>
-          <span class="addr">具体酒店待定</span>
+          <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Grand+Park+Otaru+Hotel" target="_blank" rel="noopener"><strong>Grand Park Otaru Hotel</strong></a>
+          <span class="addr"><span class="copy" data-copy="11-3 Chikko, Otaru, Hokkaido 047-0008, Japan">11-3 Chikko, Otaru, 047-0008</span> · check-in 14:00 / out 10:00</span>
         </span>
       </div>
       <ul class="plan">
@@ -1175,11 +1309,11 @@
         </div>
       </div>
       <div class="day-photo"><img src="/img/niseko/furano.jpg" alt="富良野 Farm Tomita" loading="lazy" decoding="async"></div>
-      <div class="hotel-chip is-tbd">
+      <div class="hotel-chip is-booked">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
         <span>
-          <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tonya%27s+Furano+Yayoicho" target="_blank" rel="noopener"><strong>Tonya's, Furano</strong></a>
-          <span class="addr"><span class="copy" data-copy="北海道富良野市弥生町3-104">北海道富良野市弥生町3-104</span></span>
+          <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=3-104+Yayoicho+Furano-shi+Hokkaido" target="_blank" rel="noopener"><strong>Stay FuRaNo · Private House</strong></a>
+          <span class="addr"><span class="copy" data-copy="3-104 Yayoicho, Furano-shi, Hokkaido 076-0018">3-104 Yayoicho, Furano-shi 076-0018</span> · self check-in 15:00 / out 10:00 · <a class="web" href="https://www.onestayapp.com/s/HfCLEZc" target="_blank" rel="noopener">pre-check-in</a></span>
         </span>
       </div>
       <ul class="plan">
@@ -1211,11 +1345,11 @@
         </div>
       </div>
       <div class="day-photo"><img src="/img/niseko/biei.jpg" alt="美瑛 Biei patchwork fields" loading="lazy" decoding="async"></div>
-      <div class="hotel-chip is-tbd">
+      <div class="hotel-chip is-booked">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
         <span>
-          <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tonya%27s+Furano+Yayoicho" target="_blank" rel="noopener"><strong>Tonya's, Furano</strong></a>
-          <span class="addr"><span class="copy" data-copy="北海道富良野市弥生町3-104">北海道富良野市弥生町3-104</span></span>
+          <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=3-104+Yayoicho+Furano-shi+Hokkaido" target="_blank" rel="noopener"><strong>Stay FuRaNo · Private House</strong></a>
+          <span class="addr"><span class="copy" data-copy="3-104 Yayoicho, Furano-shi, Hokkaido 076-0018">3-104 Yayoicho, Furano-shi 076-0018</span> · self check-in 15:00 / out 10:00 · <a class="web" href="https://www.onestayapp.com/s/HfCLEZc" target="_blank" rel="noopener">pre-check-in</a></span>
         </span>
       </div>
       <ul class="plan">
@@ -1247,11 +1381,11 @@
           <div class="day-title">自然 + 备用<small>Weather backup · rest · revisit favorites</small></div>
         </div>
       </div>
-      <div class="hotel-chip is-tbd">
+      <div class="hotel-chip is-booked">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13H3z"/><path d="M9 21v-6h6v6"/></svg>
         <span>
-          <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=Tonya%27s+Furano+Yayoicho" target="_blank" rel="noopener"><strong>Tonya's, Furano</strong></a>
-          <span class="addr"><span class="copy" data-copy="北海道富良野市弥生町3-104">北海道富良野市弥生町3-104</span></span>
+          <a class="gmap" href="https://www.google.com/maps/search/?api=1&query=3-104+Yayoicho+Furano-shi+Hokkaido" target="_blank" rel="noopener"><strong>Stay FuRaNo · Private House</strong></a>
+          <span class="addr"><span class="copy" data-copy="3-104 Yayoicho, Furano-shi, Hokkaido 076-0018">3-104 Yayoicho, Furano-shi 076-0018</span> · self check-in 15:00 / out 10:00 · <a class="web" href="https://www.onestayapp.com/s/HfCLEZc" target="_blank" rel="noopener">pre-check-in</a></span>
         </span>
       </div>
       <ul class="plan">
@@ -1379,6 +1513,53 @@
 </footer>
 
 <script>
+  // ───── password gate ─────
+  (function() {
+    const HASH = 'd671ecfc24bfb2b4ad9b6be0901d4301d461c5f1ce6e9cf513991beebdfe0a80'; // sha-256 of password
+    const KEY  = 'niseko-2026-auth-v1';
+    const body = document.body;
+    const gate = document.getElementById('gate');
+    const input = document.getElementById('gateInput');
+    const btn = document.getElementById('gateBtn');
+
+    async function sha256(text) {
+      const buf = new TextEncoder().encode(text);
+      const hash = await crypto.subtle.digest('SHA-256', buf);
+      return Array.from(new Uint8Array(hash))
+        .map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    function unlock() {
+      body.classList.remove('locked');
+      gate.classList.add('gate-hidden');
+    }
+
+    // already authed?
+    if (localStorage.getItem(KEY) === HASH) {
+      unlock();
+      return;
+    }
+
+    async function tryPassword() {
+      const v = input.value.trim();
+      if (!v) return;
+      const h = await sha256(v);
+      if (h === HASH) {
+        try { localStorage.setItem(KEY, HASH); } catch (_) {}
+        unlock();
+      } else {
+        input.classList.add('shake');
+        setTimeout(() => input.classList.remove('shake'), 400);
+        input.select();
+      }
+    }
+
+    btn.addEventListener('click', tryPassword);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') tryPassword();
+    });
+  })();
+
   // ───── highlight today + scrollspy active day ─────
   (function() {
     const pills = Array.from(document.querySelectorAll('.nav-pill'));
