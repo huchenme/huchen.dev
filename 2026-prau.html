@@ -523,11 +523,18 @@
     font-size:14px;
     box-shadow:0 2px 6px rgba(0,0,0,0.15);
   }
-  .map-pin-1{background:#3a513f}
-  .map-pin-2{background:#d97834}
-  .map-pin-3{background:#b85a1f}
-  .map-pin-4{background:#3a5a72}
-  .map-pin-5{background:#766b5c}
+  .map-pin-base{background:#766b5c}
+  .map-pin-air{background:#3a513f}
+  .map-pin-d1{background:#d97834}
+  .map-pin-d2{background:#b85a1f}
+  .map-pin-d4{background:#3a5a72}
+  .map-pin .lbl{
+    font-family:'Inter',sans-serif;
+    font-style:normal;
+    font-weight:700;
+    font-size:11px;
+    letter-spacing:0.02em;
+  }
   .map-legend-text strong{
     display:block;
     font-family:'Noto Serif SC',serif;
@@ -565,21 +572,28 @@
     border:none;
   }
   .custom-marker .pin{
-    width:36px;height:36px;
+    width:42px;height:42px;
     border-radius:50% 50% 50% 0;
     transform:rotate(-45deg);
     display:flex;
     align-items:center;
     justify-content:center;
     color:#fff;
-    font-family:'Cormorant Garamond',serif;
-    font-style:italic;
-    font-weight:600;
-    font-size:16px;
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:0.02em;
     box-shadow:0 4px 10px rgba(0,0,0,0.25);
     border:2px solid #fff;
   }
   .custom-marker .pin span{transform:rotate(45deg)}
+  .custom-marker.base-pin .pin{
+    width:18px;height:18px;
+    border-radius:50%;
+    transform:none;
+    border:3px solid #fff;
+  }
+  .custom-marker.base-pin .pin span{display:none}
   .leaflet-popup-content-wrapper{
     border-radius:6px !important;
     background:#fff !important;
@@ -1061,6 +1075,61 @@
   </div>
 </section>
 
+<!-- ═══════════════ MAP ═══════════════ -->
+<section class="map-section">
+  <div class="container">
+    <div class="eyebrow">地图 · Map</div>
+    <h2>整趟路线<em>The full route, in order.</em></h2>
+    <p class="lead">从 YIA 机场出发，先去婆罗浮屠，再向北到普劳山，下山后回日惹市区，去洞穴玩一天，最后从机场飞回。<br>箭头按行程顺序连接。</p>
+
+    <div class="map-wrap">
+      <div id="trip-map" role="img" aria-label="Trip route map: airport, Borobudur, Mt Prau, Yogyakarta, Jomblang"></div>
+      <div class="map-legend">
+        <div class="map-legend-item">
+          <div class="map-pin map-pin-air"><span class="lbl" style="font-size:9px">✈</span></div>
+          <div class="map-legend-text">
+            <strong>YIA 机场</strong>
+            <small>Yogyakarta Int'l Airport</small>
+            <p>抵达 / 离开 · Day 1 & 5</p>
+          </div>
+        </div>
+        <div class="map-legend-item">
+          <div class="map-pin map-pin-d1"><span class="lbl">D1</span></div>
+          <div class="map-legend-text">
+            <strong>婆罗浮屠</strong>
+            <small>Borobudur Temple</small>
+            <p>Day 1 · 距 YIA ~1h 车程</p>
+          </div>
+        </div>
+        <div class="map-legend-item">
+          <div class="map-pin map-pin-d2"><span class="lbl">D2</span></div>
+          <div class="map-legend-text">
+            <strong>普劳山 营地</strong>
+            <small>Mt Prau · Patak Banteng</small>
+            <p>Day 2 & 3 · 距 Borobudur ~3h 车程</p>
+          </div>
+        </div>
+        <div class="map-legend-item">
+          <div class="map-pin map-pin-base"><span class="lbl">·</span></div>
+          <div class="map-legend-text">
+            <strong>日惹市区</strong>
+            <small>Yogyakarta · base</small>
+            <p>D3 晚 & D4 晚住宿</p>
+          </div>
+        </div>
+        <div class="map-legend-item" style="grid-column:1/-1">
+          <div class="map-pin map-pin-d4"><span class="lbl">D4</span></div>
+          <div class="map-legend-text">
+            <strong>约姆布朗洞</strong>
+            <small>Goa Jomblang</small>
+            <p>Day 4 · 距日惹 ~1.5h 车程（当天往返）</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════ ITINERARY ═══════════════ -->
 <section class="itinerary">
   <div class="container">
@@ -1248,61 +1317,6 @@
           </div>
         </div>
       </article>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ MAP ═══════════════ -->
-<section class="map-section">
-  <div class="container">
-    <div class="eyebrow">地图 · Map</div>
-    <h2>路线分布<em>Where the trip happens, geographically.</em></h2>
-    <p class="lead">中爪哇的核心三角：日惹（基地）、北边的婆罗浮屠、东南的洞穴、西北的 Dieng 高原与 Mt Prau。<br>所有车程都是从 YIA 机场或日惹市区出发。</p>
-
-    <div class="map-wrap">
-      <div id="trip-map" role="img" aria-label="Trip locations map: YIA airport, Yogyakarta city, Borobudur, Patak Banteng basecamp, and Goa Jomblang"></div>
-      <div class="map-legend">
-        <div class="map-legend-item">
-          <div class="map-pin map-pin-1"><span style="font-style:normal;font-family:Inter,sans-serif;font-size:11px;font-weight:700">A</span></div>
-          <div class="map-legend-text">
-            <strong>YIA 机场</strong>
-            <small>Yogyakarta Int'l Airport</small>
-            <p>抵达 / 离开点 · Day 1 & Day 5</p>
-          </div>
-        </div>
-        <div class="map-legend-item">
-          <div class="map-pin map-pin-2"><span style="font-style:normal;font-family:Inter,sans-serif;font-size:11px;font-weight:700">B</span></div>
-          <div class="map-legend-text">
-            <strong>婆罗浮屠</strong>
-            <small>Borobudur Temple</small>
-            <p>距 YIA 约 1h 车程 · Day 1</p>
-          </div>
-        </div>
-        <div class="map-legend-item">
-          <div class="map-pin map-pin-3"><span style="font-style:normal;font-family:Inter,sans-serif;font-size:11px;font-weight:700">C</span></div>
-          <div class="map-legend-text">
-            <strong>Patak Banteng 营地</strong>
-            <small>Mt Prau basecamp · 1,990 m</small>
-            <p>距日惹 ~3.5–4h 车程 · Day 2 & 3</p>
-          </div>
-        </div>
-        <div class="map-legend-item">
-          <div class="map-pin map-pin-4"><span style="font-style:normal;font-family:Inter,sans-serif;font-size:11px;font-weight:700">D</span></div>
-          <div class="map-legend-text">
-            <strong>约姆布朗洞</strong>
-            <small>Goa Jomblang</small>
-            <p>距日惹 ~1.5h 车程 · Day 4</p>
-          </div>
-        </div>
-        <div class="map-legend-item" style="grid-column:1/-1">
-          <div class="map-pin map-pin-5"><span style="font-style:normal;font-family:Inter,sans-serif;font-size:11px;font-weight:700">E</span></div>
-          <div class="map-legend-text">
-            <strong>日惹市区</strong>
-            <small>Yogyakarta City · base</small>
-            <p>Day 3 & 4 晚上住宿，Malioboro 街、gudeg 老店都在附近</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1576,20 +1590,21 @@
   });
 
   // ───── trip map ─────
-  const points = [
-    { id:'A', lat:-7.9006, lng:110.0573, color:'#3a513f', name:'YIA 机场', en:'Yogyakarta Int\'l Airport', day:'Day 1 & Day 5' },
-    { id:'B', lat:-7.6079, lng:110.2038, color:'#d97834', name:'婆罗浮屠', en:'Borobudur Temple', day:'Day 1' },
-    { id:'C', lat:-7.2092, lng:109.9244, color:'#b85a1f', name:'Patak Banteng 营地', en:'Mt Prau basecamp · 1,990 m', day:'Day 2 & Day 3' },
-    { id:'D', lat:-8.0303, lng:110.6386, color:'#3a5a72', name:'约姆布朗洞', en:'Goa Jomblang', day:'Day 4' },
-    { id:'E', lat:-7.7956, lng:110.3695, color:'#766b5c', name:'日惹市区', en:'Yogyakarta City', day:'Day 3 & 4 住宿' },
-  ];
+  const P = {
+    yia:        { lat:-7.9006, lng:110.0573, color:'#3a513f', name:'YIA 机场',     en:"Yogyakarta Int'l Airport", day:'抵达 / 离开 · Day 1 & 5', kind:'air' },
+    borobudur:  { lat:-7.6079, lng:110.2038, color:'#d97834', name:'婆罗浮屠',     en:'Borobudur Temple',         day:'Day 1', kind:'pin', label:'D1' },
+    prau:       { lat:-7.2092, lng:109.9244, color:'#b85a1f', name:'普劳山 营地', en:'Mt Prau · Patak Banteng', day:'Day 2 & 3', kind:'pin', label:'D2' },
+    yogya:      { lat:-7.7956, lng:110.3695, color:'#766b5c', name:'日惹市区',     en:'Yogyakarta · base',       day:'D3 晚 & D4 晚住宿', kind:'base' },
+    jomblang:   { lat:-8.0303, lng:110.6386, color:'#3a5a72', name:'约姆布朗洞',   en:'Goa Jomblang',            day:'Day 4', kind:'pin', label:'D4' },
+  };
+  const allPoints = Object.values(P);
 
-  // bounds: fit all points with some padding
-  const lats = points.map(p => p.lat);
-  const lngs = points.map(p => p.lng);
+  // bounds
+  const lats = allPoints.map(p => p.lat);
+  const lngs = allPoints.map(p => p.lng);
   const bounds = [
-    [Math.min(...lats) - 0.15, Math.min(...lngs) - 0.15],
-    [Math.max(...lats) + 0.15, Math.max(...lngs) + 0.15],
+    [Math.min(...lats) - 0.18, Math.min(...lngs) - 0.18],
+    [Math.max(...lats) + 0.18, Math.max(...lngs) + 0.18],
   ];
 
   const map = L.map('trip-map', {
@@ -1598,43 +1613,106 @@
     attributionControl: true,
   }).fitBounds(bounds);
 
-  // CartoDB Positron — minimal light tiles, no API key
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>',
     subdomains: 'abcd',
     maxZoom: 18,
   }).addTo(map);
 
-  // custom pin markers
-  points.forEach(p => {
-    const icon = L.divIcon({
-      className: 'custom-marker',
-      html: `<div class="pin" style="background:${p.color}"><span>${p.id}</span></div>`,
-      iconSize: [36, 36],
-      iconAnchor: [18, 36],
-      popupAnchor: [0, -32],
-    });
+  // pins
+  allPoints.forEach(p => {
+    let icon;
+    if (p.kind === 'base') {
+      icon = L.divIcon({
+        className: 'custom-marker base-pin',
+        html: `<div class="pin" style="background:${p.color}"></div>`,
+        iconSize: [18, 18],
+        iconAnchor: [9, 9],
+        popupAnchor: [0, -10],
+      });
+    } else if (p.kind === 'air') {
+      icon = L.divIcon({
+        className: 'custom-marker',
+        html: `<div class="pin" style="background:${p.color}"><span style="font-size:14px">✈</span></div>`,
+        iconSize: [42, 42],
+        iconAnchor: [21, 42],
+        popupAnchor: [0, -38],
+      });
+    } else {
+      icon = L.divIcon({
+        className: 'custom-marker',
+        html: `<div class="pin" style="background:${p.color}"><span>${p.label}</span></div>`,
+        iconSize: [42, 42],
+        iconAnchor: [21, 42],
+        popupAnchor: [0, -38],
+      });
+    }
     L.marker([p.lat, p.lng], { icon }).addTo(map)
       .bindPopup(`<b>${p.name}</b><em>${p.en}</em>${p.day}`);
   });
 
-  // dashed line connecting Day 1 flow: YIA → Borobudur → Prau
-  const day1Line = [points[0], points[1], points[2]].map(p => [p.lat, p.lng]);
-  L.polyline(day1Line, {
-    color: '#b85a1f',
-    weight: 2,
-    opacity: 0.6,
-    dashArray: '6, 6',
-  }).addTo(map);
+  // ── curved dotted arrows ──
+  function curvedPath(from, to, curvature = 0.25) {
+    const lat1 = from.lat, lng1 = from.lng;
+    const lat2 = to.lat, lng2 = to.lng;
+    const midLat = (lat1 + lat2) / 2;
+    const midLng = (lng1 + lng2) / 2;
+    const dx = lng2 - lng1;
+    const dy = lat2 - lat1;
+    const ctrlLat = midLat - dx * curvature;
+    const ctrlLng = midLng + dy * curvature;
+    const pts = [];
+    const N = 40;
+    for (let i = 0; i <= N; i++) {
+      const t = i / N;
+      const lat = (1-t)*(1-t)*lat1 + 2*(1-t)*t*ctrlLat + t*t*lat2;
+      const lng = (1-t)*(1-t)*lng1 + 2*(1-t)*t*ctrlLng + t*t*lng2;
+      pts.push([lat, lng]);
+    }
+    return pts;
+  }
 
-  // Day 4: Yogyakarta → Jomblang
-  const day4Line = [points[4], points[3]].map(p => [p.lat, p.lng]);
-  L.polyline(day4Line, {
-    color: '#3a5a72',
-    weight: 2,
-    opacity: 0.6,
-    dashArray: '6, 6',
-  }).addTo(map);
+  function drawArrow(from, to, color, curvature, label) {
+    const path = curvedPath(from, to, curvature);
+    L.polyline(path, {
+      color,
+      weight: 2.5,
+      opacity: 0.75,
+      dashArray: '2, 8',
+      lineCap: 'round',
+    }).addTo(map);
+    // arrowhead at the end
+    const last = path[path.length - 1];
+    const prev = path[path.length - 4];
+    const angle = Math.atan2(last[0] - prev[0], last[1] - prev[1]);
+    const head = L.divIcon({
+      className: 'arrow-head',
+      html: `<svg width="14" height="14" viewBox="0 0 14 14" style="transform:rotate(${-angle * 180 / Math.PI}deg);transform-origin:center"><path d="M2,7 L12,2 L9,7 L12,12 Z" fill="${color}" opacity="0.9"/></svg>`,
+      iconSize: [14, 14],
+      iconAnchor: [7, 7],
+    });
+    L.marker(last, { icon: head, interactive: false }).addTo(map);
+
+    // small step number at curve midpoint
+    if (label) {
+      const mid = path[Math.floor(path.length / 2)];
+      const stepIcon = L.divIcon({
+        className: 'arrow-step',
+        html: `<div style="background:#fff;border:1.5px solid ${color};color:${color};border-radius:100px;padding:2px 8px;font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.04em;white-space:nowrap;box-shadow:0 2px 4px rgba(0,0,0,0.08)">${label}</div>`,
+        iconSize: [40, 18],
+        iconAnchor: [20, 9],
+      });
+      L.marker(mid, { icon: stepIcon, interactive: false }).addTo(map);
+    }
+  }
+
+  // sequential trip flow — labels show drive duration
+  drawArrow(P.yia,       P.borobudur, '#d97834',  0.30, '~1h');             // YIA → Boro
+  drawArrow(P.borobudur, P.prau,      '#b85a1f',  0.30, '~3h');             // Boro → Prau
+  drawArrow(P.prau,      P.yogya,     '#766b5c',  0.30, '~3.5h');           // Prau → Yogya
+  drawArrow(P.yogya,     P.jomblang,  '#3a5a72', -0.30, '~1.5h');           // Yogya → Jomblang
+  drawArrow(P.jomblang,  P.yogya,     '#3a5a72',  0.30, null);              // Jomblang → Yogya (return, no label)
+  drawArrow(P.yogya,     P.yia,       '#3a513f', -0.30, '~45min');          // Yogya → YIA (fly back)
 </script>
 
 </body>
