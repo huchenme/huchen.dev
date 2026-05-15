@@ -9,11 +9,13 @@
 <meta property="og:description" content="9 月学校假期 5 天 4 夜，新加坡出发。在凑伴儿，有兴趣的家长一起来研究。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
   :root{
+    --font-cn:'PingFang SC','Source Han Serif SC','Songti SC','Noto Serif CJK SC','Hiragino Sans GB','Microsoft YaHei',-apple-system,system-ui,sans-serif;
+    --font-en:'Cormorant Garamond',Georgia,serif;
+    --font-ui:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
     --cream:#f5efe4;
     --cream-2:#ebe3d3;
     --ink:#1f1a14;
@@ -32,7 +34,7 @@
     -webkit-text-size-adjust:100%;
   }
   body{
-    font-family:'Noto Serif SC','Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    font-family:var(--font-cn);
     background:var(--cream);
     color:var(--ink);
     line-height:1.7;
@@ -137,7 +139,7 @@
     letter-spacing:0.12em;
     text-transform:uppercase;
     margin-bottom:24px;
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-weight:500;
   }
   .hero-tag::before{
@@ -148,7 +150,7 @@
     box-shadow:0 0 8px #7ed957;
   }
   .hero h1{
-    font-family:'Noto Serif SC',serif;
+    font-family:var(--font-cn),serif;
     font-size:clamp(40px, 8vw, 84px);
     font-weight:600;
     line-height:1.05;
@@ -157,7 +159,7 @@
     text-shadow:0 2px 30px rgba(0,0,0,0.3);
   }
   .hero h1 em{
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-en);
     font-style:italic;
     font-weight:400;
     color:#ffe0b3;
@@ -171,7 +173,7 @@
     flex-wrap:wrap;
     gap:8px 28px;
     font-size:14px;
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     opacity:0.95;
     letter-spacing:0.02em;
   }
@@ -193,7 +195,7 @@
     letter-spacing:0.2em;
     text-transform:uppercase;
     color:rgba(255,255,255,0.7);
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     animation:bounce 2.4s ease-in-out infinite;
   }
   @keyframes bounce{
@@ -207,7 +209,7 @@
     position:relative;
   }
   .eyebrow{
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-size:11px;
     font-weight:600;
     letter-spacing:0.22em;
@@ -216,7 +218,7 @@
     margin-bottom:14px;
   }
   h2{
-    font-family:'Noto Serif SC',serif;
+    font-family:var(--font-cn),serif;
     font-size:clamp(28px, 4.2vw, 44px);
     font-weight:600;
     line-height:1.2;
@@ -225,7 +227,7 @@
     margin-bottom:18px;
   }
   h2 em{
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-en);
     font-style:italic;
     font-weight:400;
     color:var(--muted);
@@ -235,7 +237,7 @@
     letter-spacing:0;
   }
   h3{
-    font-family:'Noto Serif SC',serif;
+    font-family:var(--font-cn),serif;
     font-size:22px;
     font-weight:600;
     color:var(--ink);
@@ -252,7 +254,7 @@
     max-width:640px;
   }
   .lead em{
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-en);
     font-style:italic;
     color:var(--sun-2);
   }
@@ -281,7 +283,7 @@
     padding:24px 20px;
   }
   .stat-num{
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-en);
     font-size:42px;
     font-weight:500;
     color:var(--sun-2);
@@ -289,7 +291,7 @@
     margin-bottom:6px;
   }
   .stat-label{
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-size:12px;
     color:var(--muted);
     letter-spacing:0.1em;
@@ -322,7 +324,7 @@
     flex-wrap:wrap;
   }
   .day-num{
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-en);
     font-size:48px;
     font-weight:500;
     color:var(--sun);
@@ -330,7 +332,7 @@
     font-style:italic;
   }
   .day-date{
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-size:13px;
     color:var(--muted);
     letter-spacing:0.08em;
@@ -338,7 +340,7 @@
     font-weight:500;
   }
   .day-title{
-    font-family:'Noto Serif SC',serif;
+    font-family:var(--font-cn),serif;
     font-size:24px;
     font-weight:600;
     color:var(--ink);
@@ -346,7 +348,7 @@
     margin-top:-4px;
   }
   .day-title small{
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-en);
     font-style:italic;
     font-weight:400;
     color:var(--muted);
@@ -375,7 +377,7 @@
     border:2px solid var(--sun);
   }
   .timeline time{
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-weight:600;
     color:var(--ink);
     font-size:13px;
@@ -421,15 +423,21 @@
   .card-img{
     aspect-ratio:4/3;
     background:var(--cream-2);
-    background-size:cover;
-    background-position:center;
     position:relative;
+    overflow:hidden;
+  }
+  .card-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
   }
   .card-img::after{
     content:'';
     position:absolute;
     inset:0;
     box-shadow:inset 0 -40px 80px rgba(0,0,0,0.15);
+    pointer-events:none;
   }
   .card-tag{
     position:absolute;
@@ -437,7 +445,7 @@
     background:rgba(255,255,255,0.92);
     backdrop-filter:blur(10px);
     padding:4px 10px;
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-size:10px;
     font-weight:600;
     letter-spacing:0.12em;
@@ -449,7 +457,7 @@
     padding:24px 22px 26px;
   }
   .card-en{
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-en);
     font-style:italic;
     color:var(--sun-2);
     font-size:15px;
@@ -464,7 +472,7 @@
     display:flex;
     flex-wrap:wrap;
     gap:12px 18px;
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-size:12px;
     color:var(--muted);
     padding-top:14px;
@@ -490,7 +498,10 @@
   #trip-map{
     height:520px;
     width:100%;
-    background:#e8ddc8;
+    background:#e8ddc8 url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='3' fill='%23b85a1f' opacity='0.5'%3E%3Canimate attributeName='opacity' values='0.5;1;0.5' dur='1.4s' repeatCount='indefinite'/%3E%3C/circle%3E%3C/svg%3E") center center no-repeat;
+    color:var(--muted);
+    font-family:var(--font-ui);
+    font-size:13px;
   }
   /* legend */
   .map-legend{
@@ -517,7 +528,7 @@
     align-items:center;
     justify-content:center;
     color:#fff;
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-en);
     font-style:italic;
     font-weight:600;
     font-size:14px;
@@ -529,7 +540,7 @@
   .map-pin-d2{background:#b85a1f}
   .map-pin-d4{background:#3a5a72}
   .map-pin .lbl{
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-style:normal;
     font-weight:700;
     font-size:11px;
@@ -537,13 +548,13 @@
   }
   .map-legend-text strong{
     display:block;
-    font-family:'Noto Serif SC',serif;
+    font-family:var(--font-cn),serif;
     font-weight:600;
     color:var(--ink);
     margin-bottom:2px;
   }
   .map-legend-text small{
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-en);
     font-style:italic;
     color:var(--muted);
     font-size:13px;
@@ -555,7 +566,7 @@
   }
   /* leaflet override — minimal monochrome aesthetic */
   .leaflet-container{
-    font-family:'Inter','Noto Serif SC',sans-serif !important;
+    font-family:'Inter',var(--font-cn),sans-serif !important;
     background:#e8ddc8 !important;
   }
   .leaflet-tile-pane{
@@ -579,7 +590,7 @@
     align-items:center;
     justify-content:center;
     color:#fff;
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-weight:700;
     font-size:13px;
     letter-spacing:0.02em;
@@ -601,7 +612,7 @@
   }
   .leaflet-popup-content{
     margin:14px 16px !important;
-    font-family:'Noto Serif SC',sans-serif !important;
+    font-family:var(--font-cn),sans-serif !important;
     font-size:13px !important;
     color:var(--ink-2) !important;
   }
@@ -612,7 +623,7 @@
     margin-bottom:2px;
   }
   .leaflet-popup-content em{
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-en);
     color:var(--muted);
     font-size:12px;
     display:block;
@@ -652,7 +663,7 @@
     padding:24px 20px;
   }
   .clock-time{
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-en);
     font-size:34px;
     font-weight:500;
     color:#ffd479;
@@ -661,14 +672,14 @@
     letter-spacing:-0.01em;
   }
   .clock-label{
-    font-family:'Noto Serif SC',serif;
+    font-family:var(--font-cn),serif;
     font-size:14px;
     color:#f5efe4;
     margin-bottom:4px;
     font-weight:500;
   }
   .clock-note{
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-size:11px;
     color:#9b9082;
     letter-spacing:0.04em;
@@ -694,7 +705,7 @@
     align-items:start;
   }
   .price-name{
-    font-family:'Noto Serif SC',serif;
+    font-family:var(--font-cn),serif;
     font-size:17px;
     font-weight:600;
     color:var(--ink);
@@ -702,7 +713,7 @@
   }
   .price-name small{
     display:block;
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-en);
     font-style:italic;
     font-weight:400;
     color:var(--muted);
@@ -710,7 +721,7 @@
     margin-top:2px;
   }
   .price-amt{
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-weight:600;
     font-size:17px;
     color:var(--sun-2);
@@ -720,7 +731,7 @@
   }
   .price-amt small{
     display:block;
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-weight:400;
     font-size:11px;
     color:var(--muted);
@@ -747,7 +758,7 @@
     background:var(--ink);
     color:var(--cream);
     padding:14px 20px;
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-size:12px;
     letter-spacing:0.12em;
     text-transform:uppercase;
@@ -767,7 +778,7 @@
   }
   .group-row:last-child{border-bottom:none}
   .group-row strong{
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-en);
     font-style:italic;
     font-weight:500;
     color:var(--ink);
@@ -775,12 +786,12 @@
   }
   .group-row .perp{
     color:var(--ink-2);
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-weight:500;
   }
   .group-row .total{
     color:var(--sun-2);
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-weight:600;
     text-align:right;
   }
@@ -810,7 +821,7 @@
     padding:24px 22px;
   }
   .pack-col h4{
-    font-family:'Noto Serif SC',serif;
+    font-family:var(--font-cn),serif;
     font-size:16px;
     font-weight:600;
     margin-bottom:14px;
@@ -857,7 +868,7 @@
   details:last-of-type{border-bottom:1px solid var(--line)}
   summary{
     cursor:pointer;
-    font-family:'Noto Serif SC',serif;
+    font-family:var(--font-cn),serif;
     font-size:17px;
     font-weight:600;
     color:var(--ink);
@@ -871,7 +882,7 @@
   summary::-webkit-details-marker{display:none}
   summary::after{
     content:'+';
-    font-family:'Cormorant Garamond',serif;
+    font-family:var(--font-en);
     font-size:28px;
     color:var(--sun);
     transition:transform 0.3s;
@@ -933,7 +944,7 @@
     color:#fff;
     text-decoration:none;
     border-radius:100px;
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-weight:600;
     font-size:16px;
     letter-spacing:0.01em;
@@ -955,7 +966,7 @@
     color:#8a8279;
     padding:40px 0;
     text-align:center;
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-ui);
     font-size:13px;
     letter-spacing:0.04em;
   }
@@ -1084,48 +1095,6 @@
 
     <div class="map-wrap">
       <div id="trip-map" role="img" aria-label="Trip route map: airport, Borobudur, Mt Prau, Yogyakarta, Jomblang"></div>
-      <div class="map-legend">
-        <div class="map-legend-item">
-          <div class="map-pin map-pin-air"><span class="lbl" style="font-size:9px">✈</span></div>
-          <div class="map-legend-text">
-            <strong>YIA 机场</strong>
-            <small>Yogyakarta Int'l Airport</small>
-            <p>抵达 / 离开 · Day 1 & 5</p>
-          </div>
-        </div>
-        <div class="map-legend-item">
-          <div class="map-pin map-pin-d1"><span class="lbl">D1</span></div>
-          <div class="map-legend-text">
-            <strong>婆罗浮屠</strong>
-            <small>Borobudur Temple</small>
-            <p>Day 1 · 距 YIA ~1h 车程</p>
-          </div>
-        </div>
-        <div class="map-legend-item">
-          <div class="map-pin map-pin-d2"><span class="lbl">D2</span></div>
-          <div class="map-legend-text">
-            <strong>普劳山 营地</strong>
-            <small>Mt Prau · Patak Banteng</small>
-            <p>Day 2 & 3 · 距 Borobudur ~3h 车程</p>
-          </div>
-        </div>
-        <div class="map-legend-item">
-          <div class="map-pin map-pin-base"><span class="lbl">·</span></div>
-          <div class="map-legend-text">
-            <strong>日惹市区</strong>
-            <small>Yogyakarta · base</small>
-            <p>D3 晚 & D4 晚住宿</p>
-          </div>
-        </div>
-        <div class="map-legend-item" style="grid-column:1/-1">
-          <div class="map-pin map-pin-d4"><span class="lbl">D4</span></div>
-          <div class="map-legend-text">
-            <strong>约姆布朗洞</strong>
-            <small>Goa Jomblang</small>
-            <p>Day 4 · 距日惹 ~1.5h 车程（当天往返）</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1271,7 +1240,8 @@
 
     <div class="cards">
       <article class="card">
-        <div class="card-img" style="background-image:url('https://d1bv4heaa2n05k.cloudfront.net/user-images/1483965934366/1shutterstock-115097959_main_1483965939733.jpeg');">
+        <div class="card-img">
+          <img src="https://d1bv4heaa2n05k.cloudfront.net/user-images/1483965934366/1shutterstock-115097959_main_1483965939733.jpeg" alt="Borobudur Temple" loading="lazy" decoding="async">
           <span class="card-tag">Day 1</span>
         </div>
         <div class="card-body">
@@ -1287,7 +1257,8 @@
       </article>
 
       <article class="card">
-        <div class="card-img" style="background-image:url('https://javaprivatetour.com/img/destinasi/89b366dbdf79b41b2fa1abe44bdd6401.jpg');">
+        <div class="card-img">
+          <img src="https://javaprivatetour.com/img/destinasi/89b366dbdf79b41b2fa1abe44bdd6401.jpg" alt="Mt Prau summit camp at sunrise" loading="lazy" decoding="async">
           <span class="card-tag">Day 2 — 3</span>
         </div>
         <div class="card-body">
@@ -1303,7 +1274,8 @@
       </article>
 
       <article class="card">
-        <div class="card-img" style="background-image:url('https://cdn.i-scmp.com/sites/default/files/styles/1020x680/public/d8/images/methode/2020/01/29/b6c32f18-3f4a-11ea-a16e-39b824591591_image_hires_111434.jpg?itok=si2bSGzf&v=1580267686');">
+        <div class="card-img">
+          <img src="https://cdn.i-scmp.com/sites/default/files/styles/1020x680/public/d8/images/methode/2020/01/29/b6c32f18-3f4a-11ea-a16e-39b824591591_image_hires_111434.jpg?itok=si2bSGzf&v=1580267686" alt="Goa Jomblang heavenly light" loading="lazy" decoding="async">
           <span class="card-tag">Day 4</span>
         </div>
         <div class="card-body">
@@ -1572,7 +1544,6 @@
   </div>
 </footer>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
   // gentle reveal on scroll
   const io = new IntersectionObserver((entries) => {
@@ -1589,13 +1560,45 @@
     io.observe(el);
   });
 
+  // ───── load leaflet after page is interactive (doesn't block first paint) ─────
+  function loadLeaflet() {
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    css.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+    css.crossOrigin = '';
+    document.head.appendChild(css);
+
+    const js = document.createElement('script');
+    js.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    js.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+    js.crossOrigin = '';
+    js.onload = initMap;
+    document.head.appendChild(js);
+  }
+  // kick off after load event so it doesn't compete with critical resources
+  if (document.readyState === 'complete') {
+    loadLeaflet();
+  } else {
+    window.addEventListener('load', loadLeaflet, { once: true });
+  }
+
+  function initMap() {
   // ───── trip map ─────
+  // SVG glyphs for each pin
+  const G = {
+    air:    '<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M21 16v-2l-8-5V3.5C13 2.67 12.33 2 11.5 2S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>',
+    temple: '<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2L4 7v2h16V7l-8-5zm-7 9v8h2v-7h2v7h2v-7h2v7h2v-7h2v7h2v-8H5zm-1 10v1h16v-1H4z"/></svg>',
+    mtn:    '<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22L14 6z"/></svg>',
+    city:   '<svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M15 11V5l-3-3-3 3v2H3v14h18V11h-6zm-8 8H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm6 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm6 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/></svg>',
+    cave:   '<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 3C7 3 3 7 3 12v9h6v-6c0-1.66 1.34-3 3-3s3 1.34 3 3v6h6v-9c0-5-4-9-9-9z"/></svg>',
+  };
   const P = {
-    yia:        { lat:-7.9006, lng:110.0573, color:'#3a513f', name:'YIA 机场',     en:"Yogyakarta Int'l Airport", day:'抵达 / 离开 · Day 1 & 5', kind:'air' },
-    borobudur:  { lat:-7.6079, lng:110.2038, color:'#d97834', name:'婆罗浮屠',     en:'Borobudur Temple',         day:'Day 1', kind:'pin', label:'D1' },
-    prau:       { lat:-7.2092, lng:109.9244, color:'#b85a1f', name:'普劳山 营地', en:'Mt Prau · Patak Banteng', day:'Day 2 & 3', kind:'pin', label:'D2' },
-    yogya:      { lat:-7.7956, lng:110.3695, color:'#766b5c', name:'日惹市区',     en:'Yogyakarta · base',       day:'D3 晚 & D4 晚住宿', kind:'base' },
-    jomblang:   { lat:-8.0303, lng:110.6386, color:'#3a5a72', name:'约姆布朗洞',   en:'Goa Jomblang',            day:'Day 4', kind:'pin', label:'D4' },
+    yia:        { lat:-7.9006, lng:110.0573, color:'#3a513f', name:'YIA 机场',     en:"Yogyakarta Int'l Airport", day:'抵达 / 离开 · Day 1 & 5', kind:'icon', glyph:G.air },
+    borobudur:  { lat:-7.6079, lng:110.2038, color:'#d97834', name:'婆罗浮屠',     en:'Borobudur Temple',         day:'Day 1',                   kind:'icon', glyph:G.temple },
+    prau:       { lat:-7.2092, lng:109.9244, color:'#b85a1f', name:'普劳山 营地', en:'Mt Prau · Patak Banteng', day:'Day 2 & 3',               kind:'icon', glyph:G.mtn },
+    yogya:      { lat:-7.7956, lng:110.3695, color:'#766b5c', name:'日惹市区',     en:'Yogyakarta · base',       day:'D3 晚 & D4 晚住宿',       kind:'icon', glyph:G.city, small:true },
+    jomblang:   { lat:-8.0303, lng:110.6386, color:'#3a5a72', name:'约姆布朗洞',   en:'Goa Jomblang',            day:'Day 4',                   kind:'icon', glyph:G.cave },
   };
   const allPoints = Object.values(P);
 
@@ -1621,32 +1624,14 @@
 
   // pins
   allPoints.forEach(p => {
-    let icon;
-    if (p.kind === 'base') {
-      icon = L.divIcon({
-        className: 'custom-marker base-pin',
-        html: `<div class="pin" style="background:${p.color}"></div>`,
-        iconSize: [18, 18],
-        iconAnchor: [9, 9],
-        popupAnchor: [0, -10],
-      });
-    } else if (p.kind === 'air') {
-      icon = L.divIcon({
-        className: 'custom-marker',
-        html: `<div class="pin" style="background:${p.color}"><span style="font-size:14px">✈</span></div>`,
-        iconSize: [42, 42],
-        iconAnchor: [21, 42],
-        popupAnchor: [0, -38],
-      });
-    } else {
-      icon = L.divIcon({
-        className: 'custom-marker',
-        html: `<div class="pin" style="background:${p.color}"><span>${p.label}</span></div>`,
-        iconSize: [42, 42],
-        iconAnchor: [21, 42],
-        popupAnchor: [0, -38],
-      });
-    }
+    const size = p.small ? 28 : 44;
+    const icon = L.divIcon({
+      className: 'custom-marker',
+      html: `<div class="pin" style="background:${p.color};width:${size}px;height:${size}px"><span>${p.glyph}</span></div>`,
+      iconSize: [size, size],
+      iconAnchor: [size/2, size],
+      popupAnchor: [0, -size + 4],
+    });
     L.marker([p.lat, p.lng], { icon }).addTo(map)
       .bindPopup(`<b>${p.name}</b><em>${p.en}</em>${p.day}`);
   });
@@ -1672,13 +1657,13 @@
     return pts;
   }
 
-  function drawArrow(from, to, color, curvature, label) {
+  function drawArrow(from, to, color, curvature, label, dayLabel) {
     const path = curvedPath(from, to, curvature);
     L.polyline(path, {
       color,
-      weight: 2.5,
-      opacity: 0.75,
-      dashArray: '2, 8',
+      weight: 4,
+      opacity: 0.85,
+      dashArray: '4, 10',
       lineCap: 'round',
     }).addTo(map);
     // arrowhead at the end
@@ -1687,32 +1672,43 @@
     const angle = Math.atan2(last[0] - prev[0], last[1] - prev[1]);
     const head = L.divIcon({
       className: 'arrow-head',
-      html: `<svg width="14" height="14" viewBox="0 0 14 14" style="transform:rotate(${-angle * 180 / Math.PI}deg);transform-origin:center"><path d="M2,7 L12,2 L9,7 L12,12 Z" fill="${color}" opacity="0.9"/></svg>`,
-      iconSize: [14, 14],
-      iconAnchor: [7, 7],
+      html: `<svg width="20" height="20" viewBox="0 0 20 20" style="transform:rotate(${-angle * 180 / Math.PI}deg);transform-origin:center"><path d="M2,10 L18,3 L14,10 L18,17 Z" fill="${color}"/></svg>`,
+      iconSize: [20, 20],
+      iconAnchor: [10, 10],
     });
     L.marker(last, { icon: head, interactive: false }).addTo(map);
 
-    // small step number at curve midpoint
+    // pill at curve midpoint with day + duration
     if (label) {
       const mid = path[Math.floor(path.length / 2)];
+      const dayBadge = dayLabel ? `<span style="background:${color};color:#fff;padding:2px 6px;border-radius:100px;font-size:9px;letter-spacing:0.06em;margin-right:4px">${dayLabel}</span>` : '';
       const stepIcon = L.divIcon({
         className: 'arrow-step',
-        html: `<div style="background:#fff;border:1.5px solid ${color};color:${color};border-radius:100px;padding:2px 8px;font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.04em;white-space:nowrap;box-shadow:0 2px 4px rgba(0,0,0,0.08)">${label}</div>`,
-        iconSize: [40, 18],
-        iconAnchor: [20, 9],
+        html: `<div style="background:#fff;border:2px solid ${color};color:${color};border-radius:100px;padding:3px 9px 3px 4px;font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.02em;white-space:nowrap;box-shadow:0 3px 8px rgba(0,0,0,0.12);display:inline-flex;align-items:center">${dayBadge}${label}</div>`,
+        iconSize: [80, 22],
+        iconAnchor: [40, 11],
       });
       L.marker(mid, { icon: stepIcon, interactive: false }).addTo(map);
     }
   }
 
-  // sequential trip flow — labels show drive duration
-  drawArrow(P.yia,       P.borobudur, '#d97834',  0.30, '~1h');             // YIA → Boro
-  drawArrow(P.borobudur, P.prau,      '#b85a1f',  0.30, '~3h');             // Boro → Prau
-  drawArrow(P.prau,      P.yogya,     '#766b5c',  0.30, '~3.5h');           // Prau → Yogya
-  drawArrow(P.yogya,     P.jomblang,  '#3a5a72', -0.30, '~1.5h');           // Yogya → Jomblang
-  drawArrow(P.jomblang,  P.yogya,     '#3a5a72',  0.30, null);              // Jomblang → Yogya (return, no label)
-  drawArrow(P.yogya,     P.yia,       '#3a513f', -0.30, '~45min');          // Yogya → YIA (fly back)
+  // distinct color per day segment
+  const DAY_COLORS = {
+    d1: '#d97834',  // orange — Day 1
+    d2: '#b85a1f',  // deep orange/brick — Day 2
+    d3: '#766b5c',  // warm gray — Day 3 (descent + drive back)
+    d4: '#3a5a72',  // blue — Day 4 (cave)
+    d5: '#3a513f',  // forest green — Day 5 (fly home)
+  };
+
+  // sequential trip flow — labels show drive duration + day
+  drawArrow(P.yia,       P.borobudur, DAY_COLORS.d1,  0.30, '~1h',    'D1');
+  drawArrow(P.borobudur, P.prau,      DAY_COLORS.d1,  0.30, '~3h',    'D1');
+  drawArrow(P.prau,      P.yogya,     DAY_COLORS.d3,  0.30, '~3.5h',  'D3');
+  drawArrow(P.yogya,     P.jomblang,  DAY_COLORS.d4, -0.30, '~1.5h',  'D4');
+  drawArrow(P.jomblang,  P.yogya,     DAY_COLORS.d4,  0.30, null,     null);
+  drawArrow(P.yogya,     P.yia,       DAY_COLORS.d5, -0.30, '~45min', 'D5');
+  } // end initMap
 </script>
 
 </body>
