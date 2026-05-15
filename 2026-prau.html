@@ -1263,7 +1263,7 @@
 
       <article class="card">
         <div class="card-img">
-          <img src="https://javaprivatetour.com/img/destinasi/89b366dbdf79b41b2fa1abe44bdd6401.jpg" alt="Mt Prau summit camp at sunrise" loading="lazy" decoding="async">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Pagi_Hari_Di_Gunung_Prau.jpg/1280px-Pagi_Hari_Di_Gunung_Prau.jpg" alt="Mt Prau summit camp at sunrise" loading="lazy" decoding="async">
           <span class="card-tag">Day 2 — 3</span>
         </div>
         <div class="card-body">
@@ -1621,8 +1621,8 @@
   const lats = allPoints.map(p => p.lat);
   const lngs = allPoints.map(p => p.lng);
   const bounds = [
-    [Math.min(...lats) - 0.18, Math.min(...lngs) - 0.18],
-    [Math.max(...lats) + 0.18, Math.max(...lngs) + 0.18],
+    [Math.min(...lats) - 0.06, Math.min(...lngs) - 0.06],
+    [Math.max(...lats) + 0.06, Math.max(...lngs) + 0.06],
   ];
 
   const map = L.map('trip-map', {
