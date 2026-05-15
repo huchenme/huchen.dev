@@ -137,19 +137,28 @@
   .nav-pill.is-today{
     box-shadow:0 0 0 2px var(--gold), 0 4px 10px rgba(184,135,70,0.3);
   }
-  .nav-pill.is-section svg{
-    width:18px;height:18px;
-    color:currentColor;
-    margin-bottom:1px;
+  .nav-pill.is-section{
+    /* match the 3-line height of date pills (dow + num + mon) */
   }
-  .nav-pill.is-section .lbl{
+  .nav-pill.is-section .top{
     font-size:9px;font-weight:600;
     letter-spacing:0.08em;text-transform:uppercase;
     color:var(--muted);
+  }
+  .nav-pill.is-section svg{
+    width:18px;height:18px;
+    color:currentColor;
+    margin-top:2px;
+  }
+  .nav-pill.is-section .lbl{
+    font-size:9px;font-weight:500;
+    letter-spacing:0.04em;
+    color:var(--muted);
     margin-top:1px;
   }
-  .nav-pill.is-section.is-active svg{color:#fff}
+  .nav-pill.is-section.is-active .top,
   .nav-pill.is-section.is-active .lbl{color:rgba(255,255,255,0.85)}
+  .nav-pill.is-section.is-active svg{color:#fff}
 
   /* ───── HERO ───── */
   .hero{
@@ -939,6 +948,7 @@
   <div class="nav-inner" id="dateNav">
     <div class="nav-brand">Hokkaido<small>2026</small></div>
     <a class="nav-pill is-section" href="#flights" aria-label="Flights">
+      <span class="top">Info</span>
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5C13 2.67 12.33 2 11.5 2S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
       <span class="lbl">航班</span>
     </a>
