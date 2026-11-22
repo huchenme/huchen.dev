@@ -556,7 +556,7 @@ function pin(text,x,y,action,chosen=false){
  const b=btn(text,action,'scene-pin'+(chosen?' chosen':''));b.style.left=x+'%';b.style.top=y+'%';pins.append(b);
 }
 function foundPicture(){
- const b=dialog('墙上的旧照片');b.append(h('div','','found-photo'),h('p','照片背面有一行铅笔字。'),h('p',notes.bridge),btn('听这张线索',()=>{$('readNote').click();}));const w=h('div','','wrap');wordButtons(w,['木桥','山坡','照片']);b.append(w);
+ const b=dialog('墙上的旧照片');b.append(h('div','','found-photo'),h('p','照片背面有一行铅笔字。'),h('p',notes.bridge),btn('听这张线索',()=>{for(const w of ['木桥','山坡','照片'])s.assisted[w]=true;save();listen(notes.bridge);}));const w=h('div','','wrap');wordButtons(w,['木桥','山坡','照片']);b.append(w);
 }
 function sceneClue(){if(!$('ticket').classList.contains('open'))$('clueToggle').click();}
 function fillSet(){
