@@ -297,10 +297,16 @@ function buildWorld(canvas, onMark) {
     const p=at(pos),ahead=at(pos+.006),angle=Math.atan2(ahead.x-p.x,ahead.z-p.z);
     const mix=force||reduced?1:1-Math.exp(-dt*.0045);
     follow+=Math.atan2(Math.sin(angle-follow),Math.cos(angle-follow))*mix;
-    const bearing=follow+orbit+(manual?2.67:0),distance=manual?4.9:6.4;
+    const bearing=follow+orbit,distance=6.4;
     const wide=canvas.clientWidth>canvas.clientHeight;
     eye.set(p.x+Math.sin(bearing)*distance,p.y+1.1+distance*elevation,p.z+Math.cos(bearing)*distance);
     look.set(p.x+Math.sin(bearing+Math.PI/2)*(wide?.66:0),p.y+(wide?.98:1.35),p.z+Math.cos(bearing+Math.PI/2)*(wide?.66:0));
+    if(manual){
+      // Sit just above the cab roof, on the railway's clear centre line.
+      const forward=at(pos+.045),heading=follow+orbit+.65;
+      eye.set(p.x-Math.sin(follow)*.25+Math.cos(follow)*.34,2.15,p.z-Math.cos(follow)*.25-Math.sin(follow)*.34);
+      look.set(eye.x+Math.sin(heading)*6,forward.y+1.12+(elevation-.22)*6,eye.z+Math.cos(heading)*6);
+    }
     if(force){cam.position.copy(eye);target.copy(look);}else{cam.position.lerp(eye,mix);target.lerp(look,mix);}
     cam.lookAt(target);cam.updateMatrixWorld();layout();
     canvas.parentElement.style.setProperty('--pan',(50+Math.sin(bearing)*17)+'%');
@@ -327,7 +333,7 @@ function buildWorld(canvas, onMark) {
     renderer.render(scene,cam);
   }
   new IntersectionObserver(es=>{visible=es[0].isIntersecting;}).observe(canvas);frame=requestAnimationFrame(animate);
-  return {manual(on){manual=on;throttle=on?1:0;frameCamera(16,true);},throttle(n){throttle=n;},near(){let best=null,dist=Infinity;for(const [id,t] of Object.entries(stops)){const d=Math.abs((pos%1+1)%1-t),u=Math.min(d,1-d);if(u<dist){dist=u;best=id;}}return dist<.052?best:null;},equipment(kind,lit){lamp.visible=kind==='lamp'&&lit;},snap(id){pos=stops[id]||0;frameCamera(16,true);},travel(id,done){let d=stops[id]-pos;d=((d+.5)%1+1)%1-.5;drive={from:pos,delta:d,start:performance.now(),duration:reduced?180:Math.max(850,Math.abs(d)*7800),done};},night(v){night=v;sun.intensity=night?1.55:2.25;sun.color.set(night?0xffbd8b:0xffe8b3);}};
+  return {manual(on){manual=on;throttle=on?1:0;smoke.material.opacity=on?.12:.34;if(on){orbit=-.65;elevation=.22;}frameCamera(16,true);},throttle(n){throttle=n;},near(){let best=null,dist=Infinity;for(const [id,t] of Object.entries(stops)){const d=Math.abs((pos%1+1)%1-t),u=Math.min(d,1-d);if(u<dist){dist=u;best=id;}}return dist<.052?best:null;},equipment(kind,lit){lamp.visible=kind==='lamp'&&lit;},snap(id){pos=stops[id]||0;frameCamera(16,true);},travel(id,done){let d=stops[id]-pos;d=((d+.5)%1+1)%1-.5;drive={from:pos,delta:d,start:performance.now(),duration:reduced?180:Math.max(850,Math.abs(d)*7800),done};},night(v){night=v;sun.intensity=night?1.55:2.25;sun.color.set(night?0xffbd8b:0xffe8b3);}};
 }
 
 const $=id=>document.getElementById(id);
